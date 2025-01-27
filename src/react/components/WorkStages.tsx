@@ -39,7 +39,7 @@ const workProcessMap = [
 
 export const WorkStages = () => {
   return (
-    <div className="px-10 md:px-14 py-16 lg:py-32 text-secondaryCol1 font-inter">
+    <div className="px-4 md:px-20 py-16 lg:py-32 text-secondaryCol1 font-inter">
       <div>
         <div className="my-16 md:my-28 lg:my-32">
           <h2 className="font-bold text-4xl mb-5">

@@ -1,5 +1,5 @@
 ---
-import swiftInvention from '~/assets/images/swift-white-logo.svg';
+import SwiftInventionIcon from '~/assets/images/swift-white-logo.svg';
 import Button from './Button.astro';
 import { NavRoutes } from '~/constants/routes.astro';
 import HamburgerIcon from '~/assets/images/new/hamburger.svg';
@@ -9,21 +9,17 @@ import MobileNavMenu from './MobileNavMenu.astro';
 const currentPath = Astro.url.pathname;
 ---
 
-<header>
-  <nav class="bg-transparent">
-    <div class="max-w-8xl mx-auto px-4 lg:px-5">
+<header class="fixed top-0 left-0 bg-surface z-[100] w-screen">
+  <nav>
+    <div class="px-4 md:px-20">
       <div class="flex items-center justify-between h-18">
-        <div class="flex-shrink-0 md:pl-18">
+        <div class="flex-shrink-0">
           <a href={'/'}>
-            <img
-              class="cursor-pointer"
-              src={swiftInvention.src}
-              alt="Swift Invention Logo"
-            />
+            <SwiftInventionIcon class="h-6 w-[296px] cursor-pointer" />
           </a>
         </div>
         <div
-          class="hidden lg:flex items-center content-center justify-end lg:flex-1 lg:space-x-2 lg:mr-14"
+          class="hidden lg:flex items-center content-center justify-end lg:flex-1 lg:space-x-2"
         >
           <a href={NavRoutes.services.path}>
             <div
