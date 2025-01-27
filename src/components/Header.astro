@@ -1,8 +1,10 @@
 ---
 import swiftInvention from '~/assets/images/swift-white-logo.svg';
 import Button from './Button.astro';
-import { Routes } from '~/constants/routes.astro';
+import { NavRoutes } from '~/constants/routes.astro';
 import HamburgerIcon from '~/assets/images/new/hamburger.svg';
+import CloseIcon from '~/assets/images/new/x-lg.svg';
+import MobileNavMenu from './MobileNavMenu.astro';
 
 const currentPath = Astro.url.pathname;
 ---
@@ -20,102 +22,114 @@ const currentPath = Astro.url.pathname;
             />
           </a>
         </div>
-        <!-- <div class="lg:hidden">
-			  <NavMenu
-				navItems={navItems}
-				mobileMenuRootId="mobile-menu-portal"
-			  />
-			</div> -->
         <div
           class="hidden lg:flex items-center content-center justify-end lg:flex-1 lg:space-x-2 lg:mr-14"
         >
-          <a href={Routes.services.path}>
+          <a href={NavRoutes.services.path}>
             <div
               class:list={[
-                'group py-2 px-3 hover:opacity-100 cursor-pointer rounded-md hover:transition-all duration-200',
-                currentPath === Routes.services.path
+                'group py-2 px-3 hover:opacity-100 cursor-pointer rounded-md hover:transition-all duration-200 text-primaryCol2 font-semibold text-base -mb-1 whitespace-nowrap',
+                currentPath === NavRoutes.home.path ||
+                currentPath === NavRoutes.services.path
                   ? 'opacity-100'
                   : 'opacity-60',
               ]}
             >
-              <div
-                class:list={[
-                  'group-hover:opacity-100 text-primaryCol2 font-inter font-bold text-sm -mb-1 whitespace-nowrap hover:transition-all duration-200',
-                  currentPath === Routes.services.path && 'opacity-100',
-                ]}
-              >
-                {Routes.services.name}
-              </div>
+              {NavRoutes.services.name}
             </div>
           </a>
-          <a href={Routes.caseStudies.path}>
+          <a href={NavRoutes.caseStudies.path}>
             <div
               class:list={[
-                'group py-2 px-3 hover:opacity-100 cursor-pointer rounded-md hover:transition-all duration-200',
-                currentPath === Routes.caseStudies.path
+                'group py-2 px-3 hover:opacity-100 cursor-pointer rounded-md hover:transition-all duration-200 text-primaryCol2 font-semibold text-base -mb-1 whitespace-nowrap',
+                currentPath === NavRoutes.home.path ||
+                currentPath === NavRoutes.caseStudies.path
                   ? 'opacity-100'
                   : 'opacity-60',
               ]}
             >
-              <div
-                class:list={[
-                  'group-hover:opacity-100 text-primaryCol2 font-inter font-bold text-sm -mb-1 whitespace-nowrap hover:transition-all duration-200',
-                  currentPath === Routes.caseStudies.path && 'opacity-100',
-                ]}
-              >
-                {Routes.caseStudies.name}
-              </div>
+              {NavRoutes.caseStudies.name}
             </div>
           </a>
-          <a href={Routes.careers.path}>
+          <a href={NavRoutes.careers.path}>
             <div
               class:list={[
-                'group py-2 px-3 hover:opacity-100 cursor-pointer rounded-md hover:transition-all duration-200',
-                currentPath === Routes.careers.path
+                'group py-2 px-3 hover:opacity-100 cursor-pointer rounded-md hover:transition-all duration-200 text-primaryCol2 font-semibold text-base -mb-1 whitespace-nowrap',
+                currentPath === NavRoutes.home.path ||
+                currentPath === NavRoutes.careers.path
                   ? 'opacity-100'
                   : 'opacity-60',
               ]}
             >
-              <div
-                class:list={[
-                  'group-hover:opacity-100 text-primaryCol2 font-inter font-bold text-sm -mb-1 whitespace-nowrap hover:transition-all duration-200',
-                  currentPath === Routes.careers.path && 'opacity-100',
-                ]}
-              >
-                {Routes.careers.name}
-              </div>
+              {NavRoutes.careers.name}
             </div>
           </a>
-          <a href={Routes.aboutUs.path}>
+          <a href={NavRoutes.aboutUs.path}>
             <div
               class:list={[
-                'group py-2 px-3 hover:opacity-100 cursor-pointer rounded-md hover:transition-all duration-200',
-                currentPath === Routes.aboutUs.path
+                'group py-2 px-3 hover:opacity-100 cursor-pointer rounded-md hover:transition-all duration-200 text-primaryCol2 font-semibold text-base -mb-1 whitespace-nowrap',
+                currentPath === NavRoutes.home.path ||
+                currentPath === NavRoutes.aboutUs.path
                   ? 'opacity-100'
                   : 'opacity-60',
               ]}
             >
-              <div
-                class:list={[
-                  'group-hover:opacity-100 text-primaryCol2 font-inter font-bold text-sm -mb-1 whitespace-nowrap hover:transition-all duration-200',
-                  currentPath === Routes.aboutUs.path && 'opacity-100',
-                ]}
-              >
-                {Routes.aboutUs.name}
-              </div>
+              {NavRoutes.aboutUs.name}
             </div>
           </a>
           <div class="lg:ml-5">
             <Button classes="w-[154px]">Work with us</Button>
           </div>
         </div>
-        <button class="w-11 h-11 flex justify-center items-center lg:hidden">
+        <button
+          class="w-11 h-11 flex justify-center items-center lg:hidden"
+          id="mobile-menu-hamburger"
+        >
           <HamburgerIcon />
+        </button>
+        <button
+          class="w-11 h-11 justify-center items-center hidden lg:hidden"
+          id="mobile-menu-close-btn"
+        >
+          <CloseIcon />
         </button>
       </div>
     </div>
-    <div id="mobile-menu-portal"></div>
+    <MobileNavMenu id="mobile-menu-portal" />
   </nav>
 </header>
 
 <style></style>
+<script>
+  const hamburgerEl = document.getElementById(
+    'mobile-menu-hamburger'
+  ) as HTMLButtonElement | null;
+  const closeBtnEl = document.getElementById(
+    'mobile-menu-close-btn'
+  ) as HTMLButtonElement | null;
+  const mobileNavEl = document.getElementById('mobile-menu-portal');
+
+  const onHamClick = () => {
+    hamburgerEl?.classList.replace('flex', 'hidden');
+
+    closeBtnEl?.classList.replace('hidden', 'flex');
+
+    mobileNavEl?.classList.replace('hidden', 'flex');
+
+    document.body.style.overflowY = 'hidden';
+  };
+
+  const onCloseClick = () => {
+    hamburgerEl?.classList.replace('hidden', 'flex');
+
+    closeBtnEl?.classList.replace('flex', 'hidden');
+
+    mobileNavEl?.classList.replace('flex', 'hidden');
+
+    document.body.style.overflowY = '';
+  };
+
+  hamburgerEl?.addEventListener('click', onHamClick);
+  closeBtnEl?.addEventListener('click', onCloseClick);
+  mobileNavEl?.addEventListener('click', onCloseClick);
+</script>

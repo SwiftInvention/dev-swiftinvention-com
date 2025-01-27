@@ -2,7 +2,7 @@
 import birdsUpImage from '~/assets/images/new/birds-up.png';
 import SwiftInventionIcon from '~/assets/images/swift-white-logo.svg';
 
-import { Routes } from '~/constants/routes.astro';
+import { NavRoutes } from '~/constants/routes.astro';
 import Button from './Button.astro';
 import Input from './Input.astro';
 import SocialNetworks from './SocialNetworks.astro';
@@ -48,19 +48,19 @@ import SocialNetworks from './SocialNetworks.astro';
     <div class="flex gap-x-8 gap-y-6 flex-wrap mb-6 md:mb-8">
       <a
         class="text-gray-accentText font-medium text-sm"
-        href={Routes.services.path}>{Routes.services.name}</a
+        href={NavRoutes.services.path}>{NavRoutes.services.name}</a
       >
       <a
         class="text-gray-accentText font-medium text-sm"
-        href={Routes.aboutUs.path}>{Routes.aboutUs.name}</a
+        href={NavRoutes.aboutUs.path}>{NavRoutes.aboutUs.name}</a
       >
       <a
         class="text-gray-accentText font-medium text-sm"
-        href={Routes.caseStudies.path}>{Routes.caseStudies.name}</a
+        href={NavRoutes.caseStudies.path}>{NavRoutes.caseStudies.name}</a
       >
       <a
         class="text-gray-accentText font-medium text-sm"
-        href={Routes.careers.path}>{Routes.careers.name}</a
+        href={NavRoutes.careers.path}>{NavRoutes.careers.name}</a
       >
       <a
         class="text-gray-accentText font-medium text-sm"
