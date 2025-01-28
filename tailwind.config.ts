@@ -97,6 +97,7 @@ export default {
         '6xl-desktop': ['3.75rem', '4.25rem', 600],
         '7xl': ['3rem', '3.5rem', 600],
         '7xl-desktop': ['4.5rem', '5rem', 600],
+        '9xl-desktop': ['8rem', '8.5rem', 700],
       },
       fontFamily: {
         sans: ['Akzidenz-Grotesk', ...defaultTheme.fontFamily.sans],

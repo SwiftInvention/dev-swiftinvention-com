@@ -5,6 +5,7 @@ import ClientsBlock from '../components/home/ClientsBlock.astro';
 import CasesBlock from '../components/home/CasesBlock.astro';
 import WorkStages from '../react/components/WorkStages';
 import { Team } from '../react/components/Team';
+import MeetUs from '../components/about/MeetUs.astro';
 
 const workProcessMap = [
   {
@@ -23,6 +24,7 @@ const workProcessMap = [
 ---
 
 <Layout>
+  <MeetUs />
   <Team />
   <WorkStages
     stages={workProcessMap}

@@ -9,7 +9,7 @@ import MobileNavMenu from './MobileNavMenu.astro';
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="fixed top-0 left-0 bg-surface z-[100] w-screen">
+<header class="fixed top-0 left-0 bg-transparent z-[100] w-screen">
   <nav>
     <div class="px-4 md:px-20">
       <div class="flex items-center justify-between h-18">
@@ -113,6 +113,10 @@ const currentPath = Astro.url.pathname;
     mobileNavEl?.classList.replace('hidden', 'flex');
 
     document.body.style.overflowY = 'hidden';
+
+    document
+      .getElementsByTagName('header')[0]
+      ?.classList.replace('bg-transparent', 'bg-surface');
   };
 
   const onCloseClick = () => {
@@ -123,9 +127,28 @@ const currentPath = Astro.url.pathname;
     mobileNavEl?.classList.replace('flex', 'hidden');
 
     document.body.style.overflowY = '';
+
+    if (window.scrollY < 30) {
+      document
+        .getElementsByTagName('header')[0]
+        ?.classList.replace('bg-surface', 'bg-transparent');
+    }
   };
 
   hamburgerEl?.addEventListener('click', onHamClick);
   closeBtnEl?.addEventListener('click', onCloseClick);
   mobileNavEl?.addEventListener('click', onCloseClick);
+</script>
+<script>
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 30) {
+      document
+        .getElementsByTagName('header')[0]
+        ?.classList.replace('bg-transparent', 'bg-surface');
+    } else {
+      document
+        .getElementsByTagName('header')[0]
+        ?.classList.replace('bg-surface', 'bg-transparent');
+    }
+  });
 </script>
