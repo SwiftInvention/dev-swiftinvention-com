@@ -14,11 +14,11 @@ export const VisitButton: React.FC<VisitButtonProps> = ({ url }) => {
     <button
       type="button"
       onClick={handleClick}
-      className="self-center inline-flex items-center justify-start border-2 border-primaryCol3 bg-primaryCol1 text-primaryCol3 hover:text-primaryCol1 hover:bg-primaryCol3 h-8 w-30 m-2.5 -ml-8 lg:ml-0 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primaryCol3"
+      className="m-2.5 -ml-8 inline-flex h-8 w-30 items-center justify-start self-center border-2 border-primaryCol3 bg-primaryCol1 px-4 py-2.5 text-primaryCol3 hover:bg-primaryCol3 hover:text-primaryCol1 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primaryCol3 lg:ml-0"
     >
-      <div className="font-sans font-medium text-sm">Visit Site</div>
+      <div className="font-sans text-sm font-medium">Visit Site</div>
       <svg
-        className="inline ml-3"
+        className="ml-3 inline"
         width="15px"
         height="15px"
         viewBox="0 0 15 15"

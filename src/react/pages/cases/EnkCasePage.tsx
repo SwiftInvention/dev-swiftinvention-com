@@ -8,7 +8,7 @@ export const EnkCasePage: React.FC = () => {
   const leftColumnItems: JSX.Element = (
     <div>
       <img
-        className="max-h-4 mb-8 object-cover"
+        className="mb-8 max-h-4 object-cover"
         src={enkLogo.src}
         alt="EatNakedKitchen logo"
       />
@@ -16,7 +16,7 @@ export const EnkCasePage: React.FC = () => {
         Science-based nutrition, skills and strategies website
       </div>
       <div className={styles.detailsDivider} />
-      <div className="py-1 pr-2 space-y-8 max-w-md">
+      <div className="max-w-md space-y-8 py-1 pr-2">
         <div>
           <div className={styles.detailsSubtitle}>Why They Came to Swift</div>
           <div className={styles.detailsRegular}>
@@ -63,7 +63,7 @@ export const EnkCasePage: React.FC = () => {
   const rightColumnItems: JSX.Element = (
     <div className="">
       <img
-        className="max-h-80 w-full object-contain mb-4 lg:mb-0"
+        className="mb-4 max-h-80 w-full object-contain lg:mb-0"
         src={enkLaptop.src}
         alt="EatNakedKitchen page"
       />

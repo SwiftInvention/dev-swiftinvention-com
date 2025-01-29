@@ -8,7 +8,7 @@ export const BlankslateCasePage: React.FC = () => {
   const leftColumnItems: JSX.Element = (
     <div>
       <img
-        className="max-h-16 mb-3 object-cover"
+        className="mb-3 max-h-16 object-cover"
         src={blankSlateLogo.src}
         alt="Blank slate logo"
       />
@@ -16,7 +16,7 @@ export const BlankslateCasePage: React.FC = () => {
         Enterprise Microlearning App
       </div>
       <div className={styles.detailsDivider} />
-      <div className="py-1 pr-2 space-y-8 max-w-md">
+      <div className="max-w-md space-y-8 py-1 pr-2">
         <div>
           <div className={styles.detailsSubtitle}>Why They Came to Swift</div>
           <div className={styles.detailsRegular}>

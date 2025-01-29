@@ -19,19 +19,19 @@ export const WorkStages = ({
   description: string;
 }) => {
   return (
-    <div className="px-4 md:px-20 py-16 lg:py-32 text-secondaryCol1">
+    <div className="px-4 py-16 text-secondaryCol1 md:px-20 lg:py-32">
       <div>
         <div className="my-16 md:my-28 lg:my-32">
-          <h2 className="font-bold text-4xl mb-5">{title}</h2>
+          <h2 className="mb-5 text-4xl font-bold">{title}</h2>
           <p className="pb-16 text-xl text-secondaryCol1/85">{description}</p>
           <div className="mb-4 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {stages.map(({ name, body }, idx) => (
               <div
                 key={idx}
                 style={{ backgroundImage: `url(${indexImages[idx]})` }}
-                className={`pt-34 bg-no-repeat bg-left-top-2`}
+                className={`bg-left-top-2 bg-no-repeat pt-34`}
               >
-                <h3 className="font-bold text-2xl">{name}</h3>
+                <h3 className="text-2xl font-bold">{name}</h3>
                 <p className="text-lg text-secondaryCol1/85">{body}</p>
               </div>
             ))}

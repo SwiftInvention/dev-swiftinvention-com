@@ -6,8 +6,8 @@ import { CareersMainPage } from './CareersMainPage';
 export const CareersPage: React.FC = () => {
   return (
     <DefaultPage>
-      <div className="relative min-h-screen h-full">
-        <div className="hidden sm:block sm:absolute sm:inset-0 mx-auto max-w-8xl">
+      <div className="relative h-full min-h-screen">
+        <div className="mx-auto hidden max-w-8xl sm:absolute sm:inset-0 sm:block">
           <img
             className="h-full w-full object-cover object-left-top"
             src={servicesBg.src}
@@ -15,7 +15,7 @@ export const CareersPage: React.FC = () => {
           />
         </div>
         <div className="relative">
-          <div className="px-10 md:px-24 pt-16 lg:pt-32">
+          <div className="px-10 pt-16 md:px-24 lg:pt-32">
             <CareersMainPage />
           </div>
         </div>

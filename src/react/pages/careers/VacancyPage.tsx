@@ -30,8 +30,8 @@ export const VacancyPage: React.FC = () => {
 
   return (
     <DefaultPage>
-      <div className="relative min-h-screen h-full">
-        <div className="hidden sm:block sm:absolute sm:inset-0 mx-auto max-w-8xl">
+      <div className="relative h-full min-h-screen">
+        <div className="mx-auto hidden max-w-8xl sm:absolute sm:inset-0 sm:block">
           <img
             className="h-full w-full object-cover object-left-top"
             src={servicesBg.src}
@@ -39,20 +39,20 @@ export const VacancyPage: React.FC = () => {
           />
         </div>
         <div className="relative">
-          <div className="px-10 md:px-24 pt-16 lg:pt-32">
+          <div className="px-10 pt-16 md:px-24 lg:pt-32">
             <div>
               <div
                 className="font-sans text-secondaryCol1"
                 // eslint-disable-next-line react/no-danger
                 dangerouslySetInnerHTML={sanitizedData()}
               />
-              <div className="flex flex-col items-center mt-12 pb-12">
+              <div className="mt-12 flex flex-col items-center pb-12">
                 <a
                   href={`mailto:job@swiftinvention.com?subject=<Your name> - resume for ${vacancyName} position&body=Dear Hiring Manager,`}
                 >
                   <button
                     type="submit"
-                    className="inline-flex items-center justify-center border rounded-md border-primaryCol3 text-primaryCol3 hover:text-primaryCol1 hover:bg-primaryCol3 h-12 w-37 font-sans font-medium text-sm focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primaryCol3"
+                    className="inline-flex h-12 w-37 items-center justify-center rounded-md border border-primaryCol3 font-sans text-sm font-medium text-primaryCol3 hover:bg-primaryCol3 hover:text-primaryCol1 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primaryCol3"
                   >
                     Apply Now
                   </button>

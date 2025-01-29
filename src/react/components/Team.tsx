@@ -71,10 +71,10 @@ const teamMembers = [
 
 export const Team = () => {
   return (
-    <div className="px-4 md:px-20 py-16 lg:py-32 text-secondaryCol1 bg-surface">
+    <div className="bg-surface px-4 py-16 text-secondaryCol1 md:px-20 lg:py-32">
       <div>
-        <h2 className="font-bold text-4xl">Leadership Team</h2>
-        <p className="pt-5 pb-16 text-xl md:text-xl-desktop text-secondaryCol1/85 max-w-15xl">
+        <h2 className="text-4xl font-bold">Leadership Team</h2>
+        <p className="max-w-15xl pb-16 pt-5 text-xl text-secondaryCol1/85 md:text-xl-desktop">
           We know how to take ideas from concept to reality. Be sure your
           projects will be completed with a dedicated team, the highest quality,
           and on-time.
@@ -83,29 +83,29 @@ export const Team = () => {
           {teamMembers.map((member) => (
             <div
               key={member.name}
-              className="relative overflow-hidden flex flex-col rounded-xl bg-gradient-to-b from-transparent to-primaryCol3WithOpacity"
+              className="relative flex flex-col overflow-hidden rounded-xl bg-gradient-to-b from-transparent to-primaryCol3WithOpacity"
             >
-              <div className="team-member-photo w-60 h-60 rounded-full mb-5 lg:mb-0">
+              <div className="team-member-photo mb-5 h-60 w-60 rounded-full lg:mb-0">
                 <img
-                  className="w-60 h-60 object-cover rounded-full"
+                  className="h-60 w-60 rounded-full object-cover"
                   src={member.photo}
                   srcSet={`${member.photo} 1x, ${member.photo2x} 2x`}
                   alt={member.name}
                 />
               </div>
               <div className="m-8">
-                <div className="text-xl md:text-xl-desktop font-bold">
+                <div className="text-xl font-bold md:text-xl-desktop">
                   {member.name}
                 </div>
-                <div className="mb-4 text-xl md:text-xl-desktop font-medium opacity-80">
+                <div className="mb-4 text-xl font-medium opacity-80 md:text-xl-desktop">
                   {member.position}
                 </div>
-                <hr className="border-secondaryCol1 opacity-10 border-1 mb-4" />
+                <hr className="border-1 mb-4 border-secondaryCol1 opacity-10" />
                 <div className="mt-4 min-h-28 text-lg text-secondaryCol1/85">
                   {member.description}
                   <div className="italic">{member.place}</div>
                 </div>
-                <div className="mt-4 flex text-lg font-inter">
+                <div className="mt-4 flex font-inter text-lg">
                   <a href={member.linkedIn} className="mr-4">
                     <img src={linkedInIcon.src} alt={member.name} />
                   </a>
@@ -114,7 +114,7 @@ export const Team = () => {
                   </a>
                 </div>
               </div>
-              <div className="team-member-glow absolute h-full w-full top-[40%]"></div>
+              <div className="team-member-glow absolute top-[40%] h-full w-full"></div>
             </div>
           ))}
         </div>

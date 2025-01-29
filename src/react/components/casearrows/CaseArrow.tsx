@@ -16,7 +16,7 @@ export interface CaseArrowProps {
 export const CaseArrow: React.FC<CaseArrowProps> = ({ link, direction }) => {
   const isNext = direction === Direction.next;
   return (
-    <div className="text-primaryCol3 hover:text-primaryCol1 hover:bg-primaryCol3 px-2 py-2">
+    <div className="px-2 py-2 text-primaryCol3 hover:bg-primaryCol3 hover:text-primaryCol1">
       <Link className="flex flex-row" to={link}>
         <div
           className={twMerge(
@@ -27,7 +27,7 @@ export const CaseArrow: React.FC<CaseArrowProps> = ({ link, direction }) => {
         >
           {isNext ? <ArrowRight /> : <ArrowLeft />}
         </div>
-        <div className="hidden md:block font-sans font-medium text-sm">
+        <div className="hidden font-sans text-sm font-medium md:block">
           {isNext ? 'Next Case Study' : 'Previous Case Study'}
         </div>
       </Link>

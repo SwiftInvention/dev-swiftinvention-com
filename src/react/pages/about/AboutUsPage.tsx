@@ -100,27 +100,27 @@ export const AboutUsPage = () => {
 
   return (
     <DefaultPage>
-      <div className="px-10 md:px-14 py-16 lg:py-32 bg-secondaryCol5 text-secondaryCol1 font-inter bg-pageBg bg-cover bg-no-repeat bg-center">
+      <div className="bg-secondaryCol5 bg-pageBg bg-cover bg-center bg-no-repeat px-10 py-16 font-inter text-secondaryCol1 md:px-14 lg:py-32">
         <h1 className="text-5xl font-bold">
           <span>Meet</span>
           <br />
           <img
-            className="inline my-5 pr-10"
+            className="my-5 inline pr-10"
             src={swiftInvention.src}
             alt="Swift Invention Logo"
           />
         </h1>
-        <p className="text-xl text-secondaryCol1/85 max-w-15xl">
+        <p className="max-w-15xl text-xl text-secondaryCol1/85">
           Swift was founded in 2012 to help clients transform bold visions into
           breakthrough software products. Our clients collaborate with our
           cost-effective offshore team of designers, analysts, data scientists,
           and software developers. Together we'll ensure that every project is
           executed swiftly with precision and excellence.
         </p>
-        <hr className="border-secondaryCol1 opacity-10 border-1 my-16 md:my-28 lg:my-32" />
+        <hr className="border-1 my-16 border-secondaryCol1 opacity-10 md:my-28 lg:my-32" />
         <div>
-          <h2 className="font-bold text-4xl">Leadership Team</h2>
-          <p className="pt-5 pb-16 text-xl text-secondaryCol1/85 max-w-15xl">
+          <h2 className="text-4xl font-bold">Leadership Team</h2>
+          <p className="max-w-15xl pb-16 pt-5 text-xl text-secondaryCol1/85">
             We know how to take ideas from concept to reality. Be sure your
             projects will be completed with a dedicated team, the highest
             quality, and on-time.
@@ -133,7 +133,7 @@ export const AboutUsPage = () => {
               >
                 <div className="">
                   <img
-                    className="w-60 h-60 object-cover mb-5 lg:mb-0"
+                    className="mb-5 h-60 w-60 object-cover lg:mb-0"
                     src={member.photo}
                     srcSet={`${member.photo} 1x, ${member.photo2x} 2x`}
                     alt={member.name}
@@ -144,11 +144,11 @@ export const AboutUsPage = () => {
                   <div className="mb-4 text-xl font-medium">
                     {member.position}
                   </div>
-                  <hr className="border-secondaryCol1 opacity-10 border-1 mb-4" />
+                  <hr className="border-1 mb-4 border-secondaryCol1 opacity-10" />
                   <div className="mt-4 min-h-28 text-lg text-secondaryCol1/85">
                     {member.description}
                   </div>
-                  <div className="mt-4 flex text-lg font-inter">
+                  <div className="mt-4 flex font-inter text-lg">
                     <a href={member.linkedIn} className="mr-4">
                       <img src={linkedInIcon.src} alt={member.name} />
                     </a>
@@ -161,7 +161,7 @@ export const AboutUsPage = () => {
             ))}
           </div>
           <div className="my-16 md:my-28 lg:my-32">
-            <h2 className="font-bold text-4xl mb-5">
+            <h2 className="mb-5 text-4xl font-bold">
               Extensive expertise and work process
             </h2>
             <p className="pb-16 text-xl text-secondaryCol1/85">
@@ -176,20 +176,20 @@ export const AboutUsPage = () => {
                 <div
                   key={title}
                   style={{ backgroundImage: `url(${bgImage})` }}
-                  className={`pt-34 bg-no-repeat bg-left-top-2`}
+                  className={`bg-left-top-2 bg-no-repeat pt-34`}
                 >
-                  <h3 className="font-bold text-2xl">{title}</h3>
+                  <h3 className="text-2xl font-bold">{title}</h3>
                   <p className="text-lg text-secondaryCol1/85">{description}</p>
                 </div>
               ))}
             </div>
           </div>
-          <hr className="border-secondaryCol1 opacity-10 border-1 my-16" />
+          <hr className="border-1 my-16 border-secondaryCol1 opacity-10" />
           <div>
             <button
               type="button"
               onClick={handleWorkWithUs}
-              className="bg-primaryCol2 text-secondaryCol5 uppercase text-xl font-bold py-4 px-10 rounded-md"
+              className="rounded-md bg-primaryCol2 px-10 py-4 text-xl font-bold uppercase text-secondaryCol5"
             >
               Work with Us
             </button>

@@ -21,17 +21,17 @@ export const ArrowedText: React.FC<ArrowedTextProps> = ({
   return (
     <div
       className={twMerge(
-        'font-sans font-medium text-lg flex items-center py-1',
+        'flex items-center py-1 font-sans text-lg font-medium',
         mainColor,
         bgColor,
         highlightColor && `hover:${highlightColor}`,
         highlightBgColor && `hover:${highlightBgColor}`,
-        horizontalPadding ?? 'px-2 -ml-2'
+        horizontalPadding ?? '-ml-2 px-2'
       )}
     >
       {text}
       <svg
-        className="inline -mt-1 ml-2"
+        className="-mt-1 ml-2 inline"
         width="13px"
         height="17px"
         viewBox="0 0 13 17"

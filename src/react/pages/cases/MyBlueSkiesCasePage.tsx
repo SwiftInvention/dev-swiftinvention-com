@@ -8,7 +8,7 @@ export const MyBlueSkiesCasePage: React.FC = () => {
   const leftColumnItems: JSX.Element = (
     <div>
       <img
-        className="max-h-20 object-cover mb-3"
+        className="mb-3 max-h-20 object-cover"
         src={mbsLogo.src}
         alt="MyBlueSkies logo"
       />
@@ -16,7 +16,7 @@ export const MyBlueSkiesCasePage: React.FC = () => {
         An online platform for teaching and streaming
       </div>
       <div className={styles.detailsDivider} />
-      <div className="py-1 pr-2 space-y-8 max-w-md">
+      <div className="max-w-md space-y-8 py-1 pr-2">
         <div>
           <div className={styles.detailsSubtitle}>Why They Came to Swift</div>
           <div className={styles.detailsRegular}>
@@ -75,7 +75,7 @@ export const MyBlueSkiesCasePage: React.FC = () => {
   const rightColumnItems: JSX.Element = (
     <div className="">
       <img
-        className="max-h-80 w-full object-contain mb-4 lg:mb-0"
+        className="mb-4 max-h-80 w-full object-contain lg:mb-0"
         src={mbsLaptop.src}
         alt="MyBlueSkies page"
       />

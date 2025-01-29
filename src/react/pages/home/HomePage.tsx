@@ -21,12 +21,12 @@ export const HomePage: React.FC<HomePageProps> = () => {
             alt="home page header background"
           />
           <div className="absolute inset-0 z-50">
-            <div className="h-full flex items-center justify-start lg:grid lg:grid-cols-2 lg:gap-8">
-              <div className="px-8 pl-10 sm:pl-16 md:pl-30 max-w-xl">
-                <div className="text-primaryCol2 font-sans font-medium text-5xl mb-5">
+            <div className="flex h-full items-center justify-start lg:grid lg:grid-cols-2 lg:gap-8">
+              <div className="max-w-xl px-8 pl-10 sm:pl-16 md:pl-30">
+                <div className="mb-5 font-sans text-5xl font-medium text-primaryCol2">
                   Swift release for your MVP.
                 </div>
-                <div className="text-primaryCol2 font-sans font-normal text-lg">
+                <div className="font-sans text-lg font-normal text-primaryCol2">
                   We&#39;re an experienced team of software designers and
                   engineers that know how to take ideas from concept to reality.
                 </div>
@@ -71,7 +71,7 @@ export const HomePage: React.FC<HomePageProps> = () => {
           </div>
           <div className="relative">
             <div className="absolute inset-x-0 -bottom-[216px]">
-              <div className="mx-auto max-w-max-w-8xl">
+              <div className="max-w-max-w-8xl mx-auto">
                 <img
                   className="h-full object-cover"
                   src={homeGrid.src}
@@ -82,8 +82,8 @@ export const HomePage: React.FC<HomePageProps> = () => {
           </div>
         </div>
       </div>
-      <div className="bg-secondaryCol4 max-w-8xl h-25 px-8 pl-10 sm:pl-16 md:pl-100 flex items-center">
-        <div className="font-sans text-secondaryCol1 text-sm font-normal" />
+      <div className="flex h-25 max-w-8xl items-center bg-secondaryCol4 px-8 pl-10 sm:pl-16 md:pl-100">
+        <div className="font-sans text-sm font-normal text-secondaryCol1" />
       </div>
       <div className="relative min-h-[421px]">
         <div className="absolute inset-0">
@@ -96,14 +96,14 @@ export const HomePage: React.FC<HomePageProps> = () => {
           </div>
         </div>
         <div className="absolute inset-0">
-          <div className="md:relative w-full h-full items-center flex flex-row flex-wrap justify-start content-start">
+          <div className="flex h-full w-full flex-row flex-wrap content-start items-center justify-start md:relative">
             <div className="md:absolute md:left-0">
-              <div className="pt-8 md:pt-0 px-4 pl-10 sm:pl-16 md:pl-30 font-sans font-medium text-secondaryCol1 text-2.5xl">
+              <div className="px-4 pl-10 pt-8 font-sans text-2.5xl font-medium text-secondaryCol1 sm:pl-16 md:pl-30 md:pt-0">
                 Services
               </div>
             </div>
-            <div className="md:absolute md:left-0 max-w-5xl ">
-              <div className="pt-4 px-8 pl-10 sm:pl-16 md:pl-100 font-sans text-secondaryCol1 text-lg">
+            <div className="max-w-5xl md:absolute md:left-0">
+              <div className="px-8 pl-10 pt-4 font-sans text-lg text-secondaryCol1 sm:pl-16 md:pl-100">
                 We help disruptive startups and businesses create innovative
                 products and services. From strategy and design to iOS, Android,
                 web apps and infrastructure development. We’re experts at

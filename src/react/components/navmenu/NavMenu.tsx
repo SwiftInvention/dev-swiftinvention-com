@@ -18,7 +18,7 @@ export const NavMenu: React.FC<NavMenuProps> = ({
       <button
         type="button"
         onClick={toggleMenu}
-        className="inline-flex items-center justify-center p-2 mr-4 rounded-md text-primaryCol2 hover:text-primaryCol3 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primaryCol2 aria-expanded='false'"
+        className="aria-expanded='false' mr-4 inline-flex items-center justify-center rounded-md p-2 text-primaryCol2 hover:text-primaryCol3 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primaryCol2"
       >
         <span className="sr-only">Open main menu</span>
         <svg
@@ -38,7 +38,7 @@ export const NavMenu: React.FC<NavMenuProps> = ({
         </svg>
         <svg
           className={twMerge(
-            'h-6 w-6 max-h-6',
+            'h-6 max-h-6 w-6',
             isMenuOpened ? 'block' : 'hidden'
           )}
           xmlns="http://www.w3.org/2000/svg"

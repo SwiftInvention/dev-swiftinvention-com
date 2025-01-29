@@ -11,8 +11,8 @@ export interface NewProductsPageProps {}
 export const NewProductsPage: React.FC<NewProductsPageProps> = () => {
   return (
     <DefaultPage>
-      <div className="relative min-h-screen h-full">
-        <div className="hidden sm:block sm:absolute sm:inset-0 mx-auto max-w-8xl">
+      <div className="relative h-full min-h-screen">
+        <div className="mx-auto hidden max-w-8xl sm:absolute sm:inset-0 sm:block">
           <img
             className="h-full w-full object-cover object-left-top"
             src={servicesBg.src}
@@ -20,26 +20,26 @@ export const NewProductsPage: React.FC<NewProductsPageProps> = () => {
           />
         </div>
         <div className="relative">
-          <div className="px-8 pl-10 sm:pl-16 md:pl-30 pt-16 lg:pt-32">
-            <div className="text-secondaryCol1 font-sans font-medium text-4xl border-b border-primaryCol3 max-w-max pb-2 pr-6 mb-16">
+          <div className="px-8 pl-10 pt-16 sm:pl-16 md:pl-30 lg:pt-32">
+            <div className="mb-16 max-w-max border-b border-primaryCol3 pb-2 pr-6 font-sans text-4xl font-medium text-secondaryCol1">
               New Products
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-none lg:grid-flow-col lg:auto-cols-auto gap-7  justify-items-start">
+            <div className="grid grid-cols-1 justify-items-start gap-7 lg:auto-cols-auto lg:grid-flow-col lg:grid-cols-none">
               <div className="">
                 <img
-                  className="max-h-72 w-full pl-8 sm:pl-16 mb-8"
+                  className="mb-8 max-h-72 w-full pl-8 sm:pl-16"
                   src={phoneAlarm.src}
                   alt="phone alarm"
                 />
               </div>
-              <div className="lg:pl-4 mb-34">
-                <div className="text-primaryCol3 font-sans font-medium text-lg">
+              <div className="mb-34 lg:pl-4">
+                <div className="font-sans text-lg font-medium text-primaryCol3">
                   NEW!
                 </div>
-                <div className="text-secondaryCol1 text-2.5xl font-sans font-medium mt-2 mb-4">
+                <div className="mb-4 mt-2 font-sans text-2.5xl font-medium text-secondaryCol1">
                   Service Provider Scheduling App
                 </div>
-                <div className="text-secondaryCol1 font-sans font-normal text-sm space-y-4 max-w-xl">
+                <div className="max-w-xl space-y-4 font-sans text-sm font-normal text-secondaryCol1">
                   <p>
                     We are excited to announce a new service in a time of new
                     needs: Our Service Provider Scheduling App.

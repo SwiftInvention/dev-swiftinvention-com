@@ -7,16 +7,16 @@ import styles from './CaseDetailsPage.module.css';
 export const ConfyrmCasePage: React.FC = () => {
   const leftColumnItems: JSX.Element = (
     <div>
-      <img className="h-12 mb-3" src={confyrmLogo.src} alt="Confyrm logo" />
+      <img className="mb-3 h-12" src={confyrmLogo.src} alt="Confyrm logo" />
       <div className={styles.detailsDescription}>
         Online service that delivers identity security alerts to reduce fraud
         and detect threats.
       </div>
-      <div className="italic font-sans font-normal text-secondaryCol1 text-lg">
+      <div className="font-sans text-lg font-normal italic text-secondaryCol1">
         Acquired by Citigroup
       </div>
       <div className={styles.detailsDivider} />
-      <div className="py-1 pr-2 space-y-8 max-w-md">
+      <div className="max-w-md space-y-8 py-1 pr-2">
         <div>
           <div className={styles.detailsSubtitle}>Why They Came to Swift</div>
           <div className={styles.detailsRegular}>
@@ -85,7 +85,7 @@ export const ConfyrmCasePage: React.FC = () => {
   const rightColumnItems: JSX.Element = (
     <div className="">
       <img
-        className="max-h-80 w-full object-contain mb-16 lg:mb-0"
+        className="mb-16 max-h-80 w-full object-contain lg:mb-0"
         src={confyrmLaptopImg.src}
         alt="Confyrm laptop"
       />

@@ -8,13 +8,13 @@ export const BelbellaCasePage: React.FC = () => {
   const leftColumnItems: JSX.Element = (
     <div>
       <img
-        className="max-h-32 object-contain mb-3"
+        className="mb-3 max-h-32 object-contain"
         src={belbellaLogo.src}
         alt="BelBella logo"
       />
       <div className={styles.detailsDescription}>On-demand beauty services</div>
       <div className={styles.detailsDivider} />
-      <div className="py-1 pr-2 space-y-8 max-w-md">
+      <div className="max-w-md space-y-8 py-1 pr-2">
         <div>
           <div className={styles.detailsSubtitle}>Why They Came to Swift</div>
           <div className={styles.detailsRegular}>

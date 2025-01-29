@@ -27,7 +27,9 @@ module.exports = {
     sourceType: 'module',
     project: './tsconfig.json',
   },
-  settings: { react: { version: '18.2' } },
+  settings: {
+    react: { version: '18.2' }
+  },
   rules: {
     'linebreak-style': 'off',
     'react/prop-types': 'off',

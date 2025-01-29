@@ -32,21 +32,21 @@ export const FeedbackPage: React.FC<FeedbackPageProps> = () => {
 
   return (
     <DefaultPage>
-      <div className="bg-pageBg bg-cover bg-no-repeat bg-center font-inter">
-        <div className="py-16 px-5 lg:py-32 flex justify-center items-center ">
-          <div className="lg:w-660 flex flex-col justify-center items-center bg-secondaryCol4 rounded-xl shadow-card p-16 bg-gradient-to-br from-primaryCol3WithOpacity to-transparent">
+      <div className="bg-pageBg bg-cover bg-center bg-no-repeat font-inter">
+        <div className="flex items-center justify-center px-5 py-16 lg:py-32">
+          <div className="flex flex-col items-center justify-center rounded-xl bg-secondaryCol4 bg-gradient-to-br from-primaryCol3WithOpacity to-transparent p-16 shadow-card lg:w-660">
             <div className="text-secondaryCol1">
-              <div className="text-5xl font-bold mb-5">Let's talk</div>
-              <div className="text-xl leading-7 mb-8 text-secondaryCol1/85">
+              <div className="mb-5 text-5xl font-bold">Let's talk</div>
+              <div className="mb-8 text-xl leading-7 text-secondaryCol1/85">
                 Get in touch about your project or to learn more about Swift by
                 by filling out our contact form for a response within 48 hours.
               </div>
             </div>
             <form
-              className="w-full flex flex-col justify-center items-center"
+              className="flex w-full flex-col items-center justify-center"
               onSubmit={onSubmit}
             >
-              <div className="space-y-5 w-full">
+              <div className="w-full space-y-5">
                 <div className={styles.inputContainer}>
                   <label htmlFor={nameInput}>
                     <span className="sr-only">Name</span>
@@ -100,7 +100,7 @@ export const FeedbackPage: React.FC<FeedbackPageProps> = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-primaryCol3 rounded-md hover:text-primaryCol1 hover:bg-primaryCol3 py-3.5 my-5 font-medium text-base uppercase focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primaryCol3"
+                className="my-5 w-full rounded-md bg-primaryCol3 py-3.5 text-base font-medium uppercase hover:bg-primaryCol3 hover:text-primaryCol1 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primaryCol3"
               >
                 Send message
               </button>

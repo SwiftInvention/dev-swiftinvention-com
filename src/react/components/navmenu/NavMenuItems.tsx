@@ -14,12 +14,12 @@ export const NavMenuItems: React.FC<NavMenuItemsProps> = ({
 }) => {
   const node = usePortal(mobileMenuRootId);
   const menuItems = (
-    <div className="pl-5 md:pl-18 pt-2 pb-3 space-y-1 lg:hidden">
+    <div className="space-y-1 pb-3 pl-5 pt-2 md:pl-18 lg:hidden">
       {navItems.map((value) => {
         return (
           <Link
             to={value.link}
-            className="text-primaryCol2 block px-3 py-2 rounded-md text-base font-medium font-sans"
+            className="block rounded-md px-3 py-2 font-sans text-base font-medium text-primaryCol2"
             key={value.name}
           >
             {value.name}

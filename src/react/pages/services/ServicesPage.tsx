@@ -15,8 +15,8 @@ export interface ServicesPageProps {}
 export const ServicesPage: React.FC<ServicesPageProps> = () => {
   return (
     <DefaultPage>
-      <div className="relative min-h-screen h-full">
-        <div className="hidden sm:block sm:absolute sm:inset-0 mx-auto max-w-8xl">
+      <div className="relative h-full min-h-screen">
+        <div className="mx-auto hidden max-w-8xl sm:absolute sm:inset-0 sm:block">
           <img
             className="h-full w-full object-cover object-left-top"
             src={servicesBg.src}
@@ -24,12 +24,12 @@ export const ServicesPage: React.FC<ServicesPageProps> = () => {
           />
         </div>
         <div className="relative">
-          <div className="px-10 md:px-24 pt-16 lg:pt-32">
+          <div className="px-10 pt-16 md:px-24 lg:pt-32">
             <div className="max-w-xl">
-              <div className="text-secondaryCol1 font-sans font-medium text-4xl mb-5">
+              <div className="mb-5 font-sans text-4xl font-medium text-secondaryCol1">
                 Services
               </div>
-              <div className="text-secondaryCol1 font-sans font-normal text-lg">
+              <div className="font-sans text-lg font-normal text-secondaryCol1">
                 We help disruptive startups and businesses create innovative
                 products and services. From strategy and design to iOS, Android,
                 web apps and infrastructure development. We’re experts at
@@ -48,10 +48,10 @@ export const ServicesPage: React.FC<ServicesPageProps> = () => {
                 </Link>
               </div>
             </div>
-            <div className="font-sans font-medium text-primaryCol2 text-base pt-16 lg:pt-28">
+            <div className="pt-16 font-sans text-base font-medium text-primaryCol2 lg:pt-28">
               OUR SERVICES
             </div>
-            <ul className="mt-7 pb-25 flex flex-col justify-start sm:flex-row sm:flex-wrap gap-7">
+            <ul className="mt-7 flex flex-col justify-start gap-7 pb-25 sm:flex-row sm:flex-wrap">
               <ServiceCard
                 text="Mobile Apps (iOS&nbsp;and&nbsp;Android)"
                 image={phoneImage.src}

@@ -19,8 +19,8 @@ export interface CasesPageProps {}
 export const CasesPage: React.FC<CasesPageProps> = () => {
   return (
     <DefaultPage>
-      <div className="relative min-h-screen h-full">
-        <div className="hidden md:block md:absolute md:inset-0 mx-auto max-w-8xl">
+      <div className="relative h-full min-h-screen">
+        <div className="mx-auto hidden max-w-8xl md:absolute md:inset-0 md:block">
           <img
             className="h-full w-full object-cover object-center"
             src={casesBg.src}
@@ -28,17 +28,17 @@ export const CasesPage: React.FC<CasesPageProps> = () => {
           />
         </div>
         <div className="relative">
-          <div className="px-8 pl-10 sm:pl-16 lg:pl-30 pt-16 lg:pt-32">
+          <div className="px-8 pl-10 pt-16 sm:pl-16 lg:pl-30 lg:pt-32">
             <div className="max-w-xl">
-              <div className="text-secondaryCol1 font-sans font-medium text-4xl mb-5">
+              <div className="mb-5 font-sans text-4xl font-medium text-secondaryCol1">
                 Case Studies
               </div>
-              <div className="text-secondaryCol1 font-sans font-normal text-lg">
+              <div className="font-sans text-lg font-normal text-secondaryCol1">
                 No matter the need, Swift identifies the pathways needed for
                 success. See our case studies below to see how we did it.
               </div>
             </div>
-            <ul className="mt-16 sm:mt-24 pb-25 grid grid-cols-1 md:grid-cols-2 gap-x-7 gap-y-7">
+            <ul className="mt-16 grid grid-cols-1 gap-x-7 gap-y-7 pb-25 sm:mt-24 md:grid-cols-2">
               {/**
                * 
                <CaseStudyCard

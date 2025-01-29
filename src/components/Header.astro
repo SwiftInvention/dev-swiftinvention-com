@@ -9,22 +9,22 @@ import MobileNavMenu from './MobileNavMenu.astro';
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="fixed top-0 left-0 bg-transparent z-[100] w-screen">
+<header class="fixed left-0 top-0 z-[100] w-screen bg-transparent">
   <nav>
     <div class="px-4 md:px-20">
-      <div class="flex items-center justify-between h-18">
+      <div class="flex h-18 items-center justify-between">
         <div class="flex-shrink-0">
           <a href={'/'}>
             <SwiftInventionIcon class="h-6 w-[296px] cursor-pointer" />
           </a>
         </div>
         <div
-          class="hidden lg:flex items-center content-center justify-end lg:flex-1 lg:space-x-2"
+          class="hidden content-center items-center justify-end lg:flex lg:flex-1 lg:space-x-2"
         >
           <a href={NavRoutes.services.path}>
             <div
               class:list={[
-                'group py-2 px-3 hover:opacity-100 cursor-pointer rounded-md hover:transition-all duration-200 text-primaryCol2 font-semibold text-base -mb-1 whitespace-nowrap',
+                'group -mb-1 cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-base font-semibold text-primaryCol2 duration-200 hover:opacity-100 hover:transition-all',
                 currentPath === NavRoutes.home.path ||
                 currentPath === NavRoutes.services.path
                   ? 'opacity-100'
@@ -37,7 +37,7 @@ const currentPath = Astro.url.pathname;
           <a href={NavRoutes.caseStudies.path}>
             <div
               class:list={[
-                'group py-2 px-3 hover:opacity-100 cursor-pointer rounded-md hover:transition-all duration-200 text-primaryCol2 font-semibold text-base -mb-1 whitespace-nowrap',
+                'group -mb-1 cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-base font-semibold text-primaryCol2 duration-200 hover:opacity-100 hover:transition-all',
                 currentPath === NavRoutes.home.path ||
                 currentPath === NavRoutes.caseStudies.path
                   ? 'opacity-100'
@@ -50,7 +50,7 @@ const currentPath = Astro.url.pathname;
           <a href={NavRoutes.careers.path}>
             <div
               class:list={[
-                'group py-2 px-3 hover:opacity-100 cursor-pointer rounded-md hover:transition-all duration-200 text-primaryCol2 font-semibold text-base -mb-1 whitespace-nowrap',
+                'group -mb-1 cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-base font-semibold text-primaryCol2 duration-200 hover:opacity-100 hover:transition-all',
                 currentPath === NavRoutes.home.path ||
                 currentPath === NavRoutes.careers.path
                   ? 'opacity-100'
@@ -63,7 +63,7 @@ const currentPath = Astro.url.pathname;
           <a href={NavRoutes.aboutUs.path}>
             <div
               class:list={[
-                'group py-2 px-3 hover:opacity-100 cursor-pointer rounded-md hover:transition-all duration-200 text-primaryCol2 font-semibold text-base -mb-1 whitespace-nowrap',
+                'group -mb-1 cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-base font-semibold text-primaryCol2 duration-200 hover:opacity-100 hover:transition-all',
                 currentPath === NavRoutes.home.path ||
                 currentPath === NavRoutes.aboutUs.path
                   ? 'opacity-100'
@@ -78,13 +78,13 @@ const currentPath = Astro.url.pathname;
           </div>
         </div>
         <button
-          class="w-11 h-11 flex justify-center items-center lg:hidden"
+          class="flex h-11 w-11 items-center justify-center lg:hidden"
           id="mobile-menu-hamburger"
         >
           <HamburgerIcon />
         </button>
         <button
-          class="w-11 h-11 justify-center items-center hidden lg:hidden"
+          class="hidden h-11 w-11 items-center justify-center lg:hidden"
           id="mobile-menu-close-btn"
         >
           <CloseIcon />

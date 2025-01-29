@@ -241,10 +241,10 @@ const techStackList: {
 export const TechStack: React.FC = () => {
   return (
     <>
-      <div className="font-sans font-medium text-primaryCol2 text-base pt-8 lg:pt-14">
+      <div className="pt-8 font-sans text-base font-medium text-primaryCol2 lg:pt-14">
         OUR TECH STACK
       </div>
-      <ul className="mt-7 pb-25 flex flex-col justify-start sm:flex-row sm:flex-wrap gap-7">
+      <ul className="mt-7 flex flex-col justify-start gap-7 pb-25 sm:flex-row sm:flex-wrap">
         {techStackList.map((techStackItem, index) => {
           return !techStackItem.disabled ? (
             <StackCard

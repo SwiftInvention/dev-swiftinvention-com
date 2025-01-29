@@ -21,7 +21,7 @@ export const DefaultPage: React.FC<DefaultPageProps> = ({ children }) => {
   }, [pathname]);
 
   return (
-    <div className="bg-primaryCol1 max-w-8xl mx-auto">
+    <div className="mx-auto max-w-8xl bg-primaryCol1">
       <div className="relative">
         <div className="min-h-screen">
           <header>

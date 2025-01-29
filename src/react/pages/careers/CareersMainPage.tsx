@@ -107,17 +107,17 @@ export const CareersMainPage: React.FC = () => {
   return (
     <>
       <div className="max-w-xl">
-        <div className="text-secondaryCol1 font-sans font-medium text-4xl mb-5">
+        <div className="mb-5 font-sans text-4xl font-medium text-secondaryCol1">
           Careers
         </div>
-        <div className="text-secondaryCol1 font-sans font-normal text-lg">
+        <div className="font-sans text-lg font-normal text-secondaryCol1">
           {/* */}
         </div>
       </div>
-      <div className="font-sans font-medium text-primaryCol2 text-base pt-16 lg:pt-28">
+      <div className="pt-16 font-sans text-base font-medium text-primaryCol2 lg:pt-28">
         WE ARE LOOKING FOR
       </div>
-      <ul className="mt-7 pb-25 flex flex-col justify-start sm:flex-row sm:flex-wrap gap-7">
+      <ul className="mt-7 flex flex-col justify-start gap-7 pb-25 sm:flex-row sm:flex-wrap">
         {vacancyList.map((vacancy) => {
           return !vacancy.disabled ? (
             <CareersCard

@@ -21,8 +21,8 @@ export const Header: React.FC<HeaderProps> = ({ navItems }) => {
 
   return (
     <nav className="bg-secondaryCol5">
-      <div className="max-w-8xl mx-auto">
-        <div className="flex items-center justify-between h-18">
+      <div className="mx-auto max-w-8xl">
+        <div className="flex h-18 items-center justify-between">
           <div className="flex-shrink-0 pl-5 md:pl-18">
             <Link to={getByName(routes, 'Home').link}>
               <img
@@ -38,19 +38,19 @@ export const Header: React.FC<HeaderProps> = ({ navItems }) => {
               mobileMenuRootId="mobile-menu-portal"
             />
           </div>
-          <div className="hidden lg:flex items-center content-center justify-end lg:flex-1 lg:space-x-2 lg:mr-14">
+          <div className="hidden content-center items-center justify-end lg:mr-14 lg:flex lg:flex-1 lg:space-x-2">
             {navItems.map((value) => {
               return (
                 <Link to={value.link} key={value.name}>
                   <div
                     className={twMerge(
-                      'group py-2 px-3 opacity-60 hover:opacity-100 cursor-pointer	rounded-md hover:transition-all duration-200',
+                      'group cursor-pointer rounded-md px-3 py-2 opacity-60 duration-200 hover:opacity-100 hover:transition-all',
                       isActive(value.link) && 'opacity-100'
                     )}
                   >
                     <div
                       className={twMerge(
-                        'group-hover:opacity-100 uppercase text-primaryCol2 font-inter font-bold text-sm -mb-1 whitespace-nowrap hover:transition-all duration-200',
+                        '-mb-1 whitespace-nowrap font-inter text-sm font-bold uppercase text-primaryCol2 duration-200 hover:transition-all group-hover:opacity-100',
                         isActive(value.link) && 'opacity-100'
                       )}
                     >
@@ -64,7 +64,7 @@ export const Header: React.FC<HeaderProps> = ({ navItems }) => {
               <button
                 type="button"
                 onClick={handleWorkWithUs}
-                className="flex bg-primaryCol2 text-secondaryCol5 hover:text-primaryCol1 uppercase text-sm font-bold h-10 lg:ml-5 pt-1 px-5 rounded-md items-center border-none"
+                className="flex h-10 items-center rounded-md border-none bg-primaryCol2 px-5 pt-1 text-sm font-bold uppercase text-secondaryCol5 hover:text-primaryCol1 lg:ml-5"
               >
                 Work with Us
               </button>
