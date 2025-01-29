@@ -97,6 +97,28 @@ const currentPath = Astro.url.pathname;
 
 <style></style>
 <script>
+  import { gsap } from 'gsap';
+  import { Flip } from 'gsap/Flip';
+
+  gsap.registerPlugin(Flip);
+
+  const disableScrollEvents = (e: Event) => {
+    e.preventDefault();
+  };
+  const lockScroll = () => {
+    document.body.style.overflow = 'hidden';
+
+    document.addEventListener('touchmove', disableScrollEvents, {
+      passive: false,
+    });
+  };
+
+  const unlockScroll = () => {
+    document.body.style.overflow = '';
+
+    document?.removeEventListener('touchmove', disableScrollEvents);
+  };
+
   const hamburgerEl = document.getElementById(
     'mobile-menu-hamburger'
   ) as HTMLButtonElement | null;
@@ -104,40 +126,54 @@ const currentPath = Astro.url.pathname;
     'mobile-menu-close-btn'
   ) as HTMLButtonElement | null;
   const mobileNavEl = document.getElementById('mobile-menu-portal');
-
-  const onHamClick = () => {
-    hamburgerEl?.classList.replace('flex', 'hidden');
-
-    closeBtnEl?.classList.replace('hidden', 'flex');
-
-    mobileNavEl?.classList.replace('hidden', 'flex');
-
-    document.body.style.overflowY = 'hidden';
-
-    document
-      .getElementsByTagName('header')[0]
-      ?.classList.replace('bg-transparent', 'bg-surface');
-  };
-
-  const onCloseClick = () => {
-    hamburgerEl?.classList.replace('hidden', 'flex');
-
-    closeBtnEl?.classList.replace('flex', 'hidden');
-
-    mobileNavEl?.classList.replace('flex', 'hidden');
-
-    document.body.style.overflowY = '';
-
-    if (window.scrollY < 30) {
+  hamburgerEl?.addEventListener('click', () => {
+    if (mobileNavEl) {
+      hamburgerEl?.classList.replace('flex', 'hidden');
+      closeBtnEl?.classList.replace('hidden', 'flex');
+      mobileNavEl?.classList.replace('hidden', 'flex');
+      lockScroll();
       document
         .getElementsByTagName('header')[0]
-        ?.classList.replace('bg-surface', 'bg-transparent');
-    }
-  };
+        ?.classList.replace('bg-transparent', 'bg-surface');
 
-  hamburgerEl?.addEventListener('click', onHamClick);
-  closeBtnEl?.addEventListener('click', onCloseClick);
-  mobileNavEl?.addEventListener('click', onCloseClick);
+      const state = Flip.getState(mobileNavEl, { props: 'transform' });
+
+      mobileNavEl.classList.remove(
+        'scale-[0.1]',
+        'translate-x-[60%]',
+        '-translate-y-[60%]'
+      );
+      mobileNavEl.classList.add('scale-100', 'translate-x-0', 'translate-y-18');
+
+      Flip.from(state, {
+        duration: 0.5,
+        ease: 'circ.out',
+      });
+    }
+  });
+  closeBtnEl?.addEventListener('click', () => {
+    if (mobileNavEl) {
+      mobileNavEl.classList.add(
+        'scale-[0.1]',
+        'translate-x-[60%]',
+        '-translate-y-[60%]'
+      );
+      mobileNavEl.classList.remove(
+        'scale-100',
+        'translate-x-0',
+        'translate-y-18'
+      );
+      hamburgerEl?.classList.replace('hidden', 'flex');
+      closeBtnEl?.classList.replace('flex', 'hidden');
+      mobileNavEl?.classList.replace('flex', 'hidden');
+      unlockScroll();
+      if (window.scrollY < 30) {
+        document
+          .getElementsByTagName('header')[0]
+          ?.classList.replace('bg-surface', 'bg-transparent');
+      }
+    }
+  });
 </script>
 <script>
   window.addEventListener('scroll', () => {
