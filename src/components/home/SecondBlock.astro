@@ -36,7 +36,10 @@ const Expertises = [
 ];
 ---
 
-<div class="py-24 md:py-32 px-4 md:px-20 bg-white">
+<div
+  id="expertises-block"
+  class="py-24 md:py-32 px-4 md:px-20 bg-white opacity-0"
+>
   <div class="">
     <h2 class="text-6xl md:text-6xl-desktop text-title">
       For success that’s ready to scale
@@ -74,3 +77,19 @@ const Expertises = [
 </div>
 
 <style></style>
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to('#expertises-block', {
+    scrollTrigger: '#expertises-block', // start the animation when ".box" enters the viewport (once)
+    opacity: 1,
+    translateY: 0,
+    duration: 1,
+    startAt: {
+      translateY: 240,
+    },
+  });
+</script>
