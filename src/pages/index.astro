@@ -1,48 +1,17 @@
 ---
+import CasesBlock from '../components/home/CasesBlock.astro';
+import ClientsBlock from '../components/home/ClientsBlock.astro';
+import FirstBlock from '../components/home/FirstBlock.astro';
+import HomeWorkStages from '../components/home/HomeWorkStages.astro';
+import SecondBlock from '../components/home/SecondBlock.astro';
 import '../index.css';
 import Layout from '../layouts/Layout.astro';
-import FirstBlock from '../components/home/FirstBlock.astro';
-import WorkStages from '../react/components/WorkStages';
-import SecondBlock from '../components/home/SecondBlock.astro';
-import ClientsBlock from '../components/home/ClientsBlock.astro';
-import CasesBlock from '../components/home/CasesBlock.astro';
-
-const workProcessMap = [
-  {
-    name: 'Advise',
-    body: 'We help with product management, product strategy and even funding. In the end it’s about finding the right product market fit.',
-  },
-  {
-    name: 'Design',
-    body: 'We encourage our customers to perform user experience research. After that we work with you on experience and UI design.',
-  },
-  {
-    name: 'Build',
-    body: 'We assemble world-class offshore engineering teams with experience with many of the latest technologies and cloud platforms.',
-  },
-  {
-    name: 'Run',
-    body: 'After creating the CI/CD automation many clients ask us to deploy and maintain their solutions on their behalf.',
-  },
-  {
-    name: 'Optimize',
-    body: 'We scale and optimize your solutions while ensuring security best practices to achieve the highest availability and highest performance.',
-  },
-];
 ---
 
 <Layout>
   <FirstBlock />
   <SecondBlock />
-  <WorkStages
-    stages={workProcessMap}
-    title="We deliver software. Swiftly."
-    description={`We follow a proven product innovation process, guided by decades of
-            experience developing products. We assemble world-class, yet highly
-            affordable, offshore design & engineering teams. We scale as you do
-            and operate and optimize your platforms whether they run at the edge
-            or in the cloud.`}
-  />
+  <HomeWorkStages />
   <ClientsBlock />
   <CasesBlock />
 </Layout>

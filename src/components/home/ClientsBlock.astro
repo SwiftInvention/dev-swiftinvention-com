@@ -49,7 +49,10 @@ const Clients: ClientProps[] = [
 ];
 ---
 
-<div class="relative px-4 pt-24 md:px-8 md:pt-32 xl:px-20">
+<div
+  id="home-clients-block"
+  class="relative px-4 pt-24 opacity-0 md:px-8 md:pt-32 xl:px-20"
+>
   <img src={spotlightBgImage.src} class="absolute left-0 top-0 z-0 w-full" />
   <div class="relative z-10 mb-16 md:mb-20">
     <h2 class="text-6xl text-white md:text-6xl-desktop">
@@ -66,4 +69,24 @@ const Clients: ClientProps[] = [
   </div>
 </div>
 
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to('#home-clients-block', {
+    scrollTrigger: '#home-clients-block',
+    opacity: 1,
+    duration: 2,
+  });
+  gsap.to('#home-clients-block', {
+    scrollTrigger: '#home-clients-block',
+    translateY: 0,
+    duration: 1,
+    startAt: {
+      translateY: 240,
+    },
+  });
+</script>
 <style></style>
