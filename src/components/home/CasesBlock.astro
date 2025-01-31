@@ -12,6 +12,7 @@ import ArrowRight from '~/assets/images/new/arrow-right.svg';
 
 <div class="mx-4 pb-6 md:mx-20 md:pb-8">
   <div
+    id="case-studies-logos"
     class="case-studies-logos mb-0.5 mt-0 flex flex-wrap justify-center gap-x-8 gap-y-6 px-4 pb-8 pt-16 md:mt-20 md:gap-x-20 md:gap-y-8 md:pt-20"
   >
     <img src={privoLogoImage.src} class="h-6 md:h-8" alt="Privo logo" />
@@ -37,5 +38,20 @@ import ArrowRight from '~/assets/images/new/arrow-right.svg';
     >
   </div>
 </div>
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from('#case-studies-logos>img', {
+    scrollTrigger: '#case-studies-logos',
+    opacity: 0,
+    delay: 0.5,
+    duration: 1,
+    stagger: 0.2,
+    translateY: 20,
+    ease: 'power2.out',
+  });
+</script>
 <style></style>

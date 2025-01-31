@@ -3,6 +3,7 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
+    screens: defaultTheme.screens,
     colors: {
       transparent: 'transparent',
       current: 'currentColor',

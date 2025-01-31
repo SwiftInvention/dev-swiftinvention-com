@@ -49,19 +49,26 @@ const Clients: ClientProps[] = [
 ];
 ---
 
-<div
-  id="home-clients-block"
-  class="relative px-4 pt-24 opacity-0 md:px-8 md:pt-32 xl:px-20"
->
+<div id="clients-block" class="relative px-4 pt-24 md:px-8 md:pt-32 xl:px-20">
   <img src={spotlightBgImage.src} class="absolute left-0 top-0 z-0 w-full" />
-  <div class="relative z-10 mb-16 md:mb-20">
-    <h2 class="text-6xl text-white md:text-6xl-desktop">
-      For clients turned partners
-    </h2>
-    <div class="mb-12 mt-4 text-lg text-white opacity-80 md:text-lg-desktop">
-      Dive into our inspiring case studies that beautifully illustrate our
-      creative solutions and the wonderful partnerships we've built with clients
-      from diverse fields.
+  <div id="clients-block__head" class="relative z-10 mb-16 md:mb-20">
+    <div class="overflow-y-hidden">
+      <h2
+        id="clients-block__title"
+        class="text-6xl text-white md:text-6xl-desktop"
+      >
+        For clients turned partners
+      </h2>
+    </div>
+    <div class="mb-12 mt-4 overflow-y-hidden">
+      <div
+        id="clients-block__subtitle"
+        class="text-lg text-white opacity-80 md:text-lg-desktop"
+      >
+        Dive into our inspiring case studies that beautifully illustrate our
+        creative solutions and the wonderful partnerships we've built with
+        clients from diverse fields.
+      </div>
     </div>
   </div>
   <div class="flex flex-col gap-5 md:gap-20">
@@ -72,21 +79,20 @@ const Clients: ClientProps[] = [
 <script>
   import { gsap } from 'gsap';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import twConfig from '../../../tailwind.config';
 
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.to('#home-clients-block', {
-    scrollTrigger: '#home-clients-block',
-    opacity: 1,
-    duration: 2,
+  gsap.from('#clients-block__title', {
+    scrollTrigger: '#clients-block__title',
+    translateY: '100%',
+    duration: 0.75,
   });
-  gsap.to('#home-clients-block', {
-    scrollTrigger: '#home-clients-block',
-    translateY: 0,
-    duration: 1,
-    startAt: {
-      translateY: 240,
-    },
+
+  gsap.from('#clients-block__subtitle', {
+    scrollTrigger: '#clients-block__subtitle',
+    translateY: '100%',
+    duration: 0.75,
   });
 </script>
 <style></style>

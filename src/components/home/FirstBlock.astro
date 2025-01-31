@@ -4,8 +4,14 @@ import homeFirstBlockImage from '~/assets/images/new/home-first-block.png';
 import Button from '../Button.astro';
 ---
 
-<div class="relative mt-[96px] px-4 pb-4 md:mb-[232px] md:mt-[216px] md:px-20">
-  <div class="relative z-10 mb-4 md:mb-0 md:w-[55%]">
+<div
+  id="welcome-block"
+  class="relative mt-[96px] px-4 pb-4 md:mb-[232px] md:mt-[216px] md:px-20"
+>
+  <div
+    id="welcome-block__text"
+    class="relative z-10 mb-4 opacity-0 md:mb-0 md:w-[55%]"
+  >
     <h2 class="text-7xl text-white md:text-7xl-desktop">
       We build software, the Swift way
     </h2>
@@ -28,5 +34,22 @@ import Button from '../Button.astro';
     />
   </picture>
 </div>
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to('#welcome-block__text', {
+    scrollTrigger: '#welcome-block__text',
+    opacity: 1,
+    translateY: 0,
+    duration: 1,
+    delay: 0.25,
+    startAt: {
+      translateY: -60,
+    },
+  });
+</script>
 
 <style></style>

@@ -1,36 +1,17 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import '../index.css';
-import ClientsBlock from '../components/home/ClientsBlock.astro';
-import CasesBlock from '../components/home/CasesBlock.astro';
-import WorkStages from '../react/components/WorkStages';
-import { Team } from '../react/components/Team';
+import AboutTeam from '../components/about/AboutTeam.astro';
+import AboutWorkStages from '../components/about/AboutWorkStages.astro';
 import MeetUs from '../components/about/MeetUs.astro';
-
-const workProcessMap = [
-  {
-    name: 'We deliver. Swiftly!',
-    body: 'All software and design is directly and exclusively developed by our 30 person team in Eastern Europe. We know how to create production-ready solutions.',
-  },
-  {
-    name: 'We cooperate ',
-    body: 'We are quick to respond, actively engage in requirement discussions, and provide regular updates, ensuring utmost transparency in our work.',
-  },
-  {
-    name: 'We meet your needs',
-    body: 'With a solid technical background, we effortlessly translate the intricate technology of your project into visually captivating and easily understandable graphics.',
-  },
-];
+import CasesBlock from '../components/home/CasesBlock.astro';
+import ClientsBlock from '../components/home/ClientsBlock.astro';
+import '../index.css';
+import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
   <MeetUs />
-  <Team />
-  <WorkStages
-    stages={workProcessMap}
-    title="Extensive expertise and work process"
-    description="We follow a proven product innovation process. We are guided by decades of experience developing products. We assemble world-class, yet highly affordable, offshore design & engineering teams. We scale as you do and operate and optimize your platforms whether they run at the edge or in the cloud."
-  />
+  <AboutTeam />
+  <AboutWorkStages />
   <ClientsBlock />
   <CasesBlock />
 </Layout>

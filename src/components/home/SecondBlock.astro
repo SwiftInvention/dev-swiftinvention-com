@@ -80,16 +80,34 @@ const Expertises = [
 <script>
   import { gsap } from 'gsap';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import twConfig from '../../../tailwind.config';
 
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.to('#expertises-block', {
-    scrollTrigger: '#expertises-block',
-    opacity: 1,
-    translateY: 0,
-    duration: 1,
-    startAt: {
-      translateY: 240,
-    },
+  let mm = gsap.matchMedia();
+  mm.add(`(min-width: ${twConfig.theme.screens.md})`, () => {
+    gsap.to('#expertises-block', {
+      scrollTrigger: '#expertises-block',
+      opacity: 1,
+      translateY: 0,
+      duration: 1,
+      startAt: {
+        translateY: 160,
+      },
+    });
   });
+  mm.add(`(max-width: ${twConfig.theme.screens.md})`, () => {
+    gsap.to('#expertises-block', {
+      scrollTrigger: '#expertises-block',
+      opacity: 1,
+      translateY: 0,
+      duration: 1,
+      startAt: {
+        translateY: 80,
+      },
+    });
+  });
+
+  // later, if we need to revert all the animations/ScrollTriggers...
+  // mm.revert();
 </script>
