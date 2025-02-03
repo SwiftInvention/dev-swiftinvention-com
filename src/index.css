@@ -104,4 +104,8 @@
     z-index: 1; /* Ensure it sits above the text */
     pointer-events: none; /* Let text interactions pass through */
   }
+
+  .bg-mbs-music {
+    background: linear-gradient(180deg, rgba(0, 10, 13, 0.97) 5.72%, rgba(0, 10, 13, 0.50) 32.6%, rgba(0, 10, 13, 0.25) 100%), url('/images/mbs-bg.png');
+  }
 }

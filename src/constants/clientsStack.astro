@@ -1,46 +1,231 @@
 ---
+// stack
 import pgsqlImage from '~/assets/images/stack/pgsql.png';
 import ReactImage from '~/assets/images/stack/reactnative.svg';
+import WebRtcImage from '~/assets/images/stack/webrtc.svg';
+import AgoraImage from '~/assets/images/stack/agora.svg';
+import craImage from '~/assets/images/stack/create-react-app.png';
 import PytorchImage from '~/assets/images/stack/pytorch.svg';
 import scalaImage from '~/assets/images/stack/scala.png';
 import zioImage from '~/assets/images/stack/zio.png';
 import tsImage from '~/assets/images/stack/ts.png';
+import jsImage from '~/assets/images/stack/js.png';
+import FigmaImage from '~/assets/images/stack/figma.svg';
+import ScriptableImage from '~/assets/images/stack/scriptable.svg';
+import ViteImage from '~/assets/images/stack/vite.svg';
+import rustImage from '~/assets/images/stack/rust.png';
 import pythonImage from '~/assets/images/stack/python.webp';
 import javaImage from '~/assets/images/stack/java.png';
 import grpcImage from '~/assets/images/stack/grpc.png';
+import typeormImage from '~/assets/images/stack/typeorm.png';
+import nestjsImage from '~/assets/images/stack/nestjs.png';
 import GrafanaImage from '~/assets/images/stack/grafana.svg';
+import GcpImage from '~/assets/images/stack/gcp.svg';
 import AwsImage from '~/assets/images/stack/aws.svg';
+import AnsibleImage from '~/assets/images/stack/ansible.svg';
 import quillImage from '~/assets/images/stack/quill.png';
 import KubernetesImage from '~/assets/images/stack/kubernetes.svg';
 import TerraformImage from '~/assets/images/stack/terraform.svg';
+import NextjsImage from '~/assets/images/stack/nextjs.svg';
+import SinglestoreImage from '~/assets/images/stack/singlestore.svg';
+import knexjsImage from '~/assets/images/stack/knexjs.png';
+import PrismaImage from '~/assets/images/stack/prisma.svg';
+import TrpcImage from '~/assets/images/stack/trpc.svg';
 
-export const VieRallyStack = [
-  { object: pgsqlImage },
-  { object: scalaImage },
-  { object: tsImage },
-  { object: zioImage },
-  { object: pythonImage },
-  { SvgComponent: ReactImage },
-  { SvgComponent: PytorchImage },
+// clients
+import plumcheckLaptopImage from '~/assets/images/new/devices/plumcheck-desktop.png';
+import plumcheckMobileImage from '~/assets/images/new/devices/plumcheck-mobile.png';
+import plumcheckLogoImage from '~/assets/images/new/logos/plumcheck-logo.png';
+import privoLaptopImage from '~/assets/images/new/devices/privo-2x.png';
+import privoLogoImage from '~/assets/images/new/logos/privo-white.png';
+import pakiraLogoImage from '~/assets/images/logos/pakira-logo.svg';
+import pakiraLaptopImage from '~/assets/images/new/devices/pakira-desktop.png';
+import pakiraMobileImage from '~/assets/images/new/devices/pakira-mobile.png';
+import meeLogoImage from '~/assets/images/new/logos/mee-white.png';
+import meeLaptopImage from '~/assets/images/new/devices/mee.png';
+import meeMobileImage from '~/assets/images/new/devices/mee-mobile.png';
+import meeLaptop2xImage from '~/assets/images/new/devices/mee-2x.png';
+import meeMobile2xImage from '~/assets/images/new/devices/mee-mobile-2x.png';
+import vierallyLaptopImage from '~/assets/images/new/devices/vierally-desktop.png';
+import vierallyMobile2xImage from '~/assets/images/new/devices/vierally-mobile-2x.png';
+import vierallyMobileImage from '~/assets/images/new/devices/vierally-mobile.png';
+import vierallyLogoImage from '~/assets/images/new/logos/vierally-logo.png';
+import mbsLogoImage from '~/assets/images/new/logos/mbs-logo.png';
+import mbsLaptopImage from '~/assets/images/new/devices/mbs.png';
+import mbsLaptop2xImage from '~/assets/images/new/devices/mbs-2x.png';
+import blankSlateLogoImage from '~/assets/images/new/logos/blankslate-white.png';
+import blankSlateLaptopImage from '~/assets/images/new/devices/blankslate.png';
+import blankSlateLaptop2xImage from '~/assets/images/new/devices/blankslate-2x.png';
+import eversanaLogoImage from '~/assets/images/new/logos/eversana-white.png';
+import eversanaLaptopImage from '~/assets/images/new/devices/eversana.png';
+import eversanaLaptop2xImage from '~/assets/images/new/devices/eversana-2x.png';
+import quanthealthLogoImage from '~/assets/images/new/logos/quanthealth-white.png';
+import quanthealthLaptopImage from '~/assets/images/new/devices/quanthealth.png';
+import quanthealthLaptop2xImage from '~/assets/images/new/devices/quanthealth-2x.png';
+
+import type { Props as ClientProps } from '../components/clients/Client.astro';
+
+export const ClientsShort: ClientProps[] = [
+  {
+    desktopImg: { default: privoLaptopImage },
+    logoImg: privoLogoImage,
+    description: 'Children’s online identity & consent management',
+    name: 'Privo',
+    technologiesImages: [
+      { object: scalaImage },
+      { object: javaImage },
+      { object: grpcImage },
+      { SvgComponent: AwsImage },
+      { SvgComponent: GrafanaImage },
+      { SvgComponent: ReactImage },
+    ],
+    classes:
+      'bg-[#005A88] md:[&_.desktop-img]:bottom-[-30px] md:[&_.desktop-img]:w-[70%] ',
+  },
+  {
+    desktopImg: { default: vierallyLaptopImage },
+    logoImg: vierallyLogoImage,
+    mobileImg: { default: vierallyMobileImage, x2: vierallyMobile2xImage },
+    description: 'AI tool to predict virality and maximize marketing ROI',
+    name: 'VieRally',
+    technologiesImages: [
+      { object: pgsqlImage },
+      { object: scalaImage },
+      { object: tsImage },
+      { object: zioImage },
+      { object: pythonImage },
+      { SvgComponent: ReactImage },
+      { SvgComponent: PytorchImage },
+    ],
+    classes: 'bg-[#1E3A8A]',
+  },
+  {
+    desktopImg: { default: plumcheckLaptopImage },
+    logoImg: plumcheckLogoImage,
+    mobileImg: { default: plumcheckMobileImage },
+    description:
+      'Allow dating and social media app users to share verified ID and health information',
+    name: 'PlumCheck',
+    technologiesImages: [
+      { object: scalaImage },
+      { object: tsImage },
+      { object: zioImage },
+      { object: quillImage },
+      { SvgComponent: AwsImage },
+      { SvgComponent: ReactImage },
+      { SvgComponent: KubernetesImage },
+      { SvgComponent: TerraformImage },
+    ],
+    classes: 'bg-[#40169C]',
+  },
 ];
 
-export const PrivoStack = [
-  { object: scalaImage },
-  { object: javaImage },
-  { object: grpcImage },
-  { SvgComponent: AwsImage },
-  { SvgComponent: GrafanaImage },
-  { SvgComponent: ReactImage },
-];
-
-export const PlumcheckStack = [
-  { object: scalaImage },
-  { object: tsImage },
-  { object: zioImage },
-  { object: quillImage },
-  { SvgComponent: AwsImage },
-  { SvgComponent: ReactImage },
-  { SvgComponent: KubernetesImage },
-  { SvgComponent: TerraformImage },
+export const ClientsAll: ClientProps[] = [
+  {
+    desktopImg: { default: pakiraLaptopImage },
+    mobileImg: { default: pakiraMobileImage },
+    logoImg: pakiraLogoImage,
+    description:
+      'SaaS industry directory, chat, forum, and order tracking for businesses in the wholesale wood industry',
+    name: 'Pakira',
+    technologiesImages: [
+      { object: nestjsImage },
+      { object: typeormImage },
+      { object: pgsqlImage },
+      { SvgComponent: AwsImage },
+      { SvgComponent: ReactImage },
+      { object: pythonImage },
+    ],
+    classes: 'bg-[#15431A]',
+  },
+  ...ClientsShort,
+  {
+    desktopImg: { default: meeLaptopImage, x2: meeLaptop2xImage },
+    mobileImg: { default: meeMobileImage, x2: meeMobile2xImage },
+    logoImg: meeLogoImage,
+    description: 'A human-centered user experience for the internet',
+    name: 'Mee',
+    technologiesImages: [
+      { SvgComponent: ReactImage },
+      { SvgComponent: ViteImage },
+      { object: rustImage },
+      { object: jsImage },
+      { object: tsImage },
+      { SvgComponent: FigmaImage },
+    ],
+    classes: 'bg-[#4F868E]',
+  },
+  {
+    desktopImg: { default: mbsLaptopImage, x2: mbsLaptop2xImage },
+    logoImg: mbsLogoImage,
+    description: 'The Meeting app designed for musicians',
+    name: 'MyBlueSkiesMusic',
+    technologiesImages: [
+      { SvgComponent: ReactImage },
+      { object: scalaImage },
+      { object: tsImage },
+      { object: craImage },
+      { SvgComponent: AgoraImage },
+      { SvgComponent: WebRtcImage },
+      { SvgComponent: AwsImage },
+    ],
+    classes: `bg-mbs-music`,
+  },
+  {
+    desktopImg: { default: blankSlateLaptopImage, x2: blankSlateLaptop2xImage },
+    logoImg: blankSlateLogoImage,
+    description:
+      'Enterprise Microlearning App. Pushing the limits of the human brain.',
+    name: 'Blank Slate',
+    technologiesImages: [
+      { object: jsImage },
+      { SvgComponent: ReactImage },
+      { object: scalaImage },
+      { object: tsImage },
+      { SvgComponent: GcpImage },
+      { SvgComponent: ScriptableImage },
+      { SvgComponent: KubernetesImage },
+      { SvgComponent: TerraformImage },
+    ],
+    classes: `bg-[#0F172A]`,
+  },
+  {
+    desktopImg: { default: eversanaLaptopImage, x2: eversanaLaptop2xImage },
+    logoImg: eversanaLogoImage,
+    description:
+      'Integrated commercial services platform to solve any drug pricing, reimbursement, or product delivery challenge',
+    name: 'Eversana',
+    technologiesImages: [
+      { SvgComponent: ReactImage },
+      { object: scalaImage },
+      { object: tsImage },
+      { SvgComponent: ScriptableImage },
+      { SvgComponent: AwsImage },
+      { SvgComponent: AnsibleImage },
+    ],
+    classes: `bg-[#00214D]`,
+  },
+  {
+    desktopImg: {
+      default: quanthealthLaptopImage,
+      x2: quanthealthLaptop2xImage,
+    },
+    logoImg: quanthealthLogoImage,
+    description: 'Simulating real-world efficacy from preclinical to approval',
+    name: 'QuantHealth',
+    technologiesImages: [
+      { SvgComponent: ReactImage },
+      { object: tsImage },
+      { SvgComponent: PytorchImage },
+      { object: pythonImage },
+      { SvgComponent: AwsImage },
+      { SvgComponent: NextjsImage },
+      { SvgComponent: SinglestoreImage },
+      { object: knexjsImage },
+      { SvgComponent: PrismaImage },
+      { SvgComponent: TrpcImage },
+    ],
+    classes: `bg-[#0F172A]`,
+  },
 ];
 ---
