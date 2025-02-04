@@ -1,0 +1,110 @@
+---
+import mobileImage from '~/assets/images/mobile.png';
+import frontendImage from '~/assets/images/frontend-white.png';
+import devopsImage from '~/assets/images/devops-white.png';
+import backendImage from '~/assets/images/backend-white.png';
+import saImage from '~/assets/images/sa-white.png';
+import qaImage from '~/assets/images/qa-white.png';
+
+type VacancyProps = {
+  title: string;
+  description?: string;
+  image: ImageMetadata;
+  id: string;
+  employment: 'Full-time';
+  location: 'Remote';
+  disabled?: boolean;
+};
+export const AllVacancies: VacancyProps[] = [
+  {
+    image: devopsImage,
+    id: 'devops',
+    disabled: false,
+    title: 'SRE engineer (DevOps)',
+    description:
+      'Work closely with the product owner and team of other software engineers.',
+    employment: 'Full-time',
+    location: 'Remote',
+  },
+  {
+    image: backendImage,
+    id: 'fullstack-node',
+    disabled: false,
+    title: 'Fullstack engineer (Node.js/React)',
+    description:
+      'Delve into the world of Node JS and React to unlock endless possibilities.',
+    employment: 'Full-time',
+    location: 'Remote',
+  },
+  {
+    image: frontendImage,
+    id: 'frontend',
+    disabled: false,
+    title: 'Frontend Engineer',
+    description:
+      'Find out why our short description is the perfect solution for your needs.',
+    employment: 'Full-time',
+    location: 'Remote',
+  },
+  {
+    image: backendImage,
+    id: 'backend',
+    disabled: false,
+    title: 'Senior Software Engineer (Scala)',
+    description:
+      'Learn how our short description can streamline your workflow and boost productivity.',
+    employment: 'Full-time',
+    location: 'Remote',
+  },
+  {
+    image: backendImage,
+    id: 'rust',
+    disabled: false,
+    title: 'Software Engineer (Rust)',
+    description:
+      'Learn how our short description can streamline your workflow and boost productivity.',
+    employment: 'Full-time',
+    location: 'Remote',
+  },
+  {
+    title: 'Software Architect',
+    image: saImage,
+    id: 'architect',
+    disabled: true,
+    employment: 'Full-time',
+    location: 'Remote',
+  },
+  {
+    title: 'Mobile Developer (iOS/Android)',
+    image: mobileImage,
+    id: 'mobile',
+    disabled: true,
+    employment: 'Full-time',
+    location: 'Remote',
+  },
+  {
+    title: 'Data Engineer',
+    image: qaImage,
+    id: 'dataengineer',
+    disabled: true,
+    employment: 'Full-time',
+    location: 'Remote',
+  },
+  {
+    title: 'QA  Engineer',
+    image: qaImage,
+    id: 'tester',
+    disabled: true,
+    employment: 'Full-time',
+    location: 'Remote',
+  },
+  {
+    title: 'Fullstack (PHP) Engineer',
+    image: backendImage,
+    id: 'fullstack-php',
+    disabled: true,
+    employment: 'Full-time',
+    location: 'Remote',
+  },
+];
+---

@@ -1,0 +1,28 @@
+---
+import ArrowRight from '~/assets/images/new/arrow-right.svg';
+import HouseIcon from '~/assets/images/new/house-heart.svg';
+import AlarmIcon from '~/assets/images/new/alarm.svg';
+import { AllVacancies } from '../../constants/vacanciesList.astro';
+import {Image} from 'astro:assets';
+---
+
+<div class="lg:mx-20 mx-4 relative pt-16 lg:pb-32 lg:pt-20">
+  <div class="flex flex-col lg:grid lg:grid-cols-2 gap-0.5 lg:gap-1 rounded-xl overflow-hidden">
+    {AllVacancies.filter(v => !v.disabled).map((vacancy) => <div class="p-4 lg:p-6 flex flex-col md:flex-row gap-6 bg-white/5">
+      <div class="w-12 h-12 md:w-16 md:h-16"><Image width={64} height={64} src={vacancy.image} alt={vacancy.id} /></div>
+      <div class="">
+        <div class="text-white text-2xl lg:text-2xl-desktop">{vacancy.title}</div>
+        <div class="text-white text-lg">{vacancy.description}</div>
+        <div class="flex gap-1.5 mt-4 mb-8">
+          <div class="flex items-center rounded py-0.5 px-1.5 text-sm font-semibold bg-gray-solid text-white"><AlarmIcon class="mr-1.5"/>{vacancy.employment}</div>
+          <div class="flex items-center rounded py-0.5 px-1.5 text-sm font-semibold bg-gray-solid text-white"><HouseIcon class="mr-1.5"/>{vacancy.location}</div>
+        </div>
+        <a href={"/careers/"+vacancy.id} class="text-white font-medium">View job description <ArrowRight
+        class="ml-2.5 inline-block h-5 w-5"
+      /></a>
+      </div>
+    </div>)}
+  </div>
+</div>
+
+<style></style>

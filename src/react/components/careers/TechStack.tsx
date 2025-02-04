@@ -240,15 +240,21 @@ const techStackList: {
 
 export const TechStack: React.FC = () => {
   return (
-    <>
-      <div className="pt-8 font-sans text-base font-medium text-primaryCol2 lg:pt-14">
-        OUR TECH STACK
+    <div className="mx-4 mt-24 md:mx-20 md:mt-32">
+      <div className="mb-4 text-6xl text-primaryCol2 md:text-6xl-desktop">
+        Our tech stack
       </div>
-      <ul className="mt-7 flex flex-col justify-start gap-7 pb-25 sm:flex-row sm:flex-wrap">
+      <div className="mb-16 max-w-[880px] text-lg text-white/80 md:mb-20">
+        Join our dynamic team and work with cutting-edge technologies such as
+        React, Node.js, MongoDB, AWS, and many more. Our tech stack is designed
+        to empower our developers to create innovative solutions and deliver
+        high-performing products to our customers.
+      </div>
+      <ul className="mb-25 mt-7 flex flex-col justify-start gap-0.5 overflow-hidden rounded-xl md:grid md:grid-cols-2 md:gap-1 lg:md:grid-cols-3 xl:md:grid-cols-4">
         {techStackList.map((techStackItem, index) => {
           return !techStackItem.disabled ? (
             <StackCard
-              key={index.toString()}
+              key={index}
               text={techStackItem.text}
               image={techStackItem.image}
               link={techStackItem.link}
@@ -256,6 +262,6 @@ export const TechStack: React.FC = () => {
           ) : null;
         })}
       </ul>
-    </>
+    </div>
   );
 };

@@ -89,6 +89,8 @@ export default {
       fontSize: {
         xl: ['1.0625rem', '1.5rem'],
         'xl-desktop': ['1.25rem', '1.9375rem'],
+        '2xl': ['1.25rem', '1.875rem'],
+        '2xl-desktop': ['1.5rem', '2rem'],
         '2.5xl': ['1.75rem', '2rem'],
         '3xl': ['1.375rem', '2rem'],
         '3xl-desktop': ['1.875rem', '2.5rem'],

@@ -1,11 +1,14 @@
 ---
 import AllClientsBlock from '../components/case-studies/AllClientsBlock.astro';
-import CasesHead from '../components/case-studies/CasesHead.astro';
-import '../index.css';
+import PageHead from '../components/PageHead.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  <CasesHead />
+  <PageHead
+    pageTitle="Case studies"
+    title="We identify the pathways needed for success"
+    subtitle="Check out some of our most exciting projects to see how we did it."
+  />
   <AllClientsBlock />
 </Layout>
