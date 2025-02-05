@@ -2,7 +2,7 @@
 title: Software Engineer (Rust)
 id: rust
 image: /images/backend-white.png
-disabled: false
+disabled: true
 employment: Full-time
 location: Remote
 project: Mee (mee.foundation) is a software and legal framework to support human-centered apps that improve the quality of online life by giving people more control over their personal data.
