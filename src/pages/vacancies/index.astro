@@ -1,0 +1,16 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { TechStack } from '~/react/components/careers/TechStack';
+import PageHead from '~/components/PageHead.astro';
+import VacanciesBlock from '~/components/careers/VacanciesBlock.astro';
+---
+
+<Layout>
+  <PageHead
+    pageTitle="Careers"
+    title="Explore exciting opportunities"
+    subtitle="Join our team, check open positions."
+  />
+  <VacanciesBlock />
+  <TechStack />
+</Layout>
