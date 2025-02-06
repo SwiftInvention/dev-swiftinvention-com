@@ -2,7 +2,6 @@
 import ArrowRight from '~/assets/images/new/arrow-right.svg';
 import HouseIcon from '~/assets/images/new/house-heart.svg';
 import AlarmIcon from '~/assets/images/new/alarm.svg';
-import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import Button from '../Button.astro';
 
@@ -17,7 +16,7 @@ const openedVacancies = vacancies.filter((v) => !v.data.disabled);
         {openedVacancies.map(({ data: vacancy }) => (
           <div class="flex flex-col gap-6 bg-white/5 p-4 md:flex-row lg:p-6">
             <div class="h-12 w-12 md:h-16 md:w-16">
-              <Image
+              <img
                 width={64}
                 height={64}
                 src={vacancy.image}

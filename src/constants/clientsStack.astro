@@ -7,7 +7,7 @@ import AgoraImage from '~/assets/images/stack/agora.svg';
 import craImage from '~/assets/images/stack/create-react-app.png';
 import PytorchImage from '~/assets/images/stack/pytorch.svg';
 import scalaImage from '~/assets/images/stack/scala.png';
-import zioImage from '~/assets/images/stack/zio.png';
+import zioImage from '~/assets/images/stack/Zio.png';
 import tsImage from '~/assets/images/stack/ts.png';
 import jsImage from '~/assets/images/stack/js.png';
 import FigmaImage from '~/assets/images/stack/figma.svg';
@@ -36,6 +36,7 @@ import TrpcImage from '~/assets/images/stack/trpc.svg';
 import plumcheckLaptopImage from '~/assets/images/new/devices/plumcheck-desktop.png';
 import plumcheckMobileImage from '~/assets/images/new/devices/plumcheck-mobile.png';
 import plumcheckLogoImage from '~/assets/images/new/logos/plumcheck-logo.png';
+import plumcheckPageImage from '~/assets/images/new/clients/plumcheck-page.png';
 import privoLaptopImage from '~/assets/images/new/devices/privo-2x.png';
 import privoLogoImage from '~/assets/images/new/logos/privo-white.png';
 import pakiraLogoImage from '~/assets/images/logos/pakira-logo.svg';
@@ -63,21 +64,42 @@ import quanthealthLogoImage from '~/assets/images/new/logos/quanthealth-white.pn
 import quanthealthLaptopImage from '~/assets/images/new/devices/quanthealth.png';
 import quanthealthLaptop2xImage from '~/assets/images/new/devices/quanthealth-2x.png';
 
+import WindowSidebarImage from '~/assets/images/new/about/window-sidebar.svg';
+import HddStackImage from '~/assets/images/new/about/hdd-stack.svg';
+import CodeSlashImage from '~/assets/images/new/about/code-slash.svg';
+import CodeSquareImage from '~/assets/images/new/about/code-square.svg';
+import PersonVcardImage from '~/assets/images/new/about/person-vcard.svg';
+
 import type { Props as ClientProps } from '../components/clients/Client.astro';
 
-export const ClientsShort: ClientProps[] = [
+export type ClientPageProps = ClientProps & {
+  subtitle?: string;
+  link?: string;
+  pageTopImg?: { default: ImageMetadata };
+  about?: {
+    founded: string;
+    employees: string;
+    location: string;
+    purpose: string;
+  };
+  providedServices?: {
+    id: 'devops' | 'backend' | 'frontend' | 'additional' | 'design';
+    title: string;
+  }[];
+};
+export const ClientsShort: ClientPageProps[] = [
   {
     desktopImg: { default: privoLaptopImage },
     logoImg: privoLogoImage,
     description: 'Children’s online identity & consent management',
     name: 'Privo',
-    technologiesImages: [
-      { object: scalaImage },
-      { object: javaImage },
-      { object: grpcImage },
-      { SvgComponent: AwsImage },
-      { SvgComponent: GrafanaImage },
-      { SvgComponent: ReactImage },
+    technologies: [
+      { title: 'Scala', object: scalaImage },
+      { title: 'java', object: javaImage },
+      { title: 'grpc', object: grpcImage },
+      { title: 'Aws', SvgComponent: AwsImage },
+      { title: 'Grafana', SvgComponent: GrafanaImage },
+      { title: 'React', SvgComponent: ReactImage },
     ],
     classes:
       'bg-[#005A88] md:[&_.desktop-img]:bottom-[-30px] md:[&_.desktop-img]:w-[70%] ',
@@ -88,39 +110,59 @@ export const ClientsShort: ClientProps[] = [
     mobileImg: { default: vierallyMobileImage, x2: vierallyMobile2xImage },
     description: 'AI tool to predict virality and maximize marketing ROI',
     name: 'VieRally',
-    technologiesImages: [
-      { object: pgsqlImage },
-      { object: scalaImage },
-      { object: tsImage },
-      { object: zioImage },
-      { object: pythonImage },
-      { SvgComponent: ReactImage },
-      { SvgComponent: PytorchImage },
+    technologies: [
+      { title: 'Pgsql', object: pgsqlImage },
+      { title: 'Scala', object: scalaImage },
+      { title: 'Typescript', object: tsImage },
+      { title: 'Zio', object: zioImage },
+      { title: 'Python', object: pythonImage },
+      { title: 'React', SvgComponent: ReactImage },
+      { title: 'Pytorch', SvgComponent: PytorchImage },
     ],
     classes: 'bg-[#1E3A8A]',
   },
   {
+    pageTopImg: { default: plumcheckPageImage },
     desktopImg: { default: plumcheckLaptopImage },
     logoImg: plumcheckLogoImage,
     mobileImg: { default: plumcheckMobileImage },
     description:
       'Allow dating and social media app users to share verified ID and health information',
+    subtitle: 'PlumCheck empowers people to safely share personal information.',
+    link: 'plumcheck.io',
     name: 'PlumCheck',
-    technologiesImages: [
-      { object: scalaImage },
-      { object: tsImage },
-      { object: zioImage },
-      { object: quillImage },
-      { SvgComponent: AwsImage },
-      { SvgComponent: ReactImage },
-      { SvgComponent: KubernetesImage },
-      { SvgComponent: TerraformImage },
+    id: 'plumcheck',
+    about: {
+      founded: '2024',
+      employees: '5+',
+      location: 'New York City, NY',
+      purpose: 'Health data processing',
+    },
+    providedServices: [
+      { id: 'devops', title: 'DevOps' },
+      { id: 'backend', title: 'Back-end development' },
+      { id: 'frontend', title: 'Front-end development' },
+      {
+        id: 'additional',
+        title: 'Health information processing and secure sharing',
+      },
+      { id: 'design', title: 'UI/UX design' },
+    ],
+    technologies: [
+      { title: 'Scala', object: scalaImage },
+      { title: 'Typescript', object: tsImage },
+      { title: 'Zio', object: zioImage },
+      { title: 'Quill', object: quillImage },
+      { title: 'Aws', SvgComponent: AwsImage },
+      { title: 'React', SvgComponent: ReactImage },
+      { title: 'Kubernetes', SvgComponent: KubernetesImage },
+      { title: 'Terraform', SvgComponent: TerraformImage },
     ],
     classes: 'bg-[#40169C]',
   },
 ];
 
-export const ClientsAll: ClientProps[] = [
+export const ClientsAll: ClientPageProps[] = [
   {
     desktopImg: { default: pakiraLaptopImage },
     mobileImg: { default: pakiraMobileImage },
@@ -128,13 +170,13 @@ export const ClientsAll: ClientProps[] = [
     description:
       'SaaS industry directory, chat, forum, and order tracking for businesses in the wholesale wood industry',
     name: 'Pakira',
-    technologiesImages: [
-      { object: nestjsImage },
-      { object: typeormImage },
-      { object: pgsqlImage },
-      { SvgComponent: AwsImage },
-      { SvgComponent: ReactImage },
-      { object: pythonImage },
+    technologies: [
+      { title: 'Nestjs', object: nestjsImage },
+      { title: 'Typeorm', object: typeormImage },
+      { title: 'Pgsql', object: pgsqlImage },
+      { title: 'Aws', SvgComponent: AwsImage },
+      { title: 'React', SvgComponent: ReactImage },
+      { title: 'Python', object: pythonImage },
     ],
     classes: 'bg-[#15431A]',
   },
@@ -145,13 +187,13 @@ export const ClientsAll: ClientProps[] = [
     logoImg: meeLogoImage,
     description: 'A human-centered user experience for the internet',
     name: 'Mee',
-    technologiesImages: [
-      { SvgComponent: ReactImage },
-      { SvgComponent: ViteImage },
-      { object: rustImage },
-      { object: jsImage },
-      { object: tsImage },
-      { SvgComponent: FigmaImage },
+    technologies: [
+      { title: 'React', SvgComponent: ReactImage },
+      { title: 'Vite', SvgComponent: ViteImage },
+      { title: 'Rust', object: rustImage },
+      { title: 'Javascript', object: jsImage },
+      { title: 'Typescript', object: tsImage },
+      { title: 'Figma', SvgComponent: FigmaImage },
     ],
     classes: 'bg-[#4F868E]',
   },
@@ -160,14 +202,14 @@ export const ClientsAll: ClientProps[] = [
     logoImg: mbsLogoImage,
     description: 'The Meeting app designed for musicians',
     name: 'MyBlueSkiesMusic',
-    technologiesImages: [
-      { SvgComponent: ReactImage },
-      { object: scalaImage },
-      { object: tsImage },
-      { object: craImage },
-      { SvgComponent: AgoraImage },
-      { SvgComponent: WebRtcImage },
-      { SvgComponent: AwsImage },
+    technologies: [
+      { title: 'React', SvgComponent: ReactImage },
+      { title: 'Scala', object: scalaImage },
+      { title: 'Typescript', object: tsImage },
+      { title: 'Cra', object: craImage },
+      { title: 'Agora', SvgComponent: AgoraImage },
+      { title: 'WebRtc', SvgComponent: WebRtcImage },
+      { title: 'Aws', SvgComponent: AwsImage },
     ],
     classes: `bg-mbs-music`,
   },
@@ -177,15 +219,15 @@ export const ClientsAll: ClientProps[] = [
     description:
       'Enterprise Microlearning App. Pushing the limits of the human brain.',
     name: 'Blank Slate',
-    technologiesImages: [
-      { object: jsImage },
-      { SvgComponent: ReactImage },
-      { object: scalaImage },
-      { object: tsImage },
-      { SvgComponent: GcpImage },
-      { SvgComponent: ScriptableImage },
-      { SvgComponent: KubernetesImage },
-      { SvgComponent: TerraformImage },
+    technologies: [
+      { title: 'Javascript', object: jsImage },
+      { title: 'React', SvgComponent: ReactImage },
+      { title: 'Scala', object: scalaImage },
+      { title: 'Typescript', object: tsImage },
+      { title: 'Gcp', SvgComponent: GcpImage },
+      { title: 'Scriptable', SvgComponent: ScriptableImage },
+      { title: 'Kubernetes', SvgComponent: KubernetesImage },
+      { title: 'Terraform', SvgComponent: TerraformImage },
     ],
     classes: `bg-[#0F172A]`,
   },
@@ -195,13 +237,13 @@ export const ClientsAll: ClientProps[] = [
     description:
       'Integrated commercial services platform to solve any drug pricing, reimbursement, or product delivery challenge',
     name: 'Eversana',
-    technologiesImages: [
-      { SvgComponent: ReactImage },
-      { object: scalaImage },
-      { object: tsImage },
-      { SvgComponent: ScriptableImage },
-      { SvgComponent: AwsImage },
-      { SvgComponent: AnsibleImage },
+    technologies: [
+      { title: 'React', SvgComponent: ReactImage },
+      { title: 'Scala', object: scalaImage },
+      { title: 'Typescript', object: tsImage },
+      { title: 'Scriptable', SvgComponent: ScriptableImage },
+      { title: 'Aws', SvgComponent: AwsImage },
+      { title: 'Ansible', SvgComponent: AnsibleImage },
     ],
     classes: `bg-[#00214D]`,
   },
@@ -213,19 +255,27 @@ export const ClientsAll: ClientProps[] = [
     logoImg: quanthealthLogoImage,
     description: 'Simulating real-world efficacy from preclinical to approval',
     name: 'QuantHealth',
-    technologiesImages: [
-      { SvgComponent: ReactImage },
-      { object: tsImage },
-      { SvgComponent: PytorchImage },
-      { object: pythonImage },
-      { SvgComponent: AwsImage },
-      { SvgComponent: NextjsImage },
-      { SvgComponent: SinglestoreImage },
-      { object: knexjsImage },
-      { SvgComponent: PrismaImage },
-      { SvgComponent: TrpcImage },
+    technologies: [
+      { title: 'React', SvgComponent: ReactImage },
+      { title: 'Typescript', object: tsImage },
+      { title: 'Pytorch', SvgComponent: PytorchImage },
+      { title: 'Python', object: pythonImage },
+      { title: 'Aws', SvgComponent: AwsImage },
+      { title: 'Nextjs', SvgComponent: NextjsImage },
+      { title: 'Singlestore', SvgComponent: SinglestoreImage },
+      { title: 'knexjs', object: knexjsImage },
+      { title: 'Prisma', SvgComponent: PrismaImage },
+      { title: 'Trpc', SvgComponent: TrpcImage },
     ],
     classes: `bg-[#0F172A]`,
   },
 ];
+
+export const ProvidedServiceIdToIcon = {
+  devops: HddStackImage,
+  backend: CodeSlashImage,
+  frontend: CodeSquareImage,
+  additional: PersonVcardImage,
+  design: WindowSidebarImage,
+};
 ---

@@ -6,15 +6,17 @@ export interface Props {
   name: string;
   description?: string;
   logoImg: ImageMetadata;
-  caseLink?: string;
+  id?: string;
   desktopImg: { default: ImageMetadata; x2?: ImageMetadata };
   mobileImg?: { default: ImageMetadata; x2?: ImageMetadata };
-  technologiesImages: (
+  technologies?: (
     | {
+        title: string;
         object: ImageMetadata;
         SvgComponent?: undefined;
       }
     | {
+        title: string;
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         SvgComponent: (_props: Record<string, any>) => any;
         object?: undefined;
@@ -26,14 +28,14 @@ const {
   name,
   description,
   logoImg,
-  caseLink,
+  id,
   desktopImg,
   mobileImg,
-  technologiesImages,
+  technologies,
   classes,
 } = Astro.props;
 
-const getStackImageAltFromSrc = (src: string) =>
+export const getStackImageAltFromSrc = (src: string) =>
   src.slice(src.indexOf('stack/') + 'stack/'.length, src.indexOf('.')) +
   ' logo';
 ---
@@ -50,16 +52,16 @@ const getStackImageAltFromSrc = (src: string) =>
     <img src={logoImg.src} width={logoImg.width} height={logoImg.height} />
     <div class="text-3xl text-white md:text-3xl-desktop">{description}</div>
     <a
-      href={caseLink}
+      href={`case-studies/${id}`}
       class="cursor-pointer text-xl text-white hover:opacity-80 md:text-xl-desktop"
       >{name} case study <ArrowRight
         class="ml-2.5 inline-block h-5 w-5 md:h-7 md:w-7"
       /></a
     >
     {
-      technologiesImages && (
+      technologies && (
         <div class="flex flex-wrap gap-2">
-          {technologiesImages?.map((technologyImage) => (
+          {technologies?.map((technologyImage) => (
             <div class="box-border flex h-12 w-12 items-center justify-center rounded-xl border border-white/15 bg-white/5 p-2.5">
               {technologyImage.object ? (
                 <Image

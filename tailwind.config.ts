@@ -46,6 +46,9 @@ export default {
       black: theme('colors.black'),
     }),
     extend: {
+      borderRadius: {
+        '2lg': '10px',
+      },
       screens: {
         xs: '480px',
       },

@@ -1,0 +1,160 @@
+---
+import {
+  ClientsAll,
+  ProvidedServiceIdToIcon,
+  type ClientPageProps,
+} from '../../constants/clientsStack.astro';
+import Layout from '../../layouts/Layout.astro';
+import ArrowRight from '~/assets/images/new/arrow-right.svg';
+import GeoAltImage from '~/assets/images/new/about/geo-alt.svg';
+import PeopleImage from '~/assets/images/new/about/people.svg';
+import RocketTakeoffImage from '~/assets/images/new/about/rocket-takeoff.svg';
+import ShieldCheckImage from '~/assets/images/new/about/shield-check.svg';
+import { getStackImageAltFromSrc } from '../../components/clients/Client.astro';
+import { Image } from 'astro:assets';
+
+export async function getStaticPaths() {
+  return ClientsAll.filter((c) => c.id).map((client) => ({
+    params: { id: client.id },
+    props: { client },
+  }));
+}
+
+interface Props {
+  client: ClientPageProps;
+}
+
+const { client } = Astro.props;
+const {
+  name,
+  subtitle,
+  logoImg,
+  description,
+  link,
+  pageTopImg,
+  about,
+  providedServices,
+  technologies,
+} = client;
+---
+
+<Layout>
+  <div
+    class="relative mx-4 mb-4 mt-8 flex flex-col items-start justify-between md:mx-20 md:mb-32 md:mt-24 md:flex-row"
+  >
+    <div class="relative z-10 mb-8 md:mb-0 md:w-[45%] lg:pt-[45px]">
+      <img src={logoImg.src} width={logoImg.width} height={logoImg.height} />
+      <div class="md:text-4xl-desktop my-4 text-4xl text-white">
+        {description}
+      </div>
+      <div class="text-xl text-white opacity-80 md:text-xl-desktop">
+        {subtitle}
+      </div>
+      <div class="mt-8 md:mt-10">
+        <a
+          href={`https://${link}`}
+          class="rounded-2lg border border-white/60 px-6 py-3 text-xl text-white hover:border-white hover:opacity-80 md:text-xl-desktop"
+          target="_blank"
+          >Visit {link}
+          <ArrowRight class="ml-3 inline-block h-7 w-7 -rotate-45 md:h-8" /></a
+        >
+      </div>
+    </div>
+    {
+      pageTopImg && (
+        <div class="w-full rounded-xl border border-white/[0.07] bg-white/[0.07] p-0.5 md:w-1/2 md:rounded-3xl md:p-4">
+          <img
+            class="w-full rounded-xl md:rounded-3xl"
+            width={pageTopImg?.default.width}
+            height={pageTopImg?.default.height}
+            src={pageTopImg?.default.src}
+          />
+        </div>
+      )
+    }
+  </div>
+  <div class="mx-4 mb-32 overflow-hidden rounded-xl md:mx-20">
+    <div class="flex flex-wrap gap-1 lg:flex-nowrap">
+      <div
+        class="flex basis-full flex-col gap-4 border-white/[0.07] bg-white/5 p-4 md:p-8 lg:basis-1/3"
+      >
+        <div class="text-semibold text-xl text-white md:text-xl-desktop">
+          About {name}
+        </div>
+        <div
+          class="flex items-center gap-2 text-xl text-white md:text-xl-desktop"
+        >
+          <RocketTakeoffImage class="h-6 w-6 min-w-[24px]" />
+          Founded in {about?.founded}
+        </div>
+        <div
+          class="flex items-center gap-2 text-xl text-white md:text-xl-desktop"
+        >
+          <PeopleImage class="h-6 w-6 min-w-[24px]" />
+          {about?.employees} employees
+        </div>
+        <div
+          class="flex items-center gap-2 text-xl text-white md:text-xl-desktop"
+        >
+          <GeoAltImage class="h-6 w-6 min-w-[24px]" />
+          {about?.location}
+        </div>
+        <div
+          class="flex items-center gap-2 text-xl text-white md:text-xl-desktop"
+        >
+          <ShieldCheckImage class="h-6 w-6 min-w-[24px]" />
+          {about?.purpose}
+        </div>
+      </div>
+      <div
+        class="flex basis-full flex-col gap-4 border-white/[0.07] bg-white/5 p-4 md:p-8 lg:basis-1/3"
+      >
+        <div class="text-semibold text-xl text-white md:text-xl-desktop">
+          Provided services
+        </div>
+        {
+          providedServices?.map((service) => {
+            const Icon = ProvidedServiceIdToIcon[service.id];
+            return (
+              <div class="flex items-center gap-2 text-xl text-white md:text-xl-desktop">
+                <Icon class="h-6 w-6 min-w-[24px]" />
+                {service.title}
+              </div>
+            );
+          })
+        }
+      </div>
+      {
+        technologies && (
+          <div class="flex basis-full flex-col gap-4 border-white/[0.07] bg-white/5 p-4 md:p-8 lg:basis-1/3">
+            <div class="text-semibold text-xl text-white md:text-xl-desktop">
+              Technology used
+            </div>
+
+            <div class="grid grid-cols-2 gap-x-0.5 gap-y-4 lg:grid-cols-1 xl:grid-cols-2">
+              {technologies.map((technology) => {
+                const IconRendered = technology.object ? (
+                  <Image
+                    width={24}
+                    height={24}
+                    src={technology.object}
+                    class="mr-0.5 inline-block h-6 w-6 object-contain"
+                    alt={getStackImageAltFromSrc(technology.object.src)}
+                  />
+                ) : (
+                  <technology.SvgComponent class="mr-0.5 inline-block h-6 w-6" />
+                );
+                return (
+                  <div class="whitespace-nowrap text-xl text-white md:text-xl-desktop">
+                    {IconRendered}
+                    {technology.title}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )
+      }
+    </div>
+  </div>
+</Layout>
