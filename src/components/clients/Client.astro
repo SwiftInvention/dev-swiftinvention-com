@@ -1,6 +1,7 @@
 ---
 import ArrowRight from '~/assets/images/new/arrow-right.svg';
 import { Image } from 'astro:assets';
+import { getStackImageAltFromSrc } from '~/utilities/getStackImageAltFromSrc';
 
 export interface Props {
   name: string;
@@ -34,10 +35,6 @@ const {
   technologies,
   classes,
 } = Astro.props;
-
-export const getStackImageAltFromSrc = (src: string) =>
-  src.slice(src.indexOf('stack/') + 'stack/'.length, src.indexOf('.')) +
-  ' logo';
 ---
 
 <div

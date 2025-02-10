@@ -23,6 +23,8 @@
       "~/assets/*": ["./src/assets/*"],
       "~/constants/*": ["./src/constants/*"],
       "~/components/*": ["./src/components/*"],
+      "~/utilities/*": ["./src/utilities/*"],
+      "~/layouts/*": ["./src/layouts/*"],
       "~/public/*": ["./public/*"],
     },
     "strictNullChecks": true, // add if using `astro/tsconfigs` template
