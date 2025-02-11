@@ -31,7 +31,6 @@ import zioImage from '~/assets/images/stack/zio.png';
 
 // clients
 import pakiraLogoImage from '~/assets/images/logos/pakira-logo.svg';
-import plumcheckPageImage from '~/assets/images/new/clients/plumcheck-page.png';
 import blankSlateLaptop2xImage from '~/assets/images/new/devices/blankslate-2x.png';
 import blankSlateLaptopImage from '~/assets/images/new/devices/blankslate.png';
 import eversanaLaptop2xImage from '~/assets/images/new/devices/eversana-2x.png';
@@ -71,15 +70,34 @@ import joshPhotoImage from '~/assets/images/new/photos/josh.png';
 import plumCheckScreenshot1Image from '~/assets/images/new/screenshots/PlumCheck-screenshot-1.png';
 import plumCheckScreenshot2Image from '~/assets/images/new/screenshots/PlumCheck-screenshot-2.png';
 import plumCheckScreenshot3Image from '~/assets/images/new/screenshots/PlumCheck-screenshot-3.png';
+import privoScreenshot1Image from '~/assets/images/new/screenshots/Privo screenshot - 1.png';
+import mbsScreenshot1Image from '~/assets/images/new/screenshots/MBSM screenshot - 1.png';
+import mbsScreenshot2Image from '~/assets/images/new/screenshots/MBSM screenshot - 2.png';
+import mbsScreenshot3Image from '~/assets/images/new/screenshots/MBSM screenshot - 3.png';
+import meeScreenshot1Image from '~/assets/images/new/screenshots/Mee screenshot - 1.png';
+import meeScreenshot2Image from '~/assets/images/new/screenshots/Mee screenshot - 2.png';
+import meeScreenshot3Image from '~/assets/images/new/screenshots/Mee screenshot - 3.png';
+import meeScreenshot4Image from '~/assets/images/new/screenshots/Mee screenshot - 4.png';
+
+import plumcheckPageImage from '~/assets/images/new/clients/plumcheck-page.png';
+import mbsPageImage from '~/assets/images/new/clients/mbs-page.png';
+import meePageImage from '~/assets/images/new/clients/mee-page.png';
+import privoPageImage from '~/assets/images/new/clients/privo-page.png';
+import pakiraPageImage from '~/assets/images/new/clients/pakira-page.png';
+import vierallyPageImage from '~/assets/images/new/clients/vierally-page.png';
+import blankslatePageImage from '~/assets/images/new/clients/blankslate-page.png';
+import eversanaPageImage from '~/assets/images/new/clients/eversana-page.png';
+import quanthealthPageImage from '~/assets/images/new/clients/quanthealth-page.png';
 
 import type { Props as ClientProps } from '../components/clients/Client.astro';
 
 export type ClientPageProps = ClientProps & {
+  title?: string;
   subtitle?: string;
-  link?: string;
+  links?: string[];
   comment?: {
     text: string;
-    author: { avatar: ImageMetadata; name: string; position: string };
+    author: { avatar?: ImageMetadata; name: string; position: string };
   };
   pageTopImg?: { default: ImageMetadata };
   screenshotsInfo?: {
@@ -101,8 +119,42 @@ export const ClientsShort: ClientPageProps[] = [
   {
     desktopImg: { default: privoLaptopImage },
     logoImg: privoLogoImage,
+    pageTopImg: { default: privoPageImage },
     description: 'Children’s online identity & consent management',
     name: 'Privo',
+    title: 'Privacy Compliance, Age Verification & Consent Management',
+    subtitle:
+      'PRIVO delivers enterprise technology and expertise to companies to meet their unique business objectives while adhering to complex and expanding minors’ digital privacy and safety regulations.',
+    comment: {
+      author: {
+        name: 'Thorn',
+        position: 'CEO at PRIVO',
+      },
+      text: 'Swift Invention has been crucial for our digital strategy and success — you can expect organized, detailed, friendly, and fast service when working with their team. They’ve truly brought our ideas to life, and they help us to be better marketers and designers. We’re so grateful to have such a trusted partner!',
+    },
+    screenshotsInfo: {
+      subtitle:
+        'We developed a web application that allows users to verify their identity, and connect their healthcare provider accounts to share verified health information. We continue to maintain and enhance the solution.',
+      images: [privoScreenshot1Image],
+    },
+    links: ['privo.com'],
+    id: 'privo',
+    about: {
+      founded: '2001',
+      employees: '30+',
+      location: 'Dumfries, VA',
+      purpose: 'Privacy management',
+    },
+    providedServices: [
+      { id: 'devops', title: 'DevOps' },
+      { id: 'backend', title: 'Back-end development' },
+      { id: 'frontend', title: 'Front-end development' },
+      {
+        id: 'additional',
+        title: 'Identity verification methods development',
+      },
+      { id: 'design', title: 'UI/UX design' },
+    ],
     technologies: [
       { title: 'Scala', object: scalaImage },
       { title: 'java', object: javaImage },
@@ -120,6 +172,27 @@ export const ClientsShort: ClientPageProps[] = [
     mobileImg: { default: vierallyMobileImage, x2: vierallyMobile2xImage },
     description: 'AI tool to predict virality and maximize marketing ROI',
     name: 'VieRally',
+    pageTopImg: { default: vierallyPageImage },
+    subtitle:
+      'VieRally is the cutting edge platform for Predictive Viral Marketing.',
+    links: ['vierally.com'],
+    id: 'vierally',
+    about: {
+      founded: '2022',
+      employees: '5+',
+      location: 'Tel Aviv, Israel',
+      purpose: 'Predictive modeling and analytics algorithms',
+    },
+    providedServices: [
+      { id: 'devops', title: 'DevOps' },
+      { id: 'backend', title: 'Back-end development' },
+      { id: 'frontend', title: 'Front-end development' },
+      {
+        id: 'additional',
+        title: 'Secure data management and sharing',
+      },
+      { id: 'design', title: 'UI/UX design' },
+    ],
     technologies: [
       { title: 'Pgsql', object: pgsqlImage },
       { title: 'Scala', object: scalaImage },
@@ -156,7 +229,7 @@ export const ClientsShort: ClientPageProps[] = [
         plumCheckScreenshot3Image,
       ],
     },
-    link: 'plumcheck.io',
+    links: ['plumcheck.io'],
     name: 'PlumCheck',
     id: 'plumcheck',
     about: {
@@ -197,6 +270,28 @@ export const ClientsAll: ClientPageProps[] = [
     description:
       'SaaS industry directory, chat, forum, and order tracking for businesses in the wholesale wood industry',
     name: 'Pakira',
+    pageTopImg: { default: pakiraPageImage },
+    title: 'Business Intelligence platform for the wood industry',
+    subtitle:
+      'Pakira serves the wholesale wood industry across the entire supply  chain: forest landowners, mills, manufacturers, distributors, traders/brokers, lumber yards and builders.',
+    links: ['pakira.com'],
+    id: 'pakira',
+    about: {
+      founded: '2020',
+      employees: '10+',
+      location: 'Boston, MA',
+      purpose: 'Business intelligence',
+    },
+    providedServices: [
+      { id: 'devops', title: 'DevOps' },
+      { id: 'backend', title: 'Back-end development' },
+      { id: 'frontend', title: 'Front-end development' },
+      {
+        id: 'additional',
+        title: 'BI platform logic',
+      },
+      { id: 'design', title: 'UI/UX design' },
+    ],
     technologies: [
       { title: 'Nestjs', object: nestjsImage },
       { title: 'Typeorm', object: typeormImage },
@@ -214,6 +309,39 @@ export const ClientsAll: ClientPageProps[] = [
     logoImg: meeLogoImage,
     description: 'A human-centered user experience for the internet',
     name: 'Mee',
+    pageTopImg: { default: meePageImage },
+    title:
+      'Mee is about putting you in control of your data relationships with other people and companies.',
+    subtitle:
+      'Giving individuals more control. More privacy. More convenience.',
+    screenshotsInfo: {
+      subtitle:
+        'Swift is a supporter of the Mee Foundation. We contribute to the Foundation’s open source projects on Github.',
+      images: [
+        meeScreenshot1Image,
+        meeScreenshot2Image,
+        meeScreenshot3Image,
+        meeScreenshot4Image,
+      ],
+    },
+    links: ['mee.foundation', 'itsmee.org'],
+    id: 'meefoundation',
+    about: {
+      founded: '2020',
+      employees: '10+',
+      location: 'Boston, MA',
+      purpose: 'Personal data privacy',
+    },
+    providedServices: [
+      { id: 'devops', title: 'DevOps' },
+      { id: 'backend', title: 'Back-end development' },
+      { id: 'frontend', title: 'Front-end development' },
+      {
+        id: 'additional',
+        title: 'Secure data management and sharing',
+      },
+      { id: 'design', title: 'UI/UX design' },
+    ],
     technologies: [
       { title: 'React', SvgComponent: ReactImage },
       { title: 'Vite', SvgComponent: ViteImage },
@@ -229,14 +357,60 @@ export const ClientsAll: ClientPageProps[] = [
     logoImg: mbsLogoImage,
     description: 'The Meeting app designed for musicians',
     name: 'MyBlueSkiesMusic',
+    pageTopImg: { default: mbsPageImage },
+    subtitle:
+      'Experience studio-quality sound, exceptional video performance, and real-time collaboration. Master, teach, and create music anytime, anywhere. Join a secure, global community of musicians.',
+    screenshotsInfo: {
+      subtitle:
+        'We developed the entire solution from concept to production-ready web application, and continue to maintain and enhance it.',
+      images: [mbsScreenshot1Image, mbsScreenshot2Image, mbsScreenshot3Image],
+    },
+    links: ['myblueskiesmusic.com'],
+    id: 'myblueskiesmusic',
+    about: {
+      founded: '2022',
+      employees: '5+',
+      location: 'New York City, NY',
+      purpose: 'Music Collaboration & Education',
+    },
+    providedServices: [
+      { id: 'devops', title: 'DevOps' },
+      { id: 'backend', title: 'Back-end development' },
+      { id: 'frontend', title: 'Front-end development' },
+      {
+        id: 'additional',
+        title: 'Audio and video technology tailored for musicians',
+      },
+      { id: 'design', title: 'UI/UX design' },
+    ],
     classes: `bg-mbs-music`,
   },
   {
     desktopImg: { default: blankSlateLaptopImage, x2: blankSlateLaptop2xImage },
     logoImg: blankSlateLogoImage,
-    description:
-      'Enterprise Microlearning App. Pushing the limits of the human brain.',
+    description: 'Pushing the Limits of the Human Brain',
     name: 'Blank Slate',
+    pageTopImg: { default: blankslatePageImage },
+    subtitle:
+      'BlankSlate is a deeptech cognitive science firm dedicated to pushing the limits of the human brain.',
+    links: ['blankslatetech.co'],
+    id: 'blankslate',
+    about: {
+      founded: '2017',
+      employees: '10+',
+      location: 'Arlington, VA',
+      purpose: 'Cognitive science',
+    },
+    providedServices: [
+      { id: 'devops', title: 'DevOps' },
+      { id: 'backend', title: 'Back-end development' },
+      { id: 'frontend', title: 'Front-end development' },
+      {
+        id: 'additional',
+        title: 'Cognitive computing algorithms ',
+      },
+      { id: 'design', title: 'UI/UX design' },
+    ],
     technologies: [
       { title: 'Javascript', object: jsImage },
       { title: 'React', SvgComponent: ReactImage },
@@ -255,6 +429,26 @@ export const ClientsAll: ClientPageProps[] = [
     description:
       'Integrated commercial services platform to solve any drug pricing, reimbursement, or product delivery challenge',
     name: 'Eversana',
+    pageTopImg: { default: eversanaPageImage },
+    subtitle:
+      'Leading independent provider of global services to the life sciences industry.',
+    links: ['eversana.com'],
+    id: 'eversana',
+    about: {
+      founded: '1995',
+      employees: '5000+',
+      location: 'Chicago, IL',
+      purpose: 'Life sciences',
+    },
+    providedServices: [
+      { id: 'devops', title: 'DevOps' },
+      { id: 'backend', title: 'Back-end development' },
+      { id: 'frontend', title: 'Business Analytics' },
+      {
+        id: 'additional',
+        title: 'Life sciences technology services',
+      },
+    ],
     technologies: [
       { title: 'React', SvgComponent: ReactImage },
       { title: 'Scala', object: scalaImage },
@@ -273,6 +467,23 @@ export const ClientsAll: ClientPageProps[] = [
     logoImg: quanthealthLogoImage,
     description: 'Simulating real-world efficacy from preclinical to approval',
     name: 'QuantHealth',
+    pageTopImg: { default: quanthealthPageImage },
+    subtitle:
+      'QuantHealth is an AI company conducting patient-centric drug simulations to accelerate and de-risk drug development.',
+    links: ['quanthealth.ai'],
+    id: 'quantHealth',
+    about: {
+      founded: '2020',
+      employees: '10+',
+      location: 'Tel Aviv, Israel',
+      purpose:
+        'Drug Simulation, Bioinformatics, Computational Biology, Trial Simulation',
+    },
+    providedServices: [
+      { id: 'devops', title: 'DevOps' },
+      { id: 'backend', title: 'Back-end development' },
+      { id: 'frontend', title: 'Front-end development' },
+    ],
     technologies: [
       { title: 'React', SvgComponent: ReactImage },
       { title: 'Typescript', object: tsImage },

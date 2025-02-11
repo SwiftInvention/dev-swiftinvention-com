@@ -5,7 +5,6 @@ import {
   type ClientPageProps,
 } from '../../constants/clientsStack.astro';
 import Layout from '../../layouts/Layout.astro';
-import ArrowRight from '~/assets/images/new/arrow-right.svg';
 import GeoAltImage from '~/assets/images/new/about/geo-alt.svg';
 import PeopleImage from '~/assets/images/new/about/people.svg';
 import RocketTakeoffImage from '~/assets/images/new/about/rocket-takeoff.svg';
@@ -15,6 +14,7 @@ import ShieldCheckImage from '~/assets/images/new/about/shield-check.svg';
 import { getStackImageAltFromSrc } from '~/utilities/getStackImageAltFromSrc';
 import { Image } from 'astro:assets';
 import ImageCarousel from '../../components/ImageCarousel.astro';
+import ButtonLink from '../../components/ButtonLink.astro';
 
 export async function getStaticPaths() {
   return ClientsAll.filter((c) => c.id).map((client) => ({
@@ -30,11 +30,12 @@ interface Props {
 const { client } = Astro.props;
 const {
   name,
+  title,
   subtitle,
   logoImg,
   description,
   comment,
-  link,
+  links,
   pageTopImg,
   about,
   providedServices,
@@ -50,19 +51,24 @@ const {
     <div class="relative z-10 mb-8 md:mb-0 md:w-[45%] lg:pt-[45px]">
       <img src={logoImg.src} width={logoImg.width} height={logoImg.height} />
       <div class="md:text-4xl-desktop my-4 text-4xl text-white">
-        {description}
+        {title ?? description}
       </div>
       <div class="text-xl text-white opacity-80 md:text-xl-desktop">
         {subtitle}
       </div>
-      <div class="mt-8 md:mt-10">
-        <a
-          href={`https://${link}`}
-          class="rounded-2lg border border-white/60 px-6 py-3 text-xl text-white hover:border-white hover:opacity-80 md:text-xl-desktop"
-          target="_blank"
-          >Visit {link}
-          <ArrowRight class="ml-3 inline-block h-7 w-7 -rotate-45 md:h-8" /></a
-        >
+      <div class="mt-8 flex flex-wrap gap-2 md:mt-10">
+        {
+          links?.map((link) => (
+            <ButtonLink
+              href={`https://${link}`}
+              target="_blank"
+              variant="outlined"
+              arrowClasses="-rotate-45"
+            >
+              Visit {link}
+            </ButtonLink>
+          ))
+        }
       </div>
     </div>
     {
@@ -174,13 +180,15 @@ const {
               {comment.text}
             </div>
             <div class="mt-6 flex gap-4 md:mt-10">
-              <Image
-                src={comment.author.avatar}
-                width={64}
-                height={64}
-                alt={name + '`s chief photo'}
-                class="h-16 w-16 rounded-full"
-              />
+              {comment.author.avatar && (
+                <Image
+                  src={comment.author.avatar}
+                  width={64}
+                  height={64}
+                  alt={name + '`s chief photo'}
+                  class="h-16 w-16 rounded-full"
+                />
+              )}
               <div class="flex flex-col justify-center">
                 <div class="text-xl text-white md:text-xl-desktop">
                   {comment.author.name}
@@ -198,8 +206,15 @@ const {
       <ImageCarousel
         name={name}
         screenshotsInfo={screenshotsInfo}
-        link={link}
+        links={links}
       />
+    )
+  }
+  {
+    !screenshotsInfo && (
+      <ButtonLink href="/case-studies" variant="ghost" classes="w-full">
+        Visit more case studies
+      </ButtonLink>
     )
   }
 </Layout>
