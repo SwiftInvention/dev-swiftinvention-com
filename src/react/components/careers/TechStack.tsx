@@ -241,8 +241,10 @@ const techStackList: {
 export const TechStack: React.FC = () => {
   return (
     <div className="container mt-24 md:mt-32">
-      <div className="mb-4 text-6xl text-primaryCol2 md:text-6xl-desktop">
-        Our tech stack
+      <div className="overflow-hidden">
+        <div className="mb-4 text-6xl text-primaryCol2 md:text-6xl-desktop">
+          Our tech stack
+        </div>
       </div>
       <div className="mb-16 max-w-[880px] text-lg text-white/80 md:mb-20">
         Join our dynamic team and work with cutting-edge technologies such as
