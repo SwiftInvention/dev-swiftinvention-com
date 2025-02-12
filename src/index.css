@@ -42,6 +42,10 @@
 }
 
 @layer components {
+  .container {
+    @apply mx-auto max-w-[1440px] px-4 md:px-8 xl:px-20;
+  }
+
   .case-studies-logos {
     border-radius: var(--rounded-none, 0px) var(--rounded-none, 0px) var(--rounded-3xl, 24px) var(--rounded-3xl, 24px);
     border-right: 1px solid #020617;

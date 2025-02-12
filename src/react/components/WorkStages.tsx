@@ -19,7 +19,7 @@ export const WorkStages = ({
   description: string;
 }) => {
   return (
-    <div className="px-4 py-16 text-secondaryCol1 md:px-20 lg:py-32">
+    <div className="container py-16 text-secondaryCol1 lg:py-32">
       <div>
         <div className="my-16 md:my-28 lg:my-32">
           <h2 className="mb-5 text-4xl font-bold">{title}</h2>

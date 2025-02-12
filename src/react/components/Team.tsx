@@ -71,7 +71,7 @@ const teamMembers = [
 
 export const Team = () => {
   return (
-    <div className="bg-surface px-4 py-16 text-secondaryCol1 md:px-20 lg:py-32">
+    <div className="container bg-surface py-16 text-secondaryCol1 lg:py-32">
       <div>
         <h2 className="text-4xl font-bold">Leadership Team</h2>
         <p className="max-w-15xl pb-16 pt-5 text-xl text-secondaryCol1/85 md:text-xl-desktop">

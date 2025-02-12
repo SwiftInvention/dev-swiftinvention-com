@@ -9,77 +9,79 @@ type Props = Required<Pick<ClientPageProps, 'screenshotsInfo'>> &
 const { name, screenshotsInfo, links } = Astro.props;
 ---
 
-<div class="relative overflow-hidden px-4 py-24 md:px-20 md:py-32">
+<div class="relative overflow-hidden py-24 md:py-32">
   <img
     src={spotlightBfImage.src}
     class="absolute -left-1/2 top-0 z-[-1] w-[200%] max-w-none md:left-0 md:w-full"
   />
-  <div
-    class="mb-8 flex flex-col justify-between md:mb-20 md:flex-row md:items-end"
-  >
-    <div class="md:w-[60%]">
-      <div class="mb-4 text-6xl text-white md:text-6xl-desktop">
-        Our work for {name}
-      </div>
-      <div class="mb-5 text-lg text-white opacity-80">
-        {screenshotsInfo.subtitle}
-      </div>
-    </div>
-  </div>
-  <div
-    class="relative mx-auto w-full overflow-hidden rounded-xl border border-white/[0.07] bg-white/[0.07] p-0.5 md:rounded-3xl md:p-4"
-  >
-    <div class="w-full overflow-hidden">
-      <!-- max-h here only for old browsers where aspect ratio does not work -->
-      <ul
-        class="carousel-track flex aspect-[1248/700] max-h-[25vh] w-full transition-transform duration-500 ease-in-out xs:max-h-[50vh] lg:max-h-[700px]"
-      >
-        {
-          screenshotsInfo.images.map((screenshot) => (
-            <li class="box-border min-w-full overflow-hidden rounded-xl md:rounded-3xl">
-              <img src={screenshot.src} class="w-full" />
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-  </div>
-  <div
-    class="mt-8 flex flex-col gap-8 md:flex-row-reverse md:justify-between md:gap-1"
-  >
-    {
-      screenshotsInfo.images.length > 1 && (
-        <div class="flex w-full justify-center gap-3 md:w-auto">
-          <button class="arrow left flex-center h-14 w-14 rounded-full border border-white/10 bg-white/5 [&>svg]:hover:opacity-80">
-            <ArrowRight class="h-7 w-7 rotate-180" />
-          </button>
-          <button class="arrow right flex-center h-14 w-14 rounded-full border border-white/10 bg-white/5 [&>svg]:hover:opacity-80">
-            <ArrowRight class="h-7 w-7" />
-          </button>
+  <div class="container">
+    <div
+      class="mb-8 flex flex-col justify-between md:mb-20 md:flex-row md:items-end"
+    >
+      <div class="md:w-[60%]">
+        <div class="mb-4 text-6xl text-white md:text-6xl-desktop">
+          Our work for {name}
         </div>
-      )
-    }
-    <div class="flex flex-col gap-4 lg:flex-row">
-      <div class="flex flex-col gap-2 xl:flex-row">
-        {
-          links?.map((link) => (
-            <ButtonLink
-              href={`https://${link}`}
-              target="_blank"
-              variant="outlined"
-              classes="px-3 lg:px-6 w-full md:w-auto"
-              arrowClasses="-rotate-45"
-            >
-              Visit {link}
-            </ButtonLink>
-          ))
-        }
+        <div class="mb-5 text-lg text-white opacity-80">
+          {screenshotsInfo.subtitle}
+        </div>
       </div>
-      <ButtonLink
-        href="/case-studies"
-        variant="ghost"
-        classes="w-full md:w-auto">Visit more case studies</ButtonLink
-      >
+    </div>
+    <div
+      class="relative mx-auto w-full overflow-hidden rounded-xl border border-white/[0.07] bg-white/[0.07] p-0.5 md:rounded-3xl md:p-4"
+    >
+      <div class="w-full overflow-hidden">
+        <!-- max-h here only for old browsers where aspect ratio does not work -->
+        <ul
+          class="carousel-track flex aspect-[1248/700] max-h-[25vh] w-full transition-transform duration-500 ease-in-out xs:max-h-[50vh] lg:max-h-[700px]"
+        >
+          {
+            screenshotsInfo.images.map((screenshot) => (
+              <li class="box-border min-w-full overflow-hidden rounded-xl md:rounded-3xl">
+                <img src={screenshot.src} class="w-full" />
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+    <div
+      class="mt-8 flex flex-col gap-8 md:flex-row-reverse md:justify-between md:gap-1"
+    >
+      {
+        screenshotsInfo.images.length > 1 && (
+          <div class="flex w-full justify-center gap-3 md:w-auto">
+            <button class="arrow left flex-center h-14 w-14 rounded-full border border-white/10 bg-white/5 [&>svg]:hover:opacity-80">
+              <ArrowRight class="h-7 w-7 rotate-180" />
+            </button>
+            <button class="arrow right flex-center h-14 w-14 rounded-full border border-white/10 bg-white/5 [&>svg]:hover:opacity-80">
+              <ArrowRight class="h-7 w-7" />
+            </button>
+          </div>
+        )
+      }
+      <div class="flex flex-col gap-4 lg:flex-row">
+        <div class="flex flex-col gap-2 xl:flex-row">
+          {
+            links?.map((link) => (
+              <ButtonLink
+                href={`https://${link}`}
+                target="_blank"
+                variant="outlined"
+                classes="px-3 lg:px-6 w-full md:w-auto"
+                arrowClasses="-rotate-45"
+              >
+                Visit {link}
+              </ButtonLink>
+            ))
+          }
+        </div>
+        <ButtonLink
+          href="/case-studies"
+          variant="ghost"
+          classes="w-full md:w-auto">Visit more case studies</ButtonLink
+        >
+      </div>
     </div>
   </div>
 </div>

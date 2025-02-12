@@ -240,7 +240,7 @@ const techStackList: {
 
 export const TechStack: React.FC = () => {
   return (
-    <div className="mx-4 mt-24 md:mx-20 md:mt-32">
+    <div className="container mt-24 md:mt-32">
       <div className="mb-4 text-6xl text-primaryCol2 md:text-6xl-desktop">
         Our tech stack
       </div>
