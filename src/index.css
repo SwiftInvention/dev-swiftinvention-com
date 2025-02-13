@@ -104,7 +104,7 @@
     left: 0;
     right: 0;
     height: 100%; /* Adjust height to cover the bottom stroke */
-    background: linear-gradient(to top, rgb(2, 6, 23, 255) 0%, rgb(2, 6, 23, 85) 15%, transparent 100%);
+    background: linear-gradient(to top, rgb(2, 6, 23, 255) 0%, transparent 100%);
     z-index: 1; /* Ensure it sits above the text */
     pointer-events: none; /* Let text interactions pass through */
   }

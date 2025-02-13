@@ -19,9 +19,11 @@ import Button from '../Button.astro';
       We are an experienced team of software designers and engineers that know
       how to take ideas from concept to reality.
     </div>
-    <Button classes="w-full md:w-[200px] py-3 text-xl md:text-xl-desktop"
-      >Work with us</Button
-    >
+    <a class="w-full md:w-[200px]" href="#contact__form">
+      <Button classes="w-full py-3 text-xl md:text-xl-desktop"
+        >Work with us</Button
+      >
+    </a>
   </div>
   <picture>
     <source media="(min-width:768px)" srcset={homeFirstBlockDesktopImage.src} />
