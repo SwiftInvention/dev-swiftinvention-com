@@ -46,7 +46,12 @@ const {
   <div
     class="relative z-10 flex flex-col gap-6 py-8 md:w-[40%] md:pb-16 md:pt-20"
   >
-    <img src={logoImg.src} width={logoImg.width} height={logoImg.height} />
+    <img
+      src={logoImg.src}
+      width={logoImg.width}
+      height={logoImg.height}
+      alt={`${name} logo`}
+    />
     <div class="text-3xl text-white md:text-3xl-desktop">{description}</div>
     <a
       href={`/case-studies/${id}`}
@@ -86,6 +91,7 @@ const {
         ? `${desktopImg.default.src} 1x, ${desktopImg.x2.src} 2x`
         : undefined}
       class="desktop-img z-10 w-full md:absolute md:bottom-0 md:left-[40%] md:w-[60%]"
+      alt={`${name} image for desktop`}
     />
     {
       mobileImg && (
@@ -97,6 +103,7 @@ const {
               : undefined
           }
           class="absolute bottom-0 right-0 z-20 h-[110%] md:h-[65%] lg:h-[80%] xl:h-full"
+          alt={`${name} image for mobile`}
         />
       )
     }

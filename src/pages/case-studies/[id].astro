@@ -49,12 +49,18 @@ const {
     <img
       src={aboutBackgroundImage.src}
       class="absolute bottom-0 left-0 z-[-1] w-screen"
+      alt="About Us background"
     />
     <div
       class="container relative mb-4 mt-8 flex flex-col items-start justify-between md:mb-32 md:mt-24 md:flex-row"
     >
       <div class="relative z-10 mb-8 md:mb-0 md:w-[45%] lg:pt-[45px]">
-        <img src={logoImg.src} width={logoImg.width} height={logoImg.height} />
+        <img
+          src={logoImg.src}
+          width={logoImg.width}
+          height={logoImg.height}
+          alt={`${name} logo`}
+        />
         <div class="md:text-4xl-desktop my-4 text-4xl text-white">
           {title ?? description}
         </div>
@@ -84,6 +90,7 @@ const {
               width={pageTopImg?.default.width}
               height={pageTopImg?.default.height}
               src={pageTopImg?.default.src}
+              alt={`${name} image for top of the page`}
             />
           </div>
         )
