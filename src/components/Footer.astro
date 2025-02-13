@@ -1,43 +1,16 @@
 ---
-import birdsUpImage from '~/assets/images/new/birds-up.png';
 import SwiftInventionIcon from '~/assets/images/swift-white-logo.svg';
 
 import { NavRoutes } from '~/constants/routes.astro';
-import Button from './Button.astro';
-import Input from './Input.astro';
 import SocialNetworks from './SocialNetworks.astro';
+import ContactUsForm from './ContactUsForm.astro';
+
+const currentPath = Astro.url.pathname;
+const withForm = currentPath !== NavRoutes.careers.path;
 ---
 
 <footer class="container py-8 md:pt-16">
-  <div
-    class="max-md:contact-us-form md:contact-us-form-desktop flex flex-col gap-6 px-6 py-6 md:mb-16 md:flex-row md:py-16 md:pl-0 md:pr-16"
-  >
-    <div
-      class="flex flex-col items-center md:basis-[47.5%] md:flex-col-reverse md:items-start md:justify-between md:px-0"
-    >
-      <img src={birdsUpImage.src} class="relative z-10 w-[70%] md:w-[90%]" />
-      <div class="relative -mt-11 md:mt-0">
-        <div class="mb-2 text-6xl text-white md:text-6xl-desktop">
-          Let’s talk
-        </div>
-        <span class="text-lg text-white opacity-80 md:text-lg-desktop"
-          >Feel free to shoot us a message about your project and will reach
-          back to your shortly.</span
-        >
-      </div>
-    </div>
-    <form id="contact-us-form" class="flex flex-col gap-6 md:basis-[47.5%]">
-      <Input name="name" required placeholder="Name" />
-      <Input name="email" required placeholder="Email address" type="email" />
-      <Input name="phone" placeholder="Phone number" type="tel" />
-      <Input name="message" isTextarea required placeholder="Message" />
-      <Button
-        type="submit"
-        variant="orange"
-        classes="py-3 px-6 text-xl md:text-xl-desktop">Send message</Button
-      >
-    </form>
-  </div>
+  {withForm && <ContactUsForm />}
   <div class="mt-16 flex flex-col">
     <div
       class="mb-6 md:mb-8 md:flex md:items-center md:justify-between md:border-b md:border-white/10 md:pb-8"
@@ -66,7 +39,7 @@ import SocialNetworks from './SocialNetworks.astro';
       >
       <a
         class="text-sm font-medium text-gray-accentText"
-        href={'#contact-us-form'}>Contact us</a
+        href={'#contact__form'}>Contact us</a
       >
     </div>
     <div class="mb-8 border-b border-white/10 pb-8 md:hidden">
@@ -79,5 +52,4 @@ import SocialNetworks from './SocialNetworks.astro';
     </div>
   </div>
 </footer>
-
 <style></style>

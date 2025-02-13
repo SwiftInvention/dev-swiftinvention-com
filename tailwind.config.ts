@@ -4,48 +4,48 @@ export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     screens: defaultTheme.screens,
-    colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-      primaryCol1: '#000000', // black
-      primaryCol2: '#FFFFFF', // white
-      primaryCol3: '#FF7B53', // orange coral
-      secondaryCol1: '#F3F3F3', // gray concrete
-      secondaryCol2: '#D8D8D8', // gray alto
-      secondaryCol3: '#979797', // dusty gray
-      secondaryCol4: '#2D2D2D', // gray mineshaft lighter
-      secondaryCol5: '#212121', // gray mineshaft darker
-      secondaryCol6: '#C2C2C2',
-      primaryCol3WithOpacity: 'rgba(255, 123, 83, 0.05)',
-      surface: {
-        DEFAULT: '#020617',
-      },
-      title: {
-        DEFAULT: '#0F172A',
-      },
-      body: {
-        DEFAULT: '#1E293B',
-      },
-      subtle: {
-        DEFAULT: '#475569',
-      },
-      warning: {
-        DEFAULT: '#E03400',
-        500: '#FF5F2E',
-      },
-      white: '#fff',
-      gray: {
-        solid: '#334155',
-        accent: '#CBD5E1',
-        accentText: '#E2E8F0',
-      },
-    },
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     stroke: (theme: (arg0: string) => any) => ({
       orange: theme('colors.orange.coral'),
       black: theme('colors.black'),
     }),
     extend: {
+      colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
+        primaryCol1: '#000000', // black
+        primaryCol2: '#FFFFFF', // white
+        primaryCol3: '#FF7B53', // orange coral
+        secondaryCol1: '#F3F3F3', // gray concrete
+        secondaryCol2: '#D8D8D8', // gray alto
+        secondaryCol3: '#979797', // dusty gray
+        secondaryCol4: '#2D2D2D', // gray mineshaft lighter
+        secondaryCol5: '#212121', // gray mineshaft darker
+        secondaryCol6: '#C2C2C2',
+        primaryCol3WithOpacity: 'rgba(255, 123, 83, 0.05)',
+        surface: {
+          DEFAULT: '#020617',
+        },
+        title: {
+          DEFAULT: '#0F172A',
+        },
+        body: {
+          DEFAULT: '#1E293B',
+        },
+        subtle: {
+          DEFAULT: '#475569',
+        },
+        warning: {
+          DEFAULT: '#E03400',
+          500: '#FF5F2E',
+        },
+        white: '#fff',
+        gray: {
+          solid: '#334155',
+          accent: '#CBD5E1',
+          accentText: '#E2E8F0',
+        },
+      },
       borderRadius: {
         '2lg': '10px',
       },
