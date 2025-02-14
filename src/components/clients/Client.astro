@@ -1,7 +1,6 @@
 ---
-import ArrowRight from '~/assets/images/new/arrow-right.svg';
 import { Image } from 'astro:assets';
-import { getStackImageAltFromSrc } from '~/utilities/getStackImageAltFromSrc';
+import ArrowRight from '~/assets/images/new/arrow-right.svg';
 
 export interface Props {
   name: string;
@@ -46,8 +45,9 @@ const {
   <div
     class="relative z-10 flex flex-col gap-6 py-8 md:w-[40%] md:pb-16 md:pt-20"
   >
-    <img
-      src={logoImg.src}
+    <Image
+      format="webp"
+      src={logoImg}
       width={logoImg.width}
       height={logoImg.height}
       alt={`${name} logo`}
@@ -71,7 +71,7 @@ const {
                   height={52}
                   src={technologyImage.object}
                   class="h-[26px] w-[26px] object-contain"
-                  alt={getStackImageAltFromSrc(technologyImage.object.src)}
+                  alt={technologyImage.title + ' logo'}
                 />
               ) : (
                 <technologyImage.SvgComponent class="h-[26px] w-[26px]" />
@@ -85,8 +85,11 @@ const {
   <div
     class="relative -mx-12 sm:-ml-18 sm:-mr-12 md:absolute md:inset-0 md:mx-0"
   >
-    <img
-      src={desktopImg.default.src}
+    <Image
+      format="webp"
+      width={desktopImg.default.width}
+      height={desktopImg.default.height}
+      src={desktopImg.default}
       srcset={desktopImg.x2
         ? `${desktopImg.default.src} 1x, ${desktopImg.x2.src} 2x`
         : undefined}
@@ -95,8 +98,11 @@ const {
     />
     {
       mobileImg && (
-        <img
-          src={mobileImg.default.src}
+        <Image
+          format="webp"
+          width={mobileImg.default.width}
+          height={mobileImg.default.height}
+          src={mobileImg.default}
           srcset={
             mobileImg.x2
               ? `${mobileImg.default.src} 1x, ${mobileImg.x2.src} 2x`

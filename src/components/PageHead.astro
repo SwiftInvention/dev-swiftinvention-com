@@ -1,6 +1,7 @@
 ---
 import Button from '~/components/Button.astro';
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 
 interface Props {
   pageTitle: string;
@@ -48,11 +49,12 @@ const hasOpenedVacancies = !!vacancies.filter((v) => !v.data.disabled).length;
   }
   {
     image && (
-      <img
+      <Image
         class="hidden w-[30%] lg:block"
+        format="webp"
         width={image.width}
         height={image.height}
-        src={image.src}
+        src={image}
         alt="top page background"
       />
     )

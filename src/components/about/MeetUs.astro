@@ -1,6 +1,7 @@
 ---
 import SwiftInventionIcon from '~/assets/images/swift-white-logo.svg';
 import meetUsImage from '~/assets/images/new/meet-us.png';
+import { Image } from 'astro:assets';
 ---
 
 <div class="container relative mb-24 mt-8 pb-4 md:mb-32 md:mt-24">
@@ -24,8 +25,11 @@ import meetUsImage from '~/assets/images/new/meet-us.png';
       swiftly with precision and excellence.
     </div>
   </div>
-  <img
-    src={meetUsImage.src}
+  <Image
+    format="webp"
+    width={meetUsImage.width}
+    height={meetUsImage.height}
+    src={meetUsImage}
     class="absolute -top-20 right-0 h-[400px] max-w-[525px] md:h-auto md:w-[40%]"
     alt="Meet us"
   />

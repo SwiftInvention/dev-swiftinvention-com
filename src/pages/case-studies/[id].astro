@@ -11,7 +11,6 @@ import RocketTakeoffImage from '~/assets/images/new/about/rocket-takeoff.svg';
 import ChatLeftQuoteImage from '~/assets/images/new/about/chat-left-quote.svg';
 import aboutBackgroundImage from '~/assets/images/new/about/about-bg.png';
 import ShieldCheckImage from '~/assets/images/new/about/shield-check.svg';
-import { getStackImageAltFromSrc } from '~/utilities/getStackImageAltFromSrc';
 import { Image } from 'astro:assets';
 import ImageCarousel from '../../components/ImageCarousel.astro';
 import ButtonLink from '../../components/ButtonLink.astro';
@@ -46,8 +45,11 @@ const {
 
 <Layout>
   <div class="relative">
-    <img
-      src={aboutBackgroundImage.src}
+    <Image
+      format="webp"
+      width={aboutBackgroundImage.width}
+      height={aboutBackgroundImage.height}
+      src={aboutBackgroundImage}
       class="absolute bottom-0 left-0 z-[-1] w-screen"
       alt="About Us background"
     />
@@ -55,8 +57,9 @@ const {
       class="container relative mb-4 mt-8 flex flex-col items-start justify-between md:mb-32 md:mt-24 md:flex-row"
     >
       <div class="relative z-10 mb-8 md:mb-0 md:w-[45%] lg:pt-[45px]">
-        <img
-          src={logoImg.src}
+        <Image
+          format="webp"
+          src={logoImg}
           width={logoImg.width}
           height={logoImg.height}
           alt={`${name} logo`}
@@ -85,11 +88,12 @@ const {
       {
         pageTopImg && (
           <div class="w-full rounded-xl border border-white/[0.07] bg-white/[0.07] p-0.5 md:w-1/2 md:rounded-3xl md:p-4">
-            <img
+            <Image
               class="w-full rounded-xl md:rounded-3xl"
+              format="webp"
               width={pageTopImg?.default.width}
               height={pageTopImg?.default.height}
-              src={pageTopImg?.default.src}
+              src={pageTopImg?.default}
               alt={`${name} image for top of the page`}
             />
           </div>
@@ -164,7 +168,7 @@ const {
                           height={24}
                           src={technology.object}
                           class="mr-0.5 inline-block h-6 w-6 object-contain"
-                          alt={getStackImageAltFromSrc(technology.object.src)}
+                          alt={technology.title + ' logo'}
                         />
                       ) : (
                         <technology.SvgComponent class="mr-0.5 inline-block h-6 w-6" />

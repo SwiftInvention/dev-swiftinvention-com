@@ -2,11 +2,15 @@
 import spotlightBgImage from '~/assets/images/new/spotlight-bg.png';
 import Client from './clients/Client.astro';
 import { ClientsShort } from './../constants/clientsStack.astro';
+import { Image } from 'astro:assets';
 ---
 
 <div id="clients-block" class="relative pt-24 md:pt-32">
-  <img
-    src={spotlightBgImage.src}
+  <Image
+    format="webp"
+    width={spotlightBgImage.width}
+    height={spotlightBgImage.height}
+    src={spotlightBgImage}
     class="absolute left-0 top-0 z-0 w-full"
     alt="Spotlight background"
   />

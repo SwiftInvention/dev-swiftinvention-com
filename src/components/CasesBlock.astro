@@ -9,6 +9,7 @@ import pakiraLogoImage from '~/assets/images/new/logos/pakira-logo.png';
 import meeLogoImage from '~/assets/images/new/logos/mee-white.png';
 import ArrowRight from '~/assets/images/new/arrow-right.svg';
 import { NavRoutes } from '~/constants/routes.astro';
+import { Image } from 'astro:assets';
 ---
 
 <div class="container pb-6 md:pb-8">
@@ -16,18 +17,70 @@ import { NavRoutes } from '~/constants/routes.astro';
     id="case-studies-logos"
     class="case-studies-logos mb-0.5 mt-0 flex flex-wrap justify-center gap-x-8 gap-y-6 px-4 pb-8 pt-16 md:mt-20 md:gap-x-20 md:gap-y-8 md:pt-20"
   >
-    <img src={privoLogoImage.src} class="h-6 md:h-8" alt="Privo logo" />
-    <img src={vierallyLogoImage.src} class="h-6 md:h-8" alt="Vierally logo" />
-    <img src={plumcheckLogoImage.src} class="h-6 md:h-8" alt="plumcheck logo" />
-    <img src={eversanaLogoImage.src} class="h-6 md:h-8" alt="eversana logo" />
-    <img src={meeLogoImage.src} class="h-6 md:h-8" alt="mee logo" />
-    <img src={mbsLogoImage.src} class="h-6 md:h-8" alt="mbs logo" />
-    <img
-      src={blankslateLogoImage.src}
+    <Image
+      format="webp"
+      width={privoLogoImage.width}
+      height={privoLogoImage.height}
+      src={privoLogoImage}
+      class="h-6 md:h-8"
+      alt="Privo logo"
+    />
+    <Image
+      format="webp"
+      width={vierallyLogoImage.width}
+      height={vierallyLogoImage.height}
+      src={vierallyLogoImage}
+      class="h-6 md:h-8"
+      alt="Vierally logo"
+    />
+    <Image
+      format="webp"
+      width={plumcheckLogoImage.width}
+      height={plumcheckLogoImage.height}
+      src={plumcheckLogoImage}
+      class="h-6 md:h-8"
+      alt="plumcheck logo"
+    />
+    <Image
+      format="webp"
+      width={eversanaLogoImage.width}
+      height={eversanaLogoImage.height}
+      src={eversanaLogoImage}
+      class="h-6 md:h-8"
+      alt="eversana logo"
+    />
+    <Image
+      format="webp"
+      width={meeLogoImage.width}
+      height={meeLogoImage.height}
+      src={meeLogoImage}
+      class="h-6 md:h-8"
+      alt="mee logo"
+    />
+    <Image
+      format="webp"
+      width={mbsLogoImage.width}
+      height={mbsLogoImage.height}
+      src={mbsLogoImage}
+      class="h-6 md:h-8"
+      alt="mbs logo"
+    />
+    <Image
+      format="webp"
+      width={pakiraLogoImage.width}
+      height={pakiraLogoImage.height}
+      src={blankslateLogoImage}
       class="h-6 md:h-8"
       alt="blankslate logo"
     />
-    <img src={pakiraLogoImage.src} class="h-6 md:h-8" alt="pakira logo" />
+    <Image
+      format="webp"
+      width={pakiraLogoImage.width}
+      height={pakiraLogoImage.height}
+      src={pakiraLogoImage}
+      class="h-6 md:h-8"
+      alt="pakira logo"
+    />
   </div>
   <div class="case-studies-link flex justify-center py-4 md:py-8">
     <a

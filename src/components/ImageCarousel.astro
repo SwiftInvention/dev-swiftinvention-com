@@ -3,6 +3,7 @@ import ArrowRight from '~/assets/images/new/arrow-right.svg';
 import spotlightBgImage from '~/assets/images/new/spotlight-bg.png';
 import { type ClientPageProps } from '~/constants/clientsStack.astro';
 import ButtonLink from '~/components/ButtonLink.astro';
+import { Image } from 'astro:assets';
 
 type Props = Required<Pick<ClientPageProps, 'screenshotsInfo'>> &
   Pick<ClientPageProps, 'links' | 'name'>;
@@ -10,8 +11,11 @@ const { name, screenshotsInfo, links } = Astro.props;
 ---
 
 <div class="relative overflow-hidden py-24 md:py-32">
-  <img
-    src={spotlightBgImage.src}
+  <Image
+    format="webp"
+    width={spotlightBgImage.width}
+    height={spotlightBgImage.height}
+    src={spotlightBgImage}
     class="absolute -left-1/2 top-0 z-[-1] w-[200%] max-w-none md:left-0 md:w-full"
     alt="spotlight background"
   />
@@ -39,8 +43,11 @@ const { name, screenshotsInfo, links } = Astro.props;
           {
             screenshotsInfo.images.map((screenshot, index) => (
               <li class="box-border min-w-full overflow-hidden rounded-xl md:rounded-3xl">
-                <img
-                  src={screenshot.src}
+                <Image
+                  format="webp"
+                  width={screenshot.width}
+                  height={screenshot.height}
+                  src={screenshot}
                   class="w-full"
                   alt={`${name} screenshot ${index + 1}`}
                 />

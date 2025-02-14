@@ -4,6 +4,7 @@ import Input from './Input.astro';
 import birdsUpImage from '~/assets/images/new/birds-up.png';
 import CheckMarkIcon from '~/assets/images/new/check-mark.svg';
 import ExclamationTriangleIcon from '~/assets/images/new/exclamation-triangle-fill.svg';
+import { Image } from 'astro:assets';
 ---
 
 <div
@@ -15,8 +16,11 @@ import ExclamationTriangleIcon from '~/assets/images/new/exclamation-triangle-fi
   <div
     class="flex flex-col items-center md:basis-[47.5%] md:flex-col-reverse md:items-start md:justify-between md:px-0"
   >
-    <img
-      src={birdsUpImage.src}
+    <Image
+      format="webp"
+      width={birdsUpImage.width}
+      height={birdsUpImage.height}
+      src={birdsUpImage}
       class="relative z-10 w-[70%] md:w-[90%]"
       alt="Contact Us background"
     />

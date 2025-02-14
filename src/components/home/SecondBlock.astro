@@ -3,6 +3,7 @@ import infraMockupImage from '~/assets/images/new/infra-mockup.png';
 import iphoneMockupImage from '~/assets/images/new/iphone-mockup.png';
 import webappMockupImage from '~/assets/images/new/webapp-mockup.png';
 import websiteMockupImage from '~/assets/images/new/website-mockup.png';
+import { Image } from 'astro:assets';
 
 const Expertises = [
   {
@@ -53,8 +54,9 @@ const Expertises = [
         Expertises.map((expertise) => (
           <div class="md:w-[47.5%]">
             <div class="relative -left-12 xs:-left-16 md:-left-12 lg:-left-16">
-              <img
-                src={expertise.image.src}
+              <Image
+                format="webp"
+                src={expertise.image}
                 width={expertise.image.width}
                 height={expertise.image.height}
                 alt={expertise.imageAlt}
