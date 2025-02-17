@@ -12,23 +12,25 @@ const currentPath = Astro.url.pathname;
 <header class="fixed left-0 top-0 z-[100] w-screen bg-transparent">
   <nav>
     <div class="container">
-      <div class="flex h-18 items-center justify-between">
+      <div class="flex h-24 items-center justify-between">
         <div class="flex-shrink-0">
           <a href={'/'}>
             <SwiftInventionIcon class="h-6 w-[296px] cursor-pointer" />
           </a>
         </div>
         <div
-          class="hidden content-center items-center justify-end lg:flex lg:flex-1 lg:space-x-2"
+          class="hidden content-center items-center justify-end lg:flex lg:flex-1 lg:gap-x-2.5"
         >
           <a href={NavRoutes.services.path}>
             <div
               class:list={[
-                'group -mb-1 cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-base font-semibold text-primaryCol2 duration-200 hover:opacity-100 hover:transition-all',
+                'group -mb-1 cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-base font-semibold text-primaryCol2',
                 currentPath === NavRoutes.home.path ||
                 currentPath === NavRoutes.services.path
                   ? 'opacity-100'
                   : 'opacity-60',
+                currentPath === NavRoutes.home.path && 'hover:opacity-80',
+                currentPath !== NavRoutes.home.path && 'hover:opacity-100',
               ]}
             >
               {NavRoutes.services.name}
@@ -37,11 +39,13 @@ const currentPath = Astro.url.pathname;
           <a href={NavRoutes.caseStudies.path}>
             <div
               class:list={[
-                'group -mb-1 cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-base font-semibold text-primaryCol2 duration-200 hover:opacity-100 hover:transition-all',
+                'group -mb-1 cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-base font-semibold text-primaryCol2',
                 currentPath === NavRoutes.home.path ||
                 currentPath === NavRoutes.caseStudies.path
                   ? 'opacity-100'
                   : 'opacity-60',
+                currentPath === NavRoutes.home.path && 'hover:opacity-80',
+                currentPath !== NavRoutes.home.path && 'hover:opacity-100',
               ]}
             >
               {NavRoutes.caseStudies.name}
@@ -50,11 +54,13 @@ const currentPath = Astro.url.pathname;
           <a href={NavRoutes.careers.path}>
             <div
               class:list={[
-                'group -mb-1 cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-base font-semibold text-primaryCol2 duration-200 hover:opacity-100 hover:transition-all',
+                'group -mb-1 cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-base font-semibold text-primaryCol2',
                 currentPath === NavRoutes.home.path ||
                 currentPath === NavRoutes.careers.path
                   ? 'opacity-100'
                   : 'opacity-60',
+                currentPath === NavRoutes.home.path && 'hover:opacity-80',
+                currentPath !== NavRoutes.home.path && 'hover:opacity-100',
               ]}
             >
               {NavRoutes.careers.name}
@@ -63,18 +69,20 @@ const currentPath = Astro.url.pathname;
           <a href={NavRoutes.aboutUs.path}>
             <div
               class:list={[
-                'group -mb-1 cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-base font-semibold text-primaryCol2 duration-200 hover:opacity-100 hover:transition-all',
+                'group -mb-1 cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-base font-semibold text-primaryCol2',
                 currentPath === NavRoutes.home.path ||
                 currentPath === NavRoutes.aboutUs.path
                   ? 'opacity-100'
                   : 'opacity-60',
+                currentPath === NavRoutes.home.path && 'hover:opacity-80',
+                currentPath !== NavRoutes.home.path && 'hover:opacity-100',
               ]}
             >
               {NavRoutes.aboutUs.name}
             </div>
           </a>
-          <a class="lg:ml-5" href="#contact__form">
-            <Button classes="w-[154px]">Work with us</Button>
+          <a class="lg:ml-3.5" href="#contact__form">
+            <Button classes="w-[154px] h-11">Work with us</Button>
           </a>
         </div>
         <button

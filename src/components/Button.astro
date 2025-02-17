@@ -14,9 +14,9 @@ const { classes, type, variant = 'white', ...buttonProps } = Astro.props;
   class:list={[
     'flex items-center justify-center rounded-md px-2.5 py-2.5 text-sm font-semibold',
     variant === 'orange' &&
-      'border border-warning-500 bg-warning text-white hover:bg-warning/90 hover:text-white',
+      'hover:bg-warning-hover border border-warning-500 bg-warning text-white hover:border-warning',
     variant === 'white' &&
-      'border-none bg-primaryCol2 text-gray-solid hover:text-primaryCol1',
+      'not:hover:border-none bg-primaryCol2 text-gray-solid hover:border hover:border-white hover:bg-white/80',
     classes,
   ]}
   type={type ?? 'button'}

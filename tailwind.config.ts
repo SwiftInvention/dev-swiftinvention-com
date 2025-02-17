@@ -37,6 +37,7 @@ export default {
         },
         warning: {
           DEFAULT: '#E03400',
+          hover: '#B82B00',
           500: '#FF5F2E',
         },
         white: '#fff',
