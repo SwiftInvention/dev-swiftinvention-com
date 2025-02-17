@@ -1,6 +1,9 @@
 ---
 import { Image } from 'astro:assets';
 import ArrowRight from '~/assets/images/new/arrow-right.svg';
+import ResponsiveImage, {
+  type Props as ResponsiveImageProps,
+} from '../ResponsiveImage.astro';
 
 export interface Props {
   name: string;
@@ -34,6 +37,58 @@ const {
   technologies,
   classes,
 } = Astro.props;
+
+const desktopImagesConfig = [
+  desktopImg.x2 && {
+    image: desktopImg.x2,
+    sourceProps: {
+      type: 'image/webp',
+      media: '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx)',
+    },
+  },
+  desktopImg.x2 && {
+    image: desktopImg.x2,
+    sourceProps: {
+      media: '(min-device-pixel-ratio: 2)',
+      type: 'image/webp',
+    },
+  },
+  {
+    image: desktopImg.default,
+    sourceProps: {
+      media: '(max-device-pixel-ratio: 1)',
+      type: 'image/webp',
+    },
+  },
+].filter(Boolean) as ResponsiveImageProps['imagesConfig'];
+const mobileImagesConfig = (
+  mobileImg
+    ? [
+        mobileImg.x2 && {
+          image: mobileImg.x2,
+          sourceProps: {
+            type: 'image/webp',
+            media:
+              '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx)',
+          },
+        },
+        mobileImg.x2 && {
+          image: mobileImg.x2,
+          sourceProps: {
+            media: '(min-device-pixel-ratio: 2)',
+            type: 'image/webp',
+          },
+        },
+        {
+          image: mobileImg.default,
+          sourceProps: {
+            media: '(max-device-pixel-ratio: 1)',
+            type: 'image/webp',
+          },
+        },
+      ].filter(Boolean)
+    : []
+) as ResponsiveImageProps['imagesConfig'];
 ---
 
 <div
@@ -85,30 +140,18 @@ const {
   <div
     class="relative -mx-12 sm:-ml-18 sm:-mr-12 md:absolute md:inset-0 md:mx-0"
   >
-    <Image
+    <ResponsiveImage
+      imagesConfig={desktopImagesConfig}
       format="webp"
-      width={desktopImg.default.width}
-      height={desktopImg.default.height}
-      src={desktopImg.default}
-      srcset={desktopImg.x2
-        ? `${desktopImg.default.src} 1x, ${desktopImg.x2.src} 2x`
-        : undefined}
-      class="desktop-img z-10 w-full md:absolute md:bottom-0 md:left-[40%] md:w-[60%]"
+      classes="desktop-img z-10 w-full md:absolute md:bottom-0 md:left-[40%] md:w-[60%]"
       alt={`${name} image for desktop`}
     />
     {
       mobileImg && (
-        <Image
+        <ResponsiveImage
+          imagesConfig={mobileImagesConfig}
           format="webp"
-          width={mobileImg.default.width}
-          height={mobileImg.default.height}
-          src={mobileImg.default}
-          srcset={
-            mobileImg.x2
-              ? `${mobileImg.default.src} 1x, ${mobileImg.x2.src} 2x`
-              : undefined
-          }
-          class="absolute bottom-0 right-0 z-20 h-[110%] md:h-[65%] lg:h-[80%] xl:h-full"
+          classes="absolute bottom-0 right-0 z-20 h-[110%] md:h-[65%] lg:h-[80%] xl:h-full"
           alt={`${name} image for mobile`}
         />
       )

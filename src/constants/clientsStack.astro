@@ -42,13 +42,19 @@ import meeMobile2xImage from '~/assets/images/new/devices/mee-mobile-2x.png';
 import meeMobileImage from '~/assets/images/new/devices/mee-mobile.png';
 import meeLaptopImage from '~/assets/images/new/devices/mee.png';
 import pakiraLaptopImage from '~/assets/images/new/devices/pakira-desktop.png';
+import pakiraLaptop2xImage from '~/assets/images/new/devices/pakira-desktop-2x.png';
 import pakiraMobileImage from '~/assets/images/new/devices/pakira-mobile.png';
+import pakiraMobile2xImage from '~/assets/images/new/devices/pakira-mobile-2x.png';
 import plumcheckLaptopImage from '~/assets/images/new/devices/plumcheck-desktop.png';
+import plumcheckLaptop2xImage from '~/assets/images/new/devices/plumcheck-desktop-2x.png';
 import plumcheckMobileImage from '~/assets/images/new/devices/plumcheck-mobile.png';
-import privoLaptopImage from '~/assets/images/new/devices/privo-2x.png';
+import plumcheckMobile2xImage from '~/assets/images/new/devices/plumcheck-mobile-2x.png';
+import privoLaptop2xImage from '~/assets/images/new/devices/privo-2x.png';
+import privoLaptopImage from '~/assets/images/new/devices/privo.png';
 import quanthealthLaptop2xImage from '~/assets/images/new/devices/quanthealth-2x.png';
 import quanthealthLaptopImage from '~/assets/images/new/devices/quanthealth.png';
 import vierallyLaptopImage from '~/assets/images/new/devices/vierally-desktop.png';
+import vierallyLaptop2xImage from '~/assets/images/new/devices/vierally-desktop-2x.png';
 import vierallyMobile2xImage from '~/assets/images/new/devices/vierally-mobile-2x.png';
 import vierallyMobileImage from '~/assets/images/new/devices/vierally-mobile.png';
 import blankSlateLogoImage from '~/assets/images/new/logos/blankslate-white.png';
@@ -117,7 +123,7 @@ export type ClientPageProps = ClientProps & {
 };
 export const ClientsShort: ClientPageProps[] = [
   {
-    desktopImg: { default: privoLaptopImage },
+    desktopImg: { default: privoLaptopImage, x2: privoLaptop2xImage },
     logoImg: privoLogoImage,
     pageTopImg: { default: privoPageImage },
     description: 'Children’s online identity & consent management',
@@ -167,7 +173,7 @@ export const ClientsShort: ClientPageProps[] = [
       'bg-[#005A88] md:[&_.desktop-img]:bottom-[-30px] md:[&_.desktop-img]:w-[70%] ',
   },
   {
-    desktopImg: { default: vierallyLaptopImage },
+    desktopImg: { default: vierallyLaptopImage, x2: vierallyLaptop2xImage },
     logoImg: vierallyLogoImage,
     mobileImg: { default: vierallyMobileImage, x2: vierallyMobile2xImage },
     description: 'AI tool to predict virality and maximize marketing ROI',
@@ -206,9 +212,9 @@ export const ClientsShort: ClientPageProps[] = [
   },
   {
     pageTopImg: { default: plumcheckPageImage },
-    desktopImg: { default: plumcheckLaptopImage },
+    desktopImg: { default: plumcheckLaptopImage, x2: plumcheckLaptop2xImage },
     logoImg: plumcheckLogoImage,
-    mobileImg: { default: plumcheckMobileImage },
+    mobileImg: { default: plumcheckMobileImage, x2: plumcheckMobile2xImage },
     description:
       'Allow dating and social media app users to share verified ID and health information',
     subtitle: 'PlumCheck empowers people to safely share personal information.',
@@ -264,8 +270,8 @@ export const ClientsShort: ClientPageProps[] = [
 
 export const ClientsAll: ClientPageProps[] = [
   {
-    desktopImg: { default: pakiraLaptopImage },
-    mobileImg: { default: pakiraMobileImage },
+    desktopImg: { default: pakiraLaptopImage, x2: pakiraLaptop2xImage },
+    mobileImg: { default: pakiraMobileImage, x2: pakiraMobile2xImage },
     logoImg: pakiraLogoImage,
     description:
       'SaaS industry directory, chat, forum, and order tracking for businesses in the wholesale wood industry',

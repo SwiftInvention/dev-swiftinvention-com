@@ -1,21 +1,8 @@
 ---
-import { getImage } from 'astro:assets';
 import homeFirstBlockDesktopImage from '~/assets/images/new/home-first-block-desktop.png';
 import homeFirstBlockImage from '~/assets/images/new/home-first-block.png';
 import Button from '../Button.astro';
-
-const homeFirstBlockDesktopAStroImage = await getImage({
-  src: homeFirstBlockDesktopImage,
-  format: 'webp',
-  width: homeFirstBlockDesktopImage.width,
-  height: homeFirstBlockDesktopImage.height,
-});
-const homeFirstBlockAstroImage = await getImage({
-  src: homeFirstBlockImage,
-  format: 'webp',
-  width: homeFirstBlockImage.width,
-  height: homeFirstBlockImage.height,
-});
+import ResponsiveImage from '../ResponsiveImage.astro';
 ---
 
 <div
@@ -39,23 +26,21 @@ const homeFirstBlockAstroImage = await getImage({
       >
     </a>
   </div>
-  <picture>
-    <source
-      type="image/webp"
-      media="(min-width:768px)"
-      srcset={homeFirstBlockDesktopAStroImage.src}
-    />
-    <source
-      type="image/webp"
-      media="(max-width: 767px)"
-      srcset={homeFirstBlockAstroImage.src}
-    />
-    <img
-      src={homeFirstBlockAstroImage.src}
-      class="relative z-0 md:absolute md:right-[130px] md:top-[144px] md:max-w-[50%]"
-      alt="Technologies and graphics image"
-    />
-  </picture>
+  <ResponsiveImage
+    imagesConfig={[
+      {
+        image: homeFirstBlockDesktopImage,
+        sourceProps: { type: 'image/webp', media: '(min-width:768px)' },
+      },
+      {
+        image: homeFirstBlockImage,
+        sourceProps: { type: 'image/webp', media: '(max-width:767px)' },
+      },
+    ]}
+    format="webp"
+    classes="relative z-0 md:absolute md:right-[130px] md:top-[144px] md:max-w-[50%]"
+    alt="Technologies and graphics image"
+  />
 </div>
 <script>
   import { gsap } from 'gsap';

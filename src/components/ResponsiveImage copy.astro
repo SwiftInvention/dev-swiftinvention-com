@@ -2,7 +2,7 @@
 import { getImage } from 'astro:assets';
 import type {HTMLAttributes} from 'astro/types';
 
-export interface Props {
+interface Props {
   imagesConfig: {
     image: ImageMetadata;
     sourceProps: HTMLAttributes<'source'>;
@@ -28,7 +28,7 @@ const astroImages = await Promise.all(imagesConfig.map(imageConfig => getImage({
       srcset={astroImage.src}
     />))}
   <img
-    src={astroImages[astroImages.length - 1].src}
+    src={astroImages[0].src}
     class={classes}
     alt={alt}
   />
