@@ -4,7 +4,7 @@ import javaImage from '~/assets/images/stack/java.png';
 import rustImage from '~/assets/images/stack/rust.png';
 import tsImage from '~/assets/images/stack/ts.png';
 import jsImage from '~/assets/images/stack/js.png';
-import zioImage from '~/assets/images/stack/zio.png';
+import zioImage from '~/assets/images/stack/zio.svg';
 import akkaImage from '~/assets/images/stack/akka.svg';
 import grafanaImage from '~/assets/images/stack/grafana.svg';
 import gatlingImage from '~/assets/images/stack/gatling.svg';

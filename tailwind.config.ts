@@ -91,20 +91,108 @@ export default {
         65: '.65',
       },
       fontSize: {
-        lg: ['1rem', '1.5rem'],
-        'lg-desktop': ['1.125rem', '1.75rem'],
-        xl: ['1.0625rem', '1.5rem', 600],
-        'xl-desktop': ['1.25rem', '1.9375rem', 600],
-        '2xl': ['1.25rem', '1.875rem', 600],
-        '2xl-desktop': ['1.5rem', '2rem', 600],
-        '2.5xl': ['1.75rem', '2rem'],
-        '3xl': ['1.375rem', '2rem', 600],
-        '3xl-desktop': ['1.875rem', '2.5rem', 600],
-        '6xl': ['2.25rem', '3rem', 600],
-        '6xl-desktop': ['3.75rem', '4.25rem', 600],
-        '7xl': ['3rem', '3.5rem', 600],
-        '7xl-desktop': ['4.5rem', '5rem', 600],
-        '9xl-desktop': ['8rem', '8.5rem', 700],
+        lg: [
+          '1rem',
+          {
+            lineHeight: '1.5rem',
+            letterSpacing: '0.08px',
+          },
+        ],
+        'lg-desktop': [
+          '1.125rem',
+          {
+            lineHeight: '1.75rem',
+            letterSpacing: '0.09px',
+          },
+        ],
+        xl: [
+          '1.0625rem',
+          {
+            lineHeight: '1.5rem',
+            fontWeight: '600',
+            letterSpacing: '0.09px',
+          },
+        ],
+        'xl-desktop': [
+          '1.25rem',
+          {
+            lineHeight: '1.9375rem',
+            fontWeight: '600',
+            letterSpacing: '0.1px',
+          },
+        ],
+        '2xl': [
+          '1.25rem',
+          {
+            lineHeight: '1.875rem',
+            fontWeight: '600',
+            letterSpacing: '0.1px',
+          },
+        ],
+        '2xl-desktop': [
+          '1.5rem',
+          {
+            lineHeight: '2rem',
+            fontWeight: '600',
+            letterSpacing: '0.12px',
+          },
+        ],
+        '3xl': [
+          '1.375rem',
+          {
+            lineHeight: '2rem',
+            fontWeight: '600',
+            letterSpacing: '0.11px',
+          },
+        ],
+        '3xl-desktop': [
+          '1.875rem',
+          {
+            lineHeight: '2.5rem',
+            fontWeight: '600',
+            letterSpacing: '0.15px',
+          },
+        ],
+        '6xl': [
+          '2.25rem',
+          {
+            lineHeight: '3rem',
+            fontWeight: '600',
+            letterSpacing: '0.18px',
+          },
+        ],
+        '6xl-desktop': [
+          '3.75rem',
+          {
+            lineHeight: '4.25rem',
+            fontWeight: '600',
+            letterSpacing: '0.3px',
+          },
+        ],
+        '7xl': [
+          '3rem',
+          {
+            lineHeight: '3.5rem',
+            fontWeight: '600',
+            letterSpacing: '0.24px',
+          },
+        ],
+        '7xl-desktop': [
+          '4.5rem',
+          {
+            lineHeight: '5rem',
+            fontWeight: '600',
+            letterSpacing: '0.36px',
+          },
+        ],
+        '9xl-desktop': [
+          '8rem',
+          {
+            lineHeight: '8.5rem',
+            fontWeight: '700',
+            letterSpacing: '0.64px',
+          },
+        ],
       },
       fontFamily: {
         sans: ['Akzidenz-Grotesk', ...defaultTheme.fontFamily.sans],
