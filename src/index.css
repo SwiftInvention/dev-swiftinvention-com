@@ -104,14 +104,19 @@
     left: 0;
     right: 0;
     height: 100%; /* Adjust height to cover the bottom stroke */
-    background: linear-gradient(to top, rgb(2, 6, 23, 255) 0%, transparent 100%);
     z-index: 1; /* Ensure it sits above the text */
     pointer-events: none; /* Let text interactions pass through */
+  }
+  .transparent-number:after {
+    background: linear-gradient(to top, rgb(2, 6, 23, 1) 0%, transparent 100%);
+  }
+  .transparent-text:after {
+    background: linear-gradient(to top, rgb(2, 6, 23, 1) 15%, transparent 100%);
   }
 
   .transparent-number {
     position: relative;
-    background: linear-gradient(180deg, var(--alpha-light-15, rgba(255, 255, 255, 0.15)) 21.9%, var(--alpha-dark-0, rgba(15, 23, 42, 0.00)) 73.55%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 21.9%, rgba(15, 23, 42, 0.00) 73.55%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

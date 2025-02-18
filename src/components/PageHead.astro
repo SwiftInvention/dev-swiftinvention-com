@@ -7,20 +7,24 @@ interface Props {
   pageTitle: string;
   title: string;
   subtitle: string;
+  classes?: string;
   image?: ImageMetadata;
 }
-const { pageTitle, title, subtitle, image } = Astro.props;
+const { pageTitle, title, subtitle, image, classes } = Astro.props;
 
 const vacancies = await getCollection('vacancies');
 const hasOpenedVacancies = !!vacancies.filter((v) => !v.data.disabled).length;
 ---
 
 <div
-  class="container relative mt-8 flex flex-col items-start justify-between pb-4 md:mt-24 md:flex-row"
+  class:list={[
+    'container relative mt-8 flex flex-col items-start justify-between pb-4 md:mt-24 md:flex-row',
+    classes,
+  ]}
 >
   <div
     id="page-head-block__text"
-    class="relative z-10 mb-4 opacity-0 md:mb-0 md:w-[60%]"
+    class="relative z-10 mb-4 max-w-[910px] opacity-0 md:mb-0"
   >
     <div class="">
       <div class="transparent-text inline-block text-7xl md:text-9xl-desktop">
@@ -31,7 +35,7 @@ const hasOpenedVacancies = !!vacancies.filter((v) => !v.data.disabled).length;
       class="mb-4 text-4xl text-white md:mt-1.5 md:text-7xl-desktop"
       set:html={title}
     />
-    <div class="text-xl text-white opacity-80 md:text-xl-desktop">
+    <div class="text-xl !font-normal text-white opacity-80 md:text-xl-desktop">
       {subtitle}
     </div>
   </div>
