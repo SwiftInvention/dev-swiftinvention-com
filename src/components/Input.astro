@@ -14,7 +14,7 @@ const {
   ...inputProps
 } = Astro.props;
 const generalClasses =
-  'transition-all relative bg-transparent z-10 w-full py-2.5 px-4 pt-[26px] text-base rounded-lg focus:outline-0';
+  'transition-all relative bg-transparent z-10 w-full py-2.5 px-4 pt-[24px] text-base rounded-lg focus:outline-0';
 ---
 
 <div
@@ -27,7 +27,7 @@ const generalClasses =
     placeholder && (
       <span
         data-input-custom-placeholder
-        class="leading-1 absolute left-[17px] top-[25px] text-base text-subtle transition-all"
+        class="absolute left-[17px] top-[20px] text-base leading-none text-subtle transition-all"
       >
         {placeholder}
       </span>
@@ -44,7 +44,7 @@ const generalClasses =
       <input
         data-input-custom
         type={type ?? 'text'}
-        class:list={[generalClasses, 'h-18']}
+        class:list={[generalClasses, 'h-14']}
         {...inputProps}
       />
     )
@@ -66,8 +66,8 @@ const generalClasses =
           (attr) => attr.name === 'data-input-custom-placeholder'
         )
       ) {
-        placeholderEl.classList.add('text-xs', '-translate-y-[15px]');
-        input.classList.add('pt-[26px]');
+        placeholderEl.classList.add('text-xs', '-translate-y-[10px]');
+        input.classList.add('pt-[24px]');
       }
     })
   );
@@ -83,8 +83,8 @@ const generalClasses =
           (attr) => attr.name === 'data-input-custom-placeholder'
         )
       ) {
-        placeholderEl.classList.remove('text-xs', '-translate-y-[15px]');
-        input.classList.remove('pt-[26px]');
+        placeholderEl.classList.remove('text-xs', '-translate-y-[10px]');
+        input.classList.remove('pt-[24px]');
       }
     })
   );

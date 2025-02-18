@@ -17,70 +17,86 @@ import { Image } from 'astro:assets';
     id="case-studies-logos"
     class="case-studies-logos mb-0.5 mt-0 flex flex-wrap justify-center gap-x-8 gap-y-6 px-4 pb-8 pt-16 md:mt-20 md:gap-x-20 md:gap-y-8 md:pt-20"
   >
-    <Image
-      format="webp"
-      width={privoLogoImage.width}
-      height={privoLogoImage.height}
-      src={privoLogoImage}
-      class="h-6 md:h-8"
-      alt="Privo logo"
-    />
-    <Image
-      format="webp"
-      width={vierallyLogoImage.width}
-      height={vierallyLogoImage.height}
-      src={vierallyLogoImage}
-      class="h-6 md:h-8"
-      alt="Vierally logo"
-    />
-    <Image
-      format="webp"
-      width={plumcheckLogoImage.width}
-      height={plumcheckLogoImage.height}
-      src={plumcheckLogoImage}
-      class="h-6 md:h-8"
-      alt="plumcheck logo"
-    />
-    <Image
-      format="webp"
-      width={eversanaLogoImage.width}
-      height={eversanaLogoImage.height}
-      src={eversanaLogoImage}
-      class="h-6 md:h-8"
-      alt="eversana logo"
-    />
-    <Image
-      format="webp"
-      width={meeLogoImage.width}
-      height={meeLogoImage.height}
-      src={meeLogoImage}
-      class="h-6 md:h-8"
-      alt="mee logo"
-    />
-    <Image
-      format="webp"
-      width={mbsLogoImage.width}
-      height={mbsLogoImage.height}
-      src={mbsLogoImage}
-      class="h-6 md:h-8"
-      alt="mbs logo"
-    />
-    <Image
-      format="webp"
-      width={pakiraLogoImage.width}
-      height={pakiraLogoImage.height}
-      src={blankslateLogoImage}
-      class="h-6 md:h-8"
-      alt="blankslate logo"
-    />
-    <Image
-      format="webp"
-      width={pakiraLogoImage.width}
-      height={pakiraLogoImage.height}
-      src={pakiraLogoImage}
-      class="h-6 md:h-8"
-      alt="pakira logo"
-    />
+    <div class="flex h-6 items-center md:h-8">
+      <Image
+        format="webp"
+        width={privoLogoImage.width}
+        height={privoLogoImage.height}
+        src={privoLogoImage}
+        alt="Privo logo"
+        class="max-h-[1.5rem] max-w-[200px] object-contain md:max-h-[2rem]"
+      />
+    </div>
+    <div class="flex h-6 items-center md:h-8">
+      <Image
+        format="webp"
+        width={vierallyLogoImage.width}
+        height={vierallyLogoImage.height}
+        src={vierallyLogoImage}
+        alt="Vierally logo"
+        class="max-h-[1.5rem] max-w-[200px] object-contain md:max-h-[2rem]"
+      />
+    </div>
+    <div class="flex h-6 items-center md:h-8">
+      <Image
+        format="webp"
+        width={plumcheckLogoImage.width}
+        height={plumcheckLogoImage.height}
+        src={plumcheckLogoImage}
+        alt="plumcheck logo"
+        class="max-h-[1.5rem] max-w-[200px] object-contain md:max-h-[2rem]"
+      />
+    </div>
+    <div class="flex h-6 items-center md:h-8">
+      <Image
+        format="webp"
+        width={eversanaLogoImage.width}
+        height={eversanaLogoImage.height}
+        src={eversanaLogoImage}
+        alt="eversana logo"
+        class="max-h-[1.5rem] max-w-[200px] object-contain md:max-h-[2rem]"
+      />
+    </div>
+    <div class="flex h-6 items-center md:h-8">
+      <Image
+        format="webp"
+        width={meeLogoImage.width}
+        height={meeLogoImage.height}
+        src={meeLogoImage}
+        alt="mee logo"
+        class="max-h-[1.5rem] max-w-[200px] object-contain md:max-h-[2rem]"
+      />
+    </div>
+    <div class="flex h-6 items-center md:h-8">
+      <Image
+        format="webp"
+        width={mbsLogoImage.width}
+        height={mbsLogoImage.height}
+        src={mbsLogoImage}
+        alt="mbs logo"
+        class="max-h-[1.5rem] max-w-[200px] object-contain md:max-h-[2rem]"
+      />
+    </div>
+    <div class="flex h-6 items-center md:h-8">
+      <Image
+        format="webp"
+        width={blankslateLogoImage.width}
+        height={blankslateLogoImage.height}
+        src={blankslateLogoImage}
+        alt="blankslate logo"
+        class="max-h-[1.5rem] max-w-[200px] object-contain md:max-h-[2rem]"
+      />
+    </div>
+    <div class="flex h-6 items-center md:h-8">
+      <Image
+        format="webp"
+        width={pakiraLogoImage.width}
+        height={pakiraLogoImage.height}
+        src={pakiraLogoImage}
+        alt="pakira logo"
+        class="max-h-[1.5rem] max-w-[200px] object-contain md:max-h-[2rem]"
+      />
+    </div>
   </div>
   <div class="case-studies-link flex justify-center py-4 md:py-8">
     <a
@@ -99,7 +115,7 @@ import { Image } from 'astro:assets';
 
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.from('#case-studies-logos>img', {
+  gsap.from('#case-studies-logos>*', {
     scrollTrigger: '#case-studies-logos',
     opacity: 0,
     delay: 0.5,
