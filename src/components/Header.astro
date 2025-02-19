@@ -43,7 +43,7 @@ const currentPath = Astro.url.pathname;
               class:list={[
                 'group -mb-1 cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-base font-semibold text-primaryCol2',
                 currentPath === NavRoutes.home.path ||
-                currentPath === NavRoutes.caseStudies.path
+                currentPath.includes(NavRoutes.caseStudies.path)
                   ? 'opacity-100'
                   : 'opacity-60',
                 currentPath === NavRoutes.home.path && 'hover:opacity-80',
@@ -58,7 +58,7 @@ const currentPath = Astro.url.pathname;
               class:list={[
                 'group -mb-1 cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-base font-semibold text-primaryCol2',
                 currentPath === NavRoutes.home.path ||
-                currentPath === NavRoutes.careers.path
+                currentPath.includes(NavRoutes.careers.path)
                   ? 'opacity-100'
                   : 'opacity-60',
                 currentPath === NavRoutes.home.path && 'hover:opacity-80',

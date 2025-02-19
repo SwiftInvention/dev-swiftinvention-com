@@ -2,7 +2,6 @@
 // stack
 import AnsibleImage from '~/assets/images/stack/ansible.svg';
 import AwsImage from '~/assets/images/stack/aws.svg';
-import FigmaImage from '~/assets/images/stack/figma.svg';
 import GcpImage from '~/assets/images/stack/gcp.svg';
 import GrafanaImage from '~/assets/images/stack/grafana.svg';
 import grpcImage from '~/assets/images/stack/grpc.png';
@@ -20,14 +19,22 @@ import quillImage from '~/assets/images/stack/quill.png';
 import ReactImage from '~/assets/images/stack/reactnative.svg';
 import rustImage from '~/assets/images/stack/rust.png';
 import scalaImage from '~/assets/images/stack/scala.png';
-import ScriptableImage from '~/assets/images/stack/scriptable.svg';
+import RestImage from '~/assets/images/stack/rest.svg';
 import SinglestoreImage from '~/assets/images/stack/singlestore.svg';
 import TerraformImage from '~/assets/images/stack/terraform.svg';
 import TrpcImage from '~/assets/images/stack/trpc.svg';
 import tsImage from '~/assets/images/stack/ts.png';
 import typeormImage from '~/assets/images/stack/typeorm.png';
-import ViteImage from '~/assets/images/stack/vite.svg';
 import ZioImage from '~/assets/images/stack/zio.svg';
+import HtmlTagImage from '~/assets/images/stack/html-tag.svg';
+import NightwatchjsImage from '~/assets/images/stack/nightwatchjs.svg';
+import DbImage from '~/assets/images/stack/db.svg';
+import IstioImage from '~/assets/images/stack/istio.svg';
+import ZapImage from '~/assets/images/stack/zap.svg';
+import goImage from '~/assets/images/stack/go.png';
+import openidImage from '~/assets/images/stack/openid.png';
+import irohImage from '~/assets/images/stack/iroh.png';
+import WillowImage from '~/assets/images/stack/willow.svg';
 
 // clients
 import pakiraLogoImage from '~/assets/images/logos/pakira-logo.svg';
@@ -77,6 +84,13 @@ import plumCheckScreenshot1Image from '~/assets/images/new/screenshots/PlumCheck
 import plumCheckScreenshot2Image from '~/assets/images/new/screenshots/PlumCheck-screenshot-2.png';
 import plumCheckScreenshot3Image from '~/assets/images/new/screenshots/PlumCheck-screenshot-3.png';
 import privoScreenshot1Image from '~/assets/images/new/screenshots/Privo screenshot - 1.png';
+import privoScreenshot2Image from '~/assets/images/new/screenshots/Privo screenshot - 2.png';
+import privoScreenshot3Image from '~/assets/images/new/screenshots/Privo screenshot - 3.png';
+import privoScreenshot4Image from '~/assets/images/new/screenshots/Privo screenshot - 4.png';
+import privoScreenshot5Image from '~/assets/images/new/screenshots/Privo screenshot - 5.png';
+import privoScreenshot6Image from '~/assets/images/new/screenshots/Privo screenshot - 6.png';
+import privoScreenshot7Image from '~/assets/images/new/screenshots/Privo screenshot - 7.png';
+import privoScreenshot8Image from '~/assets/images/new/screenshots/Privo screenshot - 8.png';
 import mbsScreenshot1Image from '~/assets/images/new/screenshots/MBSM screenshot - 1.png';
 import mbsScreenshot2Image from '~/assets/images/new/screenshots/MBSM screenshot - 2.png';
 import mbsScreenshot3Image from '~/assets/images/new/screenshots/MBSM screenshot - 3.png';
@@ -87,11 +101,16 @@ import meeScreenshot4Image from '~/assets/images/new/screenshots/Mee screenshot 
 
 import plumcheckPageImage from '~/assets/images/new/clients/plumcheck-page.png';
 import mbsPageImage from '~/assets/images/new/clients/mbs-page.png';
+import mbsPage2xImage from '~/assets/images/new/clients/mbs-page-2x.png';
 import meePageImage from '~/assets/images/new/clients/mee-page.png';
+import meePage2xImage from '~/assets/images/new/clients/mee-page-2x.png';
 import privoPageImage from '~/assets/images/new/clients/privo-page.png';
+import privoPage2xImage from '~/assets/images/new/clients/privo-page-2x.png';
 import pakiraPageImage from '~/assets/images/new/clients/pakira-page.png';
 import vierallyPageImage from '~/assets/images/new/clients/vierally-page.png';
+import vierallyPagex2Image from '~/assets/images/new/clients/vierally-page-2x.png';
 import blankslatePageImage from '~/assets/images/new/clients/blankslate-page.png';
+import blankslatePage2xImage from '~/assets/images/new/clients/blankslate-page-2x.png';
 import eversanaPageImage from '~/assets/images/new/clients/eversana-page.png';
 import quanthealthPageImage from '~/assets/images/new/clients/quanthealth-page.png';
 
@@ -105,7 +124,7 @@ export type ClientPageProps = ClientProps & {
     text: string;
     author: { avatar?: ImageMetadata; name: string; position: string };
   };
-  pageTopImg?: { default: ImageMetadata };
+  pageTopImg?: { default: ImageMetadata; x2?: ImageMetadata };
   screenshotsInfo?: {
     subtitle: string;
     images: ImageMetadata[];
@@ -125,7 +144,7 @@ export const ClientsShort: ClientPageProps[] = [
   {
     desktopImg: { default: privoLaptopImage, x2: privoLaptop2xImage },
     logoImg: privoLogoImage,
-    pageTopImg: { default: privoPageImage },
+    pageTopImg: { default: privoPageImage, x2: privoPage2xImage },
     description: 'Children’s online identity & consent management',
     name: 'Privo',
     title: 'Privacy Compliance, Age Verification & Consent Management',
@@ -141,7 +160,16 @@ export const ClientsShort: ClientPageProps[] = [
     screenshotsInfo: {
       subtitle:
         'We developed a web application that allows users to verify their identity, and connect their healthcare provider accounts to share verified health information. We continue to maintain and enhance the solution.',
-      images: [privoScreenshot1Image],
+      images: [
+        privoScreenshot1Image,
+        privoScreenshot2Image,
+        privoScreenshot3Image,
+        privoScreenshot4Image,
+        privoScreenshot5Image,
+        privoScreenshot6Image,
+        privoScreenshot7Image,
+        privoScreenshot8Image,
+      ],
     },
     links: ['privo.com'],
     id: 'privo',
@@ -162,12 +190,22 @@ export const ClientsShort: ClientPageProps[] = [
       { id: 'design', title: 'UI/UX design' },
     ],
     technologies: [
+      { title: 'Rust', object: rustImage },
       { title: 'Scala', object: scalaImage },
-      { title: 'java', object: javaImage },
-      { title: 'grpc', object: grpcImage },
-      { title: 'Aws', SvgComponent: AwsImage },
-      { title: 'Grafana', SvgComponent: GrafanaImage },
+      { title: 'Java', object: javaImage },
       { title: 'React', SvgComponent: ReactImage },
+      { title: 'REST', SvgComponent: RestImage },
+      { title: 'Grpc', object: grpcImage },
+      { title: 'Amazon Keyspaces', SvgComponent: HtmlTagImage },
+      { title: 'Nightwatch', SvgComponent: NightwatchjsImage },
+      { title: 'Aws', SvgComponent: AwsImage },
+      { title: 'Microservices', SvgComponent: DbImage },
+      { title: 'Istio', SvgComponent: IstioImage },
+      { title: 'Zap', SvgComponent: ZapImage },
+      { title: 'Go', object: goImage },
+      { title: 'Openid', object: openidImage },
+      { title: 'Grafana', SvgComponent: GrafanaImage },
+      { title: 'Terraform', SvgComponent: TerraformImage },
     ],
     classes:
       'bg-[#005A88] md:[&_.desktop-img]:bottom-[-30px] md:[&_.desktop-img]:w-[70%] ',
@@ -178,7 +216,7 @@ export const ClientsShort: ClientPageProps[] = [
     mobileImg: { default: vierallyMobileImage, x2: vierallyMobile2xImage },
     description: 'AI tool to predict virality and maximize marketing ROI',
     name: 'VieRally',
-    pageTopImg: { default: vierallyPageImage },
+    pageTopImg: { default: vierallyPageImage, x2: vierallyPagex2Image },
     subtitle:
       'VieRally is the cutting edge platform for Predictive Viral Marketing.',
     links: ['vierally.com'],
@@ -315,7 +353,7 @@ export const ClientsAll: ClientPageProps[] = [
     logoImg: meeLogoImage,
     description: 'A human-centered user experience for the internet',
     name: 'Mee',
-    pageTopImg: { default: meePageImage },
+    pageTopImg: { default: meePageImage, x2: meePage2xImage },
     title:
       'Mee is about putting you in control of your data relationships with other people and companies.',
     subtitle:
@@ -349,12 +387,10 @@ export const ClientsAll: ClientPageProps[] = [
       { id: 'design', title: 'UI/UX design' },
     ],
     technologies: [
+      { title: 'Willow', SvgComponent: WillowImage },
       { title: 'React', SvgComponent: ReactImage },
-      { title: 'Vite', SvgComponent: ViteImage },
+      { title: 'Iroh', object: irohImage },
       { title: 'Rust', object: rustImage },
-      { title: 'Javascript', object: jsImage },
-      { title: 'Typescript', object: tsImage },
-      { title: 'Figma', SvgComponent: FigmaImage },
     ],
     classes: 'bg-[#4F868E]',
   },
@@ -363,7 +399,7 @@ export const ClientsAll: ClientPageProps[] = [
     logoImg: mbsLogoImage,
     description: 'The Meeting app designed for musicians',
     name: 'MyBlueSkiesMusic',
-    pageTopImg: { default: mbsPageImage },
+    pageTopImg: { default: mbsPageImage, x2: mbsPage2xImage },
     subtitle:
       'Experience studio-quality sound, exceptional video performance, and real-time collaboration. Master, teach, and create music anytime, anywhere. Join a secure, global community of musicians.',
     screenshotsInfo: {
@@ -396,7 +432,7 @@ export const ClientsAll: ClientPageProps[] = [
     logoImg: blankSlateLogoImage,
     description: 'Pushing the Limits of the Human Brain',
     name: 'Blank Slate',
-    pageTopImg: { default: blankslatePageImage },
+    pageTopImg: { default: blankslatePageImage, x2: blankslatePage2xImage },
     subtitle:
       'BlankSlate is a deeptech cognitive science firm dedicated to pushing the limits of the human brain.',
     links: ['blankslatetech.co'],
@@ -423,7 +459,7 @@ export const ClientsAll: ClientPageProps[] = [
       { title: 'Scala', object: scalaImage },
       { title: 'Typescript', object: tsImage },
       { title: 'Gcp', SvgComponent: GcpImage },
-      { title: 'Scriptable', SvgComponent: ScriptableImage },
+      { title: 'REST', SvgComponent: RestImage },
       { title: 'Kubernetes', SvgComponent: KubernetesImage },
       { title: 'Terraform', SvgComponent: TerraformImage },
     ],
@@ -459,7 +495,7 @@ export const ClientsAll: ClientPageProps[] = [
       { title: 'React', SvgComponent: ReactImage },
       { title: 'Scala', object: scalaImage },
       { title: 'Typescript', object: tsImage },
-      { title: 'Scriptable', SvgComponent: ScriptableImage },
+      { title: 'REST', SvgComponent: RestImage },
       { title: 'Aws', SvgComponent: AwsImage },
       { title: 'Ansible', SvgComponent: AnsibleImage },
     ],

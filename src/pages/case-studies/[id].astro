@@ -14,6 +14,8 @@ import ShieldCheckImage from '~/assets/images/new/about/shield-check.svg';
 import { Image } from 'astro:assets';
 import ImageCarousel from '../../components/ImageCarousel.astro';
 import ButtonLink from '../../components/ButtonLink.astro';
+import type { ResponsiveImagesConfig } from '../../components/ResponsiveImage.astro';
+import ResponsiveImage from '../../components/ResponsiveImage.astro';
 
 export async function getStaticPaths() {
   return ClientsAll.filter((c) => c.id).map((client) => ({
@@ -41,6 +43,32 @@ const {
   technologies,
   screenshotsInfo,
 } = client;
+
+const pageImagesConfig =
+  pageTopImg &&
+  ([
+    pageTopImg.x2 && {
+      image: pageTopImg.x2,
+      sourceProps: {
+        type: 'image/webp',
+        media: '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx)',
+      },
+    },
+    pageTopImg.x2 && {
+      image: pageTopImg.x2,
+      sourceProps: {
+        media: '(min-device-pixel-ratio: 2)',
+        type: 'image/webp',
+      },
+    },
+    {
+      image: pageTopImg.default,
+      sourceProps: {
+        media: '(max-device-pixel-ratio: 1)',
+        type: 'image/webp',
+      },
+    },
+  ].filter(Boolean) as ResponsiveImagesConfig);
 ---
 
 <Layout>
@@ -80,15 +108,13 @@ const {
         </div>
       </div>
       {
-        pageTopImg && (
+        pageImagesConfig && (
           <div class="w-full rounded-xl border border-white/[0.07] bg-white/[0.07] p-0.5 md:w-1/2 md:rounded-3xl md:p-4">
-            <Image
-              class="w-full rounded-xl md:rounded-3xl"
-              format="webp"
-              width={pageTopImg?.default.width}
-              height={pageTopImg?.default.height}
-              src={pageTopImg?.default}
+            <ResponsiveImage
+              imagesConfig={pageImagesConfig}
               alt={`${name} image for top of the page`}
+              format="webp"
+              classes="w-full rounded-xl md:rounded-3xl"
             />
           </div>
         )
@@ -167,14 +193,14 @@ const {
                           width={24}
                           height={24}
                           src={technology.object}
-                          class="mr-0.5 inline-block h-6 w-6 object-contain"
+                          class="inline-block h-6 w-6 min-w-[1.5rem] object-contain"
                           alt={technology.title + ' logo'}
                         />
                       ) : (
-                        <technology.SvgComponent class="mr-0.5 inline-block h-6 w-6" />
+                        <technology.SvgComponent class="inline-block h-6 w-6 min-w-[1.5rem]" />
                       );
                       return (
-                        <div class="whitespace-nowrap text-xl !font-normal text-white md:text-xl-desktop">
+                        <div class="flex items-center gap-2 text-xl !font-normal text-white md:text-xl-desktop">
                           {IconRendered}
                           {technology.title}
                         </div>

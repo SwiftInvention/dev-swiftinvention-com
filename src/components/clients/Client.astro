@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import ArrowRight from '~/assets/images/new/arrow-right.svg';
 import ResponsiveImage, {
-  type Props as ResponsiveImageProps,
+  type ResponsiveImagesConfig,
 } from '../ResponsiveImage.astro';
 
 export interface Props {
@@ -60,7 +60,7 @@ const desktopImagesConfig = [
       type: 'image/webp',
     },
   },
-].filter(Boolean) as ResponsiveImageProps['imagesConfig'];
+].filter(Boolean) as ResponsiveImagesConfig;
 const mobileImagesConfig = (
   mobileImg
     ? [
@@ -88,7 +88,7 @@ const mobileImagesConfig = (
         },
       ].filter(Boolean)
     : []
-) as ResponsiveImageProps['imagesConfig'];
+) as ResponsiveImagesConfig;
 ---
 
 <div
