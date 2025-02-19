@@ -242,7 +242,7 @@ export const TechStack: React.FC = () => {
   return (
     <div className="container mt-24 md:mt-32">
       <div className="overflow-hidden">
-        <div className="mb-4 text-6xl text-primaryCol2 md:text-6xl-desktop">
+        <div className="mb-4 text-6xl text-white md:text-6xl-desktop">
           Our tech stack
         </div>
       </div>

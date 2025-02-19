@@ -12,16 +12,7 @@ export default {
     extend: {
       colors: {
         transparent: 'transparent',
-        current: 'currentColor',
-        primaryCol1: '#000000', // black
-        primaryCol2: '#FFFFFF', // white
-        primaryCol3: '#FF7B53', // orange coral
         secondaryCol1: '#F3F3F3', // gray concrete
-        secondaryCol2: '#D8D8D8', // gray alto
-        secondaryCol3: '#979797', // dusty gray
-        secondaryCol4: '#2D2D2D', // gray mineshaft lighter
-        secondaryCol5: '#212121', // gray mineshaft darker
-        secondaryCol6: '#C2C2C2',
         primaryCol3WithOpacity: 'rgba(255, 123, 83, 0.05)',
         surface: {
           DEFAULT: '#020617',
@@ -53,22 +44,8 @@ export default {
       screens: {
         xs: '480px',
       },
-      backgroundImage: {
-        pageBg: "url('../src/assets/images/services-bg.png')",
-      },
-      backgroundPosition: {
-        'left-top-2': 'left 0.5rem top 2rem',
-      },
       maxWidth: {
-        '8xl': '90rem',
-        sm2: '235px',
         '15xl': '874px',
-      },
-      width: {
-        '660': '660px',
-      },
-      paddingTop: {
-        '34': '138px',
       },
       spacing: {
         18: '4.5rem',
@@ -80,15 +57,9 @@ export default {
         50: '3.75rem',
         100: '25rem',
       },
-      height: {
-        62: '15.5rem',
-      },
       boxShadow: {
         card: '0 0 23px 0 rgba(0,0,0,0.5)',
         cardHovered: '0 0 35px 0 rgba(0,0,0,0.7)',
-      },
-      opacity: {
-        65: '.65',
       },
       fontSize: {
         lg: [
