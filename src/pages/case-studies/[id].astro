@@ -3,7 +3,7 @@ import {
   ClientsAll,
   ProvidedServiceIdToIcon,
   type ClientPageProps,
-} from '../../constants/clientsStack.astro';
+} from '~/constants/clientsStack.astro';
 import Layout from '../../layouts/Layout.astro';
 import GeoAltImage from '~/assets/images/new/about/geo-alt.svg';
 import PeopleImage from '~/assets/images/new/about/people.svg';
@@ -12,10 +12,10 @@ import ChatLeftQuoteImage from '~/assets/images/new/about/chat-left-quote.svg';
 import aboutBackgroundImage from '~/assets/images/new/about/about-bg.png';
 import ShieldCheckImage from '~/assets/images/new/about/shield-check.svg';
 import { Image } from 'astro:assets';
-import ImageCarousel from '../../components/ImageCarousel.astro';
-import ButtonLink from '../../components/ButtonLink.astro';
-import type { ResponsiveImagesConfig } from '../../components/ResponsiveImage.astro';
-import ResponsiveImage from '../../components/ResponsiveImage.astro';
+import ImageCarousel from '~/components/ImageCarousel.astro';
+import ButtonLink from '~/components/ButtonLink.astro';
+import type { ResponsiveImagesConfig } from '~/components/ResponsiveImage.astro';
+import ResponsiveImage from '~/components/ResponsiveImage.astro';
 
 export async function getStaticPaths() {
   return ClientsAll.filter((c) => c.id).map((client) => ({

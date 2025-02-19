@@ -1,5 +1,5 @@
 ---
-import { TechStack } from '../react/components/careers/TechStack';
+import { TechStack } from '~/react/components/careers/TechStack';
 ---
 
 <div id="tech-stack-block__wrapper">
@@ -11,7 +11,7 @@ import { TechStack } from '../react/components/careers/TechStack';
 <script>
   import { gsap } from 'gsap';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
-  import twConfig from '../../tailwind.config';
+  import twConfig from '../../../tailwind.config';
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -22,9 +22,8 @@ import { TechStack } from '../react/components/careers/TechStack';
       duration: 1,
       rotateX: 30,
       scale: 0.9,
-      opacity: 0
+      opacity: 0,
     });
-  })
+  });
 </script>
-<style>
-</style>
+<style></style>
