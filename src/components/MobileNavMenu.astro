@@ -10,7 +10,7 @@ const { id } = Astro.props;
 
 <div
   id={id}
-  class="fixed right-0 top-0 z-[1000] hidden h-[calc(100dvh-96px)] w-full -translate-y-[60%] translate-x-[60%] scale-[0.1] flex-col overflow-hidden bg-surface"
+  class="fixed right-0 top-0 z-[1000] hidden h-[calc(100dvh-96px)] w-full -translate-y-[60%] translate-x-[60%] flex-col overflow-hidden rounded-[50%] bg-surface [will-change:border-radius]"
 >
   <Image
     format="webp"
@@ -78,7 +78,8 @@ const { id } = Astro.props;
   </div>
   <div class="z-10 flex justify-center px-3 py-4">
     <a class="w-full max-w-[350px]" href="index.html#footer">
-      <Button classes="w-full">Work with us</Button>
+      <Button classes="h-[58px] w-full text-xl rounded-2lg">Work with us</Button
+      >
     </a>
   </div>
 </div>

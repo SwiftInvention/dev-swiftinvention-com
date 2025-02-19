@@ -85,15 +85,15 @@ export const Team = () => {
               key={member.name}
               className="relative flex flex-col overflow-hidden rounded-xl bg-gradient-to-b from-transparent to-primaryCol3WithOpacity"
             >
-              <div className="team-member-photo mb-5 h-60 w-60 rounded-full lg:mb-0">
+              <div className="team-member-photo mb-5 h-60 w-60 rounded-[50%] lg:mb-0">
                 <img
-                  className="h-60 w-60 rounded-full object-cover"
+                  className="h-60 w-60 rounded-[50%] object-cover"
                   src={member.photo}
                   srcSet={`${member.photo} 1x, ${member.photo2x} 2x`}
                   alt={member.name}
                 />
               </div>
-              <div className="m-8">
+              <div className="relative z-10 m-8">
                 <div className="text-xl font-bold md:text-xl-desktop">
                   {member.name}
                 </div>
@@ -106,10 +106,10 @@ export const Team = () => {
                   <div className="italic">{member.place}</div>
                 </div>
                 <div className="mt-4 flex font-inter text-lg">
-                  <a href={member.linkedIn} className="mr-4">
+                  <a href={member.linkedIn} className="mr-4" target="_blank">
                     <img src={linkedInIcon.src} alt={member.name} />
                   </a>
-                  <a href={`mailto:${member.email}`}>
+                  <a href={`mailto:${member.email}`} target="_blank">
                     <img src={emailIcon.src} alt={member.email} />
                   </a>
                 </div>

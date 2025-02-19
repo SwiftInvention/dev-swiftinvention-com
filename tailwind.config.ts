@@ -77,7 +77,7 @@ export default {
           },
         ],
         xl: [
-          '1.0625rem',
+          '1.125rem',
           {
             lineHeight: '1.5rem',
             fontWeight: '600',

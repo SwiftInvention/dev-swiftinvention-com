@@ -22,7 +22,6 @@ const currentPath = Astro.url.pathname;
         </div>
         <div
           class="hidden content-center items-center justify-end lg:flex lg:flex-1 lg:gap-x-2.5"
-          data--path={currentPath}
         >
           <a href={NavRoutes.services.path}>
             <div
@@ -85,7 +84,7 @@ const currentPath = Astro.url.pathname;
             </div>
           </a>
           <a class="lg:ml-3.5" href="#footer">
-            <Button classes="w-[154px] h-11">Work with us</Button>
+            <Button classes="w-[154px]">Work with us</Button>
           </a>
         </div>
         <button
@@ -137,6 +136,7 @@ const currentPath = Astro.url.pathname;
     'mobile-menu-close-btn'
   ) as HTMLButtonElement | null;
   const mobileNavEl = document.getElementById('mobile-menu-portal');
+
   hamburgerEl?.addEventListener('click', () => {
     if (mobileNavEl) {
       hamburgerEl?.classList.replace('flex', 'hidden');
@@ -147,17 +147,25 @@ const currentPath = Astro.url.pathname;
         .getElementsByTagName('header')[0]
         ?.classList.replace('bg-transparent', 'bg-surface');
 
-      const state = Flip.getState(mobileNavEl, { props: 'transform' });
+      const state = Flip.getState(mobileNavEl, {
+        props: 'transform,border-radius',
+      });
 
       mobileNavEl.classList.remove(
         'scale-[0.1]',
+        'rounded-[50%]',
         'translate-x-[60%]',
         '-translate-y-[60%]'
       );
-      mobileNavEl.classList.add('scale-100', 'translate-x-0', 'translate-y-24');
+      mobileNavEl.classList.add(
+        'scale-100',
+        'rounded-none',
+        'translate-x-0',
+        'translate-y-24'
+      );
 
       Flip.from(state, {
-        duration: 0.5,
+        duration: 0.4,
         ease: 'circ.out',
       });
     }
@@ -166,11 +174,13 @@ const currentPath = Astro.url.pathname;
     if (mobileNavEl) {
       mobileNavEl.classList.add(
         'scale-[0.1]',
+        'rounded-[50%]',
         'translate-x-[60%]',
         '-translate-y-[60%]'
       );
       mobileNavEl.classList.remove(
         'scale-100',
+        'rounded-none',
         'translate-x-0',
         'translate-y-24'
       );

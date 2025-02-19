@@ -120,8 +120,8 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #333;
+    -webkit-text-stroke-width: .7px;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.3);
   }
 
   .bg-mbs-music {
