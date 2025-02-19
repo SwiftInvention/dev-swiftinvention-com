@@ -9,7 +9,7 @@ const currentPath = Astro.url.pathname;
 const withForm = currentPath !== NavRoutes.careers.path;
 ---
 
-<footer class="container py-8 md:pt-16">
+<footer id="footer" class="container py-8 md:pt-16">
   {withForm && <ContactUsForm />}
   <div class="mt-16 flex flex-col">
     <div
@@ -37,7 +37,7 @@ const withForm = currentPath !== NavRoutes.careers.path;
         class="text-sm font-medium text-gray-accentText"
         href={NavRoutes.careers.path}>{NavRoutes.careers.name}</a
       >
-      <a class="text-sm font-medium text-gray-accentText" href="#contact__form"
+      <a class="text-sm font-medium text-gray-accentText" href="#footer"
         >Contact us</a
       >
     </div>

@@ -83,7 +83,7 @@ const currentPath = Astro.url.pathname;
               {NavRoutes.aboutUs.name}
             </div>
           </a>
-          <a class="lg:ml-3.5" href="#contact__form">
+          <a class="lg:ml-3.5" href="#footer">
             <Button classes="w-[154px] h-11">Work with us</Button>
           </a>
         </div>
@@ -153,7 +153,7 @@ const currentPath = Astro.url.pathname;
         'translate-x-[60%]',
         '-translate-y-[60%]'
       );
-      mobileNavEl.classList.add('scale-100', 'translate-x-0', 'translate-y-18');
+      mobileNavEl.classList.add('scale-100', 'translate-x-0', 'translate-y-24');
 
       Flip.from(state, {
         duration: 0.5,
@@ -171,7 +171,7 @@ const currentPath = Astro.url.pathname;
       mobileNavEl.classList.remove(
         'scale-100',
         'translate-x-0',
-        'translate-y-18'
+        'translate-y-24'
       );
       hamburgerEl?.classList.replace('hidden', 'flex');
       closeBtnEl?.classList.replace('flex', 'hidden');
