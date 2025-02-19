@@ -1,15 +1,15 @@
 import emailIcon from '~/assets/images/email.svg';
 import linkedInIcon from '~/assets/images/linkedIn.svg';
-import Alex2x from '~/assets/images/new/teamMembers/Alex-2x.png';
-import Alex from '~/assets/images/new/teamMembers/Alex.png';
-import Maria2x from '~/assets/images/new/teamMembers/Maria-2x.png';
-import Maria from '~/assets/images/new/teamMembers/Maria.png';
-import Paul2x from '~/assets/images/new/teamMembers/Paul-2x.png';
-import Paul from '~/assets/images/new/teamMembers/Paul.png';
-import Samaya2x from '~/assets/images/new/teamMembers/Samaya-2x.png';
-import Samaya from '~/assets/images/new/teamMembers/Samaya.png';
-import Sergey2x from '~/assets/images/new/teamMembers/Sergey-2x.png';
-import Sergey from '~/assets/images/new/teamMembers/Sergey.png';
+import Alex2x from '~/assets/images/teamMembers/Alex-2x.png';
+import Alex from '~/assets/images/teamMembers/Alex.png';
+import Maria2x from '~/assets/images/teamMembers/Maria-2x.png';
+import Maria from '~/assets/images/teamMembers/Maria.png';
+import Paul2x from '~/assets/images/teamMembers/Paul-2x.png';
+import Paul from '~/assets/images/teamMembers/Paul.png';
+import Samaya2x from '~/assets/images/teamMembers/Samaya-2x.png';
+import Samaya from '~/assets/images/teamMembers/Samaya.png';
+import Sergey2x from '~/assets/images/teamMembers/Sergey-2x.png';
+import Sergey from '~/assets/images/teamMembers/Sergey.png';
 
 const teamMembers = [
   {

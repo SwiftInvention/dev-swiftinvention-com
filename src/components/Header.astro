@@ -2,8 +2,8 @@
 import SwiftInventionIcon from '~/assets/images/swift-white-logo.svg';
 import Button from './Button.astro';
 import { NavRoutes } from '~/constants/routes.astro';
-import HamburgerIcon from '~/assets/images/new/hamburger.svg';
-import CloseIcon from '~/assets/images/new/x-lg.svg';
+import HamburgerIcon from '~/assets/images/hamburger.svg';
+import CloseIcon from '~/assets/images/x-lg.svg';
 import MobileNavMenu from './MobileNavMenu.astro';
 
 const currentPath = Astro.url.pathname;
@@ -26,7 +26,7 @@ const currentPath = Astro.url.pathname;
           <a href={NavRoutes.services.path}>
             <div
               class:list={[
-                'group -mb-1 cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-base font-semibold text-primaryCol2',
+                'group -mb-1 cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-base font-semibold text-white',
                 currentPath === NavRoutes.home.path ||
                 currentPath === NavRoutes.services.path
                   ? 'opacity-100'
@@ -41,7 +41,7 @@ const currentPath = Astro.url.pathname;
           <a href={NavRoutes.caseStudies.path}>
             <div
               class:list={[
-                'group -mb-1 cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-base font-semibold text-primaryCol2',
+                'group -mb-1 cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-base font-semibold text-white',
                 currentPath === NavRoutes.home.path ||
                 currentPath.includes(NavRoutes.caseStudies.path)
                   ? 'opacity-100'
@@ -56,7 +56,7 @@ const currentPath = Astro.url.pathname;
           <a href={NavRoutes.careers.path}>
             <div
               class:list={[
-                'group -mb-1 cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-base font-semibold text-primaryCol2',
+                'group -mb-1 cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-base font-semibold text-white',
                 currentPath === NavRoutes.home.path ||
                 currentPath.includes(NavRoutes.careers.path)
                   ? 'opacity-100'
@@ -71,7 +71,7 @@ const currentPath = Astro.url.pathname;
           <a href={NavRoutes.aboutUs.path}>
             <div
               class:list={[
-                'group -mb-1 cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-base font-semibold text-primaryCol2',
+                'group -mb-1 cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-base font-semibold text-white',
                 currentPath === NavRoutes.home.path ||
                 currentPath === NavRoutes.aboutUs.path
                   ? 'opacity-100'

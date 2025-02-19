@@ -1,7 +1,7 @@
 ---
 import Button from './Button.astro';
 import { NavRoutes } from '~/constants/routes.astro';
-import glowBgImage from '~/assets/images/new/glow.png';
+import glowBgImage from '~/assets/images/glow.png';
 import { Image } from 'astro:assets';
 
 const currentPath = Astro.url.pathname;
@@ -26,7 +26,7 @@ const { id } = Astro.props;
     <a href={NavRoutes.services.path} class="block w-full">
       <div
         class:list={[
-          '-mb-1 w-full cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-center text-xl text-primaryCol2 duration-200 hover:opacity-100 hover:transition-all',
+          '-mb-1 w-full cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-center text-xl text-white duration-200 hover:opacity-100 hover:transition-all',
           currentPath === NavRoutes.home.path ||
           currentPath === NavRoutes.services.path
             ? 'opacity-100'
@@ -39,7 +39,7 @@ const { id } = Astro.props;
     <a href={NavRoutes.caseStudies.path} class="block w-full">
       <div
         class:list={[
-          '-mb-1 w-full cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-center text-xl text-primaryCol2 duration-200 hover:opacity-100 hover:transition-all',
+          '-mb-1 w-full cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-center text-xl text-white duration-200 hover:opacity-100 hover:transition-all',
           currentPath === NavRoutes.home.path ||
           currentPath === NavRoutes.caseStudies.path
             ? 'opacity-100'
@@ -52,7 +52,7 @@ const { id } = Astro.props;
     <a href={NavRoutes.careers.path} class="block w-full">
       <div
         class:list={[
-          '-mb-1 w-full cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-center text-xl text-primaryCol2 duration-200 hover:opacity-100 hover:transition-all',
+          '-mb-1 w-full cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-center text-xl text-white duration-200 hover:opacity-100 hover:transition-all',
           currentPath === NavRoutes.home.path ||
           currentPath === NavRoutes.careers.path
             ? 'opacity-100'
@@ -65,7 +65,7 @@ const { id } = Astro.props;
     <a href={NavRoutes.aboutUs.path} class="block w-full">
       <div
         class:list={[
-          '-mb-1 w-full cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-center text-xl text-primaryCol2 duration-200 hover:opacity-100 hover:transition-all',
+          '-mb-1 w-full cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-center text-xl text-white duration-200 hover:opacity-100 hover:transition-all',
           currentPath === NavRoutes.home.path ||
           currentPath === NavRoutes.aboutUs.path
             ? 'opacity-100'
