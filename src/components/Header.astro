@@ -27,12 +27,13 @@ const currentPath = Astro.url.pathname;
             <div
               class:list={[
                 'group -mb-1 cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-base font-semibold text-white',
-                currentPath === NavRoutes.home.path ||
-                currentPath === NavRoutes.services.path
+                currentPath.includes(NavRoutes.home.path) ||
+                currentPath.includes(NavRoutes.services.path)
                   ? 'opacity-100'
                   : 'opacity-60',
-                currentPath === NavRoutes.home.path && 'hover:opacity-80',
-                currentPath !== NavRoutes.home.path && 'hover:opacity-100',
+                currentPath.includes(NavRoutes.home.path) && 'hover:opacity-80',
+                !currentPath.includes(NavRoutes.home.path) &&
+                  'hover:opacity-100',
               ]}
             >
               {NavRoutes.services.name}
@@ -42,12 +43,13 @@ const currentPath = Astro.url.pathname;
             <div
               class:list={[
                 'group -mb-1 cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-base font-semibold text-white',
-                currentPath === NavRoutes.home.path ||
+                currentPath.includes(NavRoutes.home.path) ||
                 currentPath.includes(NavRoutes.caseStudies.path)
                   ? 'opacity-100'
                   : 'opacity-60',
-                currentPath === NavRoutes.home.path && 'hover:opacity-80',
-                currentPath !== NavRoutes.home.path && 'hover:opacity-100',
+                currentPath.includes(NavRoutes.home.path) && 'hover:opacity-80',
+                !currentPath.includes(NavRoutes.home.path) &&
+                  'hover:opacity-100',
               ]}
             >
               {NavRoutes.caseStudies.name}
@@ -57,12 +59,13 @@ const currentPath = Astro.url.pathname;
             <div
               class:list={[
                 'group -mb-1 cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-base font-semibold text-white',
-                currentPath === NavRoutes.home.path ||
+                currentPath.includes(NavRoutes.home.path) ||
                 currentPath.includes(NavRoutes.careers.path)
                   ? 'opacity-100'
                   : 'opacity-60',
-                currentPath === NavRoutes.home.path && 'hover:opacity-80',
-                currentPath !== NavRoutes.home.path && 'hover:opacity-100',
+                currentPath.includes(NavRoutes.home.path) && 'hover:opacity-80',
+                !currentPath.includes(NavRoutes.home.path) &&
+                  'hover:opacity-100',
               ]}
             >
               {NavRoutes.careers.name}
@@ -72,12 +75,13 @@ const currentPath = Astro.url.pathname;
             <div
               class:list={[
                 'group -mb-1 cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-base font-semibold text-white',
-                currentPath === NavRoutes.home.path ||
-                currentPath === NavRoutes.aboutUs.path
+                currentPath.includes(NavRoutes.home.path) ||
+                currentPath.includes(NavRoutes.aboutUs.path)
                   ? 'opacity-100'
                   : 'opacity-60',
-                currentPath === NavRoutes.home.path && 'hover:opacity-80',
-                currentPath !== NavRoutes.home.path && 'hover:opacity-100',
+                currentPath.includes(NavRoutes.home.path) && 'hover:opacity-80',
+                !currentPath.includes(NavRoutes.home.path) &&
+                  'hover:opacity-100',
               ]}
             >
               {NavRoutes.aboutUs.name}
