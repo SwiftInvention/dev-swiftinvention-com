@@ -3,6 +3,7 @@ import type { HTMLAttributes } from 'astro/types';
 
 interface Props extends HTMLAttributes<'input'> {
   classes?: string;
+  id?: string;
   isTextarea?: boolean;
 }
 
@@ -11,6 +12,7 @@ const {
   placeholder,
   type,
   isTextarea = false,
+  id,
   ...inputProps
 } = Astro.props;
 const generalClasses =
@@ -25,23 +27,26 @@ const generalClasses =
 >
   {
     placeholder && (
-      <span
+      <label
+        for={id}
         data-input-custom-placeholder
         class="absolute left-[17px] top-[20px] text-base leading-none text-subtle transition-all"
       >
         {placeholder}
-      </span>
+      </label>
     )
   }
   {
     isTextarea ? (
       <textarea
+        id={id}
         data-input-custom
         class:list={[generalClasses, 'h-30']}
         {...inputProps}
       />
     ) : (
       <input
+        id={id}
         data-input-custom
         type={type ?? 'text'}
         class:list={[generalClasses, 'h-14']}

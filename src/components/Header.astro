@@ -14,7 +14,7 @@ const currentPath = Astro.url.pathname;
     <div class="container">
       <div class="flex h-24 items-center justify-between">
         <div class="flex-shrink-0">
-          <a href={'/'}>
+          <a href={'/'} aria-label="Go to Swift home page">
             <SwiftInventionIcon
               class="h-5 w-[252px] cursor-pointer md:h-6 md:w-[296px]"
             />
@@ -90,12 +90,14 @@ const currentPath = Astro.url.pathname;
         <button
           class="flex h-11 w-11 items-center justify-center lg:hidden"
           id="mobile-menu-hamburger"
+          aria-label="Open mobile menu"
         >
           <HamburgerIcon />
         </button>
         <button
           class="hidden h-11 w-11 items-center justify-center lg:hidden"
           id="mobile-menu-close-btn"
+          aria-label="Close mobile menu"
         >
           <CloseIcon />
         </button>

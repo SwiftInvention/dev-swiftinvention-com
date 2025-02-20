@@ -35,12 +35,15 @@ import { Image } from 'astro:assets';
   <div class="md:basis-[45%]">
     <form id="contact__form" class="flex flex-col gap-6">
       <Input
+        id="contact__form_input_name"
         name="name"
         required
         placeholder="Name"
+        type="text"
         classes="contact__form_input"
       />
       <Input
+        id="contact__form_input_email"
         name="email"
         required
         placeholder="Email address"
@@ -48,6 +51,7 @@ import { Image } from 'astro:assets';
         classes="contact__form_input"
       />
       <Input
+        id="ter_phone"
         name="phone"
         placeholder="Phone number"
         type="tel"
@@ -56,6 +60,7 @@ import { Image } from 'astro:assets';
         classes="contact__form_input"
       />
       <Input
+        id="contact__form_input_message"
         name="message"
         isTextarea
         required
