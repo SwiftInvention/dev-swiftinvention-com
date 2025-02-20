@@ -9,24 +9,17 @@ import akkaImage from '~/assets/images/stack/akka.svg';
 import grafanaImage from '~/assets/images/stack/grafana.svg';
 import gatlingImage from '~/assets/images/stack/gatling.svg';
 import zapImage from '~/assets/images/stack/zap.svg';
-import nwjImage from '~/assets/images/stack/nightwatchjs.svg';
 import awsImage from '~/assets/images/stack/aws.svg';
 import gcpImage from '~/assets/images/stack/gcp.svg';
-import ociImage from '~/assets/images/stack/oci.svg';
 import kubernetesImage from '~/assets/images/stack/kubernetes.svg';
 import istioImage from '~/assets/images/stack/istio.svg';
 import prometheusImage from '~/assets/images/stack/prometheus.svg';
 import terraformImage from '~/assets/images/stack/terraform.svg';
 import viteImage from '~/assets/images/stack/vite.svg';
-import snowpackImage from '~/assets/images/stack/snowpack.svg';
-import muiImage from '~/assets/images/stack/mui.svg';
 import tailwindImage from '~/assets/images/stack/tailwind.svg';
-import socketIoImage from '~/assets/images/stack/socketio.svg';
 import i18nextImage from '~/assets/images/stack/i18next.svg';
 import solidJsImage from '~/assets/images/stack/solidjs.svg';
 import wcImage from '~/assets/images/stack/webcomponents.svg';
-import puppeteerImage from '~/assets/images/stack/puppeteer.svg';
-import recoilImage from '~/assets/images/stack/recoil.svg';
 import rnImage from '~/assets/images/stack/reactnative.svg';
 import swiftImage from '~/assets/images/stack/swift.svg';
 import swiftUiImage from '~/assets/images/stack/swiftui.svg';
@@ -34,7 +27,6 @@ import kotlinImage from '~/assets/images/stack/kotlin.svg';
 import ajcImage from '~/assets/images/stack/ajc.svg';
 
 import jotaiImage from '~/assets/images/stack/jotai.png';
-import quillImage from '~/assets/images/stack/quill.png';
 import mysqlImage from '~/assets/images/stack/mysql.png';
 import pgsqlImage from '~/assets/images/stack/pgsql.png';
 import grpcImage from '~/assets/images/stack/grpc.png';
@@ -82,11 +74,6 @@ const techStackList: {
     link: 'https://akka.io/',
   },
   {
-    text: 'Quill',
-    image: quillImage.src,
-    link: 'https://getquill.io/',
-  },
-  {
     text: 'Grafana',
     image: grafanaImage.src,
     link: 'https://grafana.com/',
@@ -117,11 +104,6 @@ const techStackList: {
     link: 'https://www.zaproxy.org/',
   },
   {
-    text: 'Nightwatch.js',
-    image: nwjImage.src,
-    link: 'https://nightwatchjs.org/',
-  },
-  {
     text: 'AWS',
     image: awsImage.src,
     link: 'https://aws.amazon.com/',
@@ -130,11 +112,6 @@ const techStackList: {
     text: 'GCP',
     image: gcpImage.src,
     link: 'https://cloud.google.com/',
-  },
-  {
-    text: 'OCI',
-    image: ociImage.src,
-    link: 'https://www.oracle.com/cloud/',
   },
   {
     text: 'Kubernetes',
@@ -162,24 +139,9 @@ const techStackList: {
     link: 'https://vitejs.dev/',
   },
   {
-    text: 'Snowpack',
-    image: snowpackImage.src,
-    link: 'https://www.snowpack.dev/',
-  },
-  {
-    text: 'MUI',
-    image: muiImage.src,
-    link: 'https://mui.com/',
-  },
-  {
     text: 'Tailwind',
     image: tailwindImage.src,
     link: 'https://tailwindcss.com/',
-  },
-  {
-    text: 'Socket IO',
-    image: socketIoImage.src,
-    link: 'https://socket.io/',
   },
   {
     text: 'i18next',
@@ -195,16 +157,6 @@ const techStackList: {
     text: 'WebComponents',
     image: wcImage.src,
     link: 'https://www.webcomponents.org/',
-  },
-  {
-    text: 'Puppeteer',
-    image: puppeteerImage.src,
-    link: 'https://github.com/puppeteer/puppeteer',
-  },
-  {
-    text: 'Recoil',
-    image: recoilImage.src,
-    link: 'https://recoiljs.org/',
   },
   {
     text: 'Jotai',
