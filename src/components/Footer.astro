@@ -1,5 +1,6 @@
 ---
-import SwiftInventionIcon from '~/assets/images/swift-white-logo.svg';
+import { Image } from 'astro:assets';
+import swiftInventionIcon from '~/assets/images/swift-white-logo.svg';
 
 import { NavRoutes } from '~/constants/routes.astro';
 import SocialNetworks from './SocialNetworks.astro';
@@ -15,7 +16,13 @@ const withForm = currentPath !== NavRoutes.careers.path;
     <div
       class="mb-6 md:mb-8 md:flex md:items-center md:justify-between md:border-b md:border-white/10 md:pb-8"
     >
-      <SwiftInventionIcon class="h-4 w-[200px]" />
+      <Image
+        src={swiftInventionIcon}
+        width={swiftInventionIcon.width}
+        height={swiftInventionIcon.height}
+        alt="Swift Invention logo"
+        class="h-4 w-[200px]"
+      />
       <div class="hidden md:block">
         <SocialNetworks />
       </div>

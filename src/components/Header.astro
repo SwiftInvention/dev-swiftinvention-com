@@ -1,5 +1,6 @@
 ---
-import SwiftInventionIcon from '~/assets/images/swift-white-logo.svg';
+import { Image } from 'astro:assets';
+import swiftInventionIcon from '~/assets/images/swift-white-logo.svg';
 import Button from './Button.astro';
 import { NavRoutes } from '~/constants/routes.astro';
 import HamburgerIcon from '~/assets/images/hamburger.svg';
@@ -15,8 +16,12 @@ const currentPath = Astro.url.pathname;
       <div class="flex h-24 items-center justify-between">
         <div class="flex-shrink-0">
           <a href={'/'} aria-label="Go to Swift home page">
-            <SwiftInventionIcon
-              class="h-5 w-[252px] cursor-pointer md:h-6 md:w-[296px]"
+            <Image
+              src={swiftInventionIcon}
+              width={swiftInventionIcon.width}
+              height={swiftInventionIcon.height}
+              alt="Swift Invention logo"
+              class="h-5 w-[252px] md:h-6 md:w-[296px]"
             />
           </a>
         </div>

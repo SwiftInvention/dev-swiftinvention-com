@@ -1,5 +1,5 @@
 ---
-import SwiftInventionIcon from '~/assets/images/swift-white-logo.svg';
+import swiftInventionIcon from '~/assets/images/swift-white-logo.svg';
 import meetUsImage from '~/assets/images/meet-us.png';
 import { Image } from 'astro:assets';
 ---
@@ -14,9 +14,16 @@ import { Image } from 'astro:assets';
         Meet
       </div>
     </div>
-    <SwiftInventionIcon
+    <Image
+      src={swiftInventionIcon}
+      width={swiftInventionIcon.width}
+      height={swiftInventionIcon.height}
+      alt="Swift Invention logo"
       class="h-8 w-full max-w-[355px] md:h-16 md:max-w-[795px]"
     />
+    <!-- <SwiftInventionIcon
+      class="h-8 w-full max-w-[355px] md:h-16 md:max-w-[795px]"
+    /> -->
     <div
       class="mb-12 mt-4 text-xl !font-normal text-white opacity-80 md:text-xl-desktop"
     >

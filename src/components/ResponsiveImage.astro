@@ -10,10 +10,11 @@ interface Props {
   alt: string;
   format?: string;
   classes?: string;
+  loading?: 'lazy' | 'eager';
 }
 export type ResponsiveImagesConfig = Props['imagesConfig'];
 
-const { imagesConfig, alt, format, classes } = Astro.props;
+const { imagesConfig, alt, format, classes, loading } = Astro.props;
 
 const astroImages = await Promise.all(
   imagesConfig.map((imageConfig) =>
@@ -37,6 +38,7 @@ const astroImages = await Promise.all(
     src={astroImages[astroImages.length - 1].src}
     class={classes}
     alt={alt}
+    loading={loading}
   />
 </picture>
 
