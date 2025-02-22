@@ -13,6 +13,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "dev-build": "pnpm build && pnpm preview",
     "astro": "astro"
   },
   "dependencies": {

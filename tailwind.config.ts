@@ -166,8 +166,16 @@ export default {
         ],
       },
       fontFamily: {
-        sans: ['Akzidenz-Grotesk', ...defaultTheme.fontFamily.sans],
         inter: ['Inter', ...defaultTheme.fontFamily.sans],
+      },
+      keyframes: {
+        'page-head': {
+          '0%': { transform: 'translateY(-60px)', opacity: 0 },
+          '100%': { transform: 'translateY(0px)', opacity: 1 },
+        },
+      },
+      animation: {
+        'page-head': 'page-head 1s ease-in-out',
       },
     },
   },
