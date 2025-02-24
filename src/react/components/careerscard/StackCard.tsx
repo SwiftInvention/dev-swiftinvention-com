@@ -3,7 +3,7 @@ import React from 'react';
 export interface StackCardProps {
   text: string;
   image: string;
-  link: string;
+  link?: string;
 }
 
 export const StackCard: React.FC<StackCardProps> = ({ text, image, link }) => {
