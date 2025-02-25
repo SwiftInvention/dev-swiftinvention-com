@@ -2,40 +2,34 @@
 // stack
 import AnsibleImage from '~/assets/images/stack/ansible.svg';
 import AwsImage from '~/assets/images/stack/aws.svg';
+import DbImage from '~/assets/images/stack/db.svg';
 import GcpImage from '~/assets/images/stack/gcp.svg';
+import goImage from '~/assets/images/stack/go.png';
 import GrafanaImage from '~/assets/images/stack/grafana.svg';
 import grpcImage from '~/assets/images/stack/grpc.png';
+import HtmlTagImage from '~/assets/images/stack/html-tag.svg';
+import irohImage from '~/assets/images/stack/iroh.png';
+import IstioImage from '~/assets/images/stack/istio.svg';
 import javaImage from '~/assets/images/stack/java.png';
 import jsImage from '~/assets/images/stack/js.png';
-import knexjsImage from '~/assets/images/stack/knexjs.png';
 import KubernetesImage from '~/assets/images/stack/kubernetes.svg';
 import nestjsImage from '~/assets/images/stack/nestjs.png';
-import NextjsImage from '~/assets/images/stack/nextjs.svg';
+import openidImage from '~/assets/images/stack/openid.png';
 import pgsqlImage from '~/assets/images/stack/pgsql.png';
-import PrismaImage from '~/assets/images/stack/prisma.svg';
 import pythonImage from '~/assets/images/stack/python.webp';
 import PytorchImage from '~/assets/images/stack/pytorch.svg';
 import ReactImage from '~/assets/images/stack/reactnative.svg';
+import RestImage from '~/assets/images/stack/rest.svg';
 import rustImage from '~/assets/images/stack/rust.png';
 import scalaImage from '~/assets/images/stack/scala.png';
-import RestImage from '~/assets/images/stack/rest.svg';
-import SinglestoreImage from '~/assets/images/stack/singlestore.svg';
 import TerraformImage from '~/assets/images/stack/terraform.svg';
-import TrpcImage from '~/assets/images/stack/trpc.svg';
 import tsImage from '~/assets/images/stack/ts.png';
 import typeormImage from '~/assets/images/stack/typeorm.png';
-import ZioImage from '~/assets/images/stack/zio.svg';
-import HtmlTagImage from '~/assets/images/stack/html-tag.svg';
-import DbImage from '~/assets/images/stack/db.svg';
-import IstioImage from '~/assets/images/stack/istio.svg';
-import ZapImage from '~/assets/images/stack/zap.svg';
-import goImage from '~/assets/images/stack/go.png';
-import openidImage from '~/assets/images/stack/openid.png';
-import irohImage from '~/assets/images/stack/iroh.png';
 import WillowImage from '~/assets/images/stack/willow.svg';
+import ZapImage from '~/assets/images/stack/zap.svg';
+import ZioImage from '~/assets/images/stack/zio.svg';
 
 // clients
-import pakiraLogoImage from '~/assets/images/logos/pakira-logo.svg';
 import blankSlateLaptop2xImage from '~/assets/images/devices/blankslate-2x.png';
 import blankSlateLaptopImage from '~/assets/images/devices/blankslate.png';
 import eversanaLaptop2xImage from '~/assets/images/devices/eversana-2x.png';
@@ -46,26 +40,27 @@ import meeLaptop2xImage from '~/assets/images/devices/mee-2x.png';
 import meeMobile2xImage from '~/assets/images/devices/mee-mobile-2x.png';
 import meeMobileImage from '~/assets/images/devices/mee-mobile.png';
 import meeLaptopImage from '~/assets/images/devices/mee.png';
-import pakiraLaptopImage from '~/assets/images/devices/pakira-desktop.png';
 import pakiraLaptop2xImage from '~/assets/images/devices/pakira-desktop-2x.png';
-import pakiraMobileImage from '~/assets/images/devices/pakira-mobile.png';
+import pakiraLaptopImage from '~/assets/images/devices/pakira-desktop.png';
 import pakiraMobile2xImage from '~/assets/images/devices/pakira-mobile-2x.png';
-import plumcheckLaptopImage from '~/assets/images/devices/plumcheck-desktop.png';
+import pakiraMobileImage from '~/assets/images/devices/pakira-mobile.png';
 import plumcheckLaptop2xImage from '~/assets/images/devices/plumcheck-desktop-2x.png';
-import plumcheckMobileImage from '~/assets/images/devices/plumcheck-mobile.png';
+import plumcheckLaptopImage from '~/assets/images/devices/plumcheck-desktop.png';
 import plumcheckMobile2xImage from '~/assets/images/devices/plumcheck-mobile-2x.png';
+import plumcheckMobileImage from '~/assets/images/devices/plumcheck-mobile.png';
 import privoLaptop2xImage from '~/assets/images/devices/privo-2x.png';
 import privoLaptopImage from '~/assets/images/devices/privo.png';
 import quanthealthLaptop2xImage from '~/assets/images/devices/quanthealth-2x.png';
 import quanthealthLaptopImage from '~/assets/images/devices/quanthealth.png';
-import vierallyLaptopImage from '~/assets/images/devices/vierally-desktop.png';
 import vierallyLaptop2xImage from '~/assets/images/devices/vierally-desktop-2x.png';
+import vierallyLaptopImage from '~/assets/images/devices/vierally-desktop.png';
 import vierallyMobile2xImage from '~/assets/images/devices/vierally-mobile-2x.png';
 import vierallyMobileImage from '~/assets/images/devices/vierally-mobile.png';
 import blankSlateLogoImage from '~/assets/images/logos/blankslate-white.png';
 import eversanaLogoImage from '~/assets/images/logos/eversana-white.png';
 import mbsLogoImage from '~/assets/images/logos/mbs-logo.png';
 import meeLogoImage from '~/assets/images/logos/mee-white.png';
+import pakiraLogoImage from '~/assets/images/logos/pakira-logo.svg';
 import plumcheckLogoImage from '~/assets/images/logos/plumcheck-logo.png';
 import privoLogoImage from '~/assets/images/logos/privo-white.png';
 import quanthealthLogoImage from '~/assets/images/logos/quanthealth-white.png';
@@ -76,8 +71,20 @@ import CodeSquareImage from '~/assets/images/about/code-square.svg';
 import HddStackImage from '~/assets/images/about/hdd-stack.svg';
 import PersonVcardImage from '~/assets/images/about/person-vcard.svg';
 import WindowSidebarImage from '~/assets/images/about/window-sidebar.svg';
+import FileEarmarkImage from '~/assets/images/about/file-earmark.svg';
+import CardChecklistImage from '~/assets/images/about/card-checklist.svg';
+import ShieldLockImage from '~/assets/images/about/shield-lock.svg';
+import PersonCheckImage from '~/assets/images/about/person-check.svg';
 
 import joshPhotoImage from '~/assets/images/photos/josh.png';
+import katePhotoImage from '~/assets/images/photos/kate.png';
+import mbsScreenshot1Image from '~/assets/images/screenshots/MBSM screenshot - 1.png';
+import mbsScreenshot2Image from '~/assets/images/screenshots/MBSM screenshot - 2.png';
+import mbsScreenshot3Image from '~/assets/images/screenshots/MBSM screenshot - 3.png';
+import meeScreenshot1Image from '~/assets/images/screenshots/Mee screenshot - 1.png';
+import meeScreenshot2Image from '~/assets/images/screenshots/Mee screenshot - 2.png';
+import meeScreenshot3Image from '~/assets/images/screenshots/Mee screenshot - 3.png';
+import meeScreenshot4Image from '~/assets/images/screenshots/Mee screenshot - 4.png';
 import plumCheckScreenshot1Image from '~/assets/images/screenshots/PlumCheck-screenshot-1.png';
 import plumCheckScreenshot2Image from '~/assets/images/screenshots/PlumCheck-screenshot-2.png';
 import plumCheckScreenshot3Image from '~/assets/images/screenshots/PlumCheck-screenshot-3.png';
@@ -89,28 +96,21 @@ import privoScreenshot5Image from '~/assets/images/screenshots/PRIVO screenshot 
 import privoScreenshot6Image from '~/assets/images/screenshots/PRIVO screenshot - 6.png';
 import privoScreenshot7Image from '~/assets/images/screenshots/PRIVO screenshot - 7.png';
 import privoScreenshot8Image from '~/assets/images/screenshots/PRIVO screenshot - 8.png';
-import mbsScreenshot1Image from '~/assets/images/screenshots/MBSM screenshot - 1.png';
-import mbsScreenshot2Image from '~/assets/images/screenshots/MBSM screenshot - 2.png';
-import mbsScreenshot3Image from '~/assets/images/screenshots/MBSM screenshot - 3.png';
-import meeScreenshot1Image from '~/assets/images/screenshots/Mee screenshot - 1.png';
-import meeScreenshot2Image from '~/assets/images/screenshots/Mee screenshot - 2.png';
-import meeScreenshot3Image from '~/assets/images/screenshots/Mee screenshot - 3.png';
-import meeScreenshot4Image from '~/assets/images/screenshots/Mee screenshot - 4.png';
 
-import plumcheckPageImage from '~/assets/images/clients/plumcheck-page.png';
-import mbsPageImage from '~/assets/images/clients/mbs-page.png';
-import mbsPage2xImage from '~/assets/images/clients/mbs-page-2x.png';
-import meePageImage from '~/assets/images/clients/mee-page.png';
-import meePage2xImage from '~/assets/images/clients/mee-page-2x.png';
-import privoPageImage from '~/assets/images/clients/privo-page.png';
-import privoPage2xImage from '~/assets/images/clients/privo-page-2x.png';
-import pakiraPageImage from '~/assets/images/clients/pakira-page.png';
-import vierallyPageImage from '~/assets/images/clients/vierally-page.png';
-import vierallyPagex2Image from '~/assets/images/clients/vierally-page-2x.png';
-import blankslatePageImage from '~/assets/images/clients/blankslate-page.png';
 import blankslatePage2xImage from '~/assets/images/clients/blankslate-page-2x.png';
+import blankslatePageImage from '~/assets/images/clients/blankslate-page.png';
 import eversanaPageImage from '~/assets/images/clients/eversana-page.png';
+import mbsPage2xImage from '~/assets/images/clients/mbs-page-2x.png';
+import mbsPageImage from '~/assets/images/clients/mbs-page.png';
+import meePage2xImage from '~/assets/images/clients/mee-page-2x.png';
+import meePageImage from '~/assets/images/clients/mee-page.png';
+import pakiraPageImage from '~/assets/images/clients/pakira-page.png';
+import plumcheckPageImage from '~/assets/images/clients/plumcheck-page.png';
+import privoPage2xImage from '~/assets/images/clients/privo-page-2x.png';
+import privoPageImage from '~/assets/images/clients/privo-page.png';
 import quanthealthPageImage from '~/assets/images/clients/quanthealth-page.png';
+import vierallyPagex2Image from '~/assets/images/clients/vierally-page-2x.png';
+import vierallyPageImage from '~/assets/images/clients/vierally-page.png';
 
 import type { Props as ClientProps } from '../components/clients/Client.astro';
 
@@ -134,7 +134,7 @@ export type ClientPageProps = ClientProps & {
     purpose: string;
   };
   providedServices?: {
-    id: 'devops' | 'backend' | 'frontend' | 'additional' | 'design';
+    id: keyof typeof ProvidedServiceIdToIcon;
     title: string;
   }[];
 };
@@ -144,17 +144,10 @@ export const ClientsShort: ClientPageProps[] = [
     logoImg: privoLogoImage,
     pageTopImg: { default: privoPageImage, x2: privoPage2xImage },
     description: 'Children’s online identity & consent management',
-    name: 'Privo',
+    name: 'PRIVO',
     title: 'Privacy Compliance, Age Verification & Consent Management',
     subtitle:
       'PRIVO delivers enterprise technology and expertise to companies to meet their unique business objectives while adhering to complex and expanding minors’ digital privacy and safety regulations.',
-    comment: {
-      author: {
-        name: 'Thorn',
-        position: 'CEO at PRIVO',
-      },
-      text: 'Swift Invention has been crucial for our digital strategy and success — you can expect organized, detailed, friendly, and fast service when working with their team. They’ve truly brought our ideas to life, and they help us to be better marketers and designers. We’re so grateful to have such a trusted partner!',
-    },
     screenshotsInfo: {
       subtitle:
         'We developed a web application that allows users to verify their identity, and connect their healthcare provider accounts to share verified health information. We continue to maintain and enhance the solution.',
@@ -178,14 +171,16 @@ export const ClientsShort: ClientPageProps[] = [
       purpose: 'Privacy management',
     },
     providedServices: [
-      { id: 'devops', title: 'DevOps' },
-      { id: 'backend', title: 'Back-end development' },
-      { id: 'frontend', title: 'Front-end development' },
+      { id: 'file', title: 'Consent Management Service' },
+      { id: 'guard', title: 'Customizable Authorization Service' },
+      { id: 'additional', title: 'Age Verification Service' },
+      { id: 'person', title: 'Identity Verification Service' },
       {
-        id: 'additional',
-        title: 'Identity verification methods development',
+        id: 'checklist',
+        title: 'Automated Compliance Assessment and Management',
       },
-      { id: 'design', title: 'UI/UX design' },
+      { id: 'design', title: 'UI/UX' },
+      { id: 'devops', title: 'DevOps' },
     ],
     technologies: [
       { title: 'Rust', object: rustImage },
@@ -393,11 +388,19 @@ export const ClientsAll: ClientPageProps[] = [
   {
     desktopImg: { default: mbsLaptopImage, x2: mbsLaptop2xImage },
     logoImg: mbsLogoImage,
-    description: 'The Meeting app designed for musicians',
+    description: 'Your Music Collaboration App',
     name: 'MyBlueSkiesMusic',
     pageTopImg: { default: mbsPageImage, x2: mbsPage2xImage },
     subtitle:
       'Experience studio-quality sound, exceptional video performance, and real-time collaboration. Master, teach, and create music anytime, anywhere. Join a secure, global community of musicians.',
+    comment: {
+      author: {
+        avatar: katePhotoImage,
+        name: 'Kate Dillingham',
+        position: 'CEO at MyBlueSkiesMusic',
+      },
+      text: 'Collaborating with Swift Invention, Inc on myblueskiesmusic.com is an exceptional experience. Their technical expertise, creativity, and commitment to excellence brought my vision to life, delivering a beautifully crafted platform that exceeded my expectations. I truly enjoy working with this talented team!',
+    },
     screenshotsInfo: {
       subtitle:
         'We developed the entire solution from concept to production-ready web application, and continue to maintain and enhance it.',
@@ -522,18 +525,6 @@ export const ClientsAll: ClientPageProps[] = [
       { id: 'backend', title: 'Back-end development' },
       { id: 'frontend', title: 'Front-end development' },
     ],
-    technologies: [
-      { title: 'React', SvgComponent: ReactImage },
-      { title: 'Typescript', object: tsImage },
-      { title: 'Pytorch', SvgComponent: PytorchImage },
-      { title: 'Python', object: pythonImage },
-      { title: 'Aws', SvgComponent: AwsImage },
-      { title: 'Nextjs', SvgComponent: NextjsImage },
-      { title: 'Singlestore', SvgComponent: SinglestoreImage },
-      { title: 'knexjs', object: knexjsImage },
-      { title: 'Prisma', SvgComponent: PrismaImage },
-      { title: 'Trpc', SvgComponent: TrpcImage },
-    ],
     classes: `bg-[#0F172A]`,
   },
 ];
@@ -544,5 +535,9 @@ export const ProvidedServiceIdToIcon = {
   frontend: CodeSquareImage,
   additional: PersonVcardImage,
   design: WindowSidebarImage,
+  file: FileEarmarkImage,
+  checklist: CardChecklistImage,
+  guard: ShieldLockImage,
+  person: PersonCheckImage,
 };
 ---
