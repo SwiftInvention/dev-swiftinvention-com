@@ -117,6 +117,10 @@
   .bg-mbs-music {
     background: linear-gradient(180deg, rgba(0, 10, 13, 0.97) 5.72%, rgba(0, 10, 13, 0.50) 32.6%, rgba(0, 10, 13, 0.25) 100%), url('/images/mbs-bg.png');
   }
+
+  .case-study-hover {
+    box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.40), 0px 0px 0px 4px rgba(255, 255, 255, 0.45);
+  }
 }
 
 @layer utilities {
