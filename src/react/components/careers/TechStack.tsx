@@ -353,16 +353,20 @@ export const TechStack: React.FC = () => {
         high-performing products to our customers.
       </div>
       <ul className="mb-25 mt-7 flex flex-col justify-start gap-0.5 overflow-hidden rounded-xl md:grid md:grid-cols-2 md:gap-1 lg:md:grid-cols-3 xl:md:grid-cols-4">
-        {techStackList.map((techStackItem, index) => {
-          return !techStackItem.disabled ? (
-            <StackCard
-              key={index}
-              text={techStackItem.text}
-              image={techStackItem.image}
-              link={techStackItem.link}
-            />
-          ) : null;
-        })}
+        {techStackList
+          .sort((a, b) =>
+            a.text.toLowerCase() > b.text.toLowerCase() ? 1 : -1
+          )
+          .map((techStackItem, index) => {
+            return !techStackItem.disabled ? (
+              <StackCard
+                key={index}
+                text={techStackItem.text}
+                image={techStackItem.image}
+                link={techStackItem.link}
+              />
+            ) : null;
+          })}
       </ul>
     </div>
   );
